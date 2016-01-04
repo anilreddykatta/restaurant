@@ -1,0 +1,51 @@
+/*Override css from material .min.css*/
+.btn {
+	margin: 0px;
+}
+
+.form-control {
+	background-image: none;
+}
+
+.navbar {
+	position: relative;
+	min-height: 50px;
+	margin-bottom: 0px;
+	border: 1px solid transparent;
+}
+
+.navbar-brand {
+	float: left;
+	padding: 5px;
+	font-size: 18px;
+	line-height: 20px;
+	height: 20px;
+}
+
+nav {
+	font-weight: 200;
+	font-family: RobotoDraft;
+	color: #f2f2f2;
+}
+
+.navbar .navbar-nav>.active>a, .navbar .navbar-nav>.active>a:hover,
+	.navbar .navbar-nav>.active>a:focus {
+	color: inherit;
+	background-color: none;
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover,
+	.navbar-default .navbar-nav>.active>a:focus {
+	color: #009688;
+	background-color: transparent;
+}
+
+.override-fluid {
+	padding-right: 0px;
+	padding-left: 0px;
+}
+
+.override-col-margin {
+	padding-left: 0px;
+	padding-right: 0px;
+}

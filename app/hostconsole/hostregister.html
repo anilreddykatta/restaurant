@@ -1,0 +1,57 @@
+<link href="css/header.css" rel="stylesheet">
+<style>
+.js-hero {
+	display: none;
+}
+</style>
+
+
+<div class="bodyContent">
+	<div class="headerpadding" id="non-printable">
+		<h4 class="benefit-header1 common">
+
+			<span class="fa-cutlery fa hostgliflogo"></span> Host Event Data
+		</h4>
+	</div>
+	<div class="container-fluid">
+		<div role="tabpanel">
+			<ul id="non-printable"
+				class="nav nav-tabs nav-border nav-justified headerContent bg-clr border"
+				role="tablist">
+
+
+				<li ui-sref="hostregister.registertabs.introduction"
+					ui-sref-active="active" role="presentation" class="tab-align"><a
+					ui-sref="hostregister.registertabs.introduction"
+					aria-controls="questions" role="tab" class="presentation"><h5
+							class="benefit-tab-txt common">Host Events</h5></a></li>
+
+				<li ui-sref="hostregister.myEvents" ui-sref-active="active"
+					role="presentation" class="tab-align"><a
+					ui-sref="hostregister.myEvents" href="#/benefitfinder/myfavourites"
+					aria-controls="favorites" role="tab" class="presentation"><h5
+							class="benefit-tab-txt common">My Events</h5></a></li>
+
+				<li ui-sref="hostregister.eventPreviewtabs.preview" ui-sref-active="active"
+					role="presentation" class="tab-align"><a
+					ui-sref="hostregister.eventPreviewtabs.preview" href="" aria-controls="results"
+					role="tab" class="presentation"><h5
+							class="benefit-tab-txt common">Events Preview</h5></a></li>
+
+
+
+
+
+
+			</ul>
+
+
+			<div class="tab-content custom-tab-content">
+				<div role="tabpanel" class="tab-pane active" id="questions">
+					<div data-ui-view></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+

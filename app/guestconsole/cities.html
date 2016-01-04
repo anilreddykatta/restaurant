@@ -1,0 +1,251 @@
+<link href="css/header.css" rel="stylesheet">
+
+<div class="fluid-container" id="search-page">
+	<div class="search-banner">
+		<div class="search-banner-header">
+			<h1 class="ng-binding">NewYork</h1>
+		</div>
+	</div>
+</div>
+
+<div id="list-main-container" class="col-md-12 override-col-margin">
+
+	<div id="list-filters-container" class="col-md-3 override-col-margin">
+
+		<div id="filters">
+			<a data-toggle="collapse" ng-init="clickedkey = true"
+				ng-click="clickedkey = !clickedkey" data-target="#keyword-search"
+				class="no-border not-link cursor-display"><h6
+					class="filter-title">Keyword</h6>
+				<div class="relative">
+					<i ng-class="{'fa-plus' : clickedkey, 'fa-minus' : !clickedkey}"
+						class="fa text-right collapse-icon fa-minus"></i>
+				</div></a>
+			<div id="keyword-search" class="collapse" style="height: auto;">
+				<div class="filter-content">
+					<input type="text" placeholder="Search by keyword"
+						ng-model="data.keyword" ng-change="keywordUpdate()"
+						class="shove20 form-control ng-pristine ng-valid">
+				</div>
+			</div>
+
+			<a data-toggle="collapse" ng-init="clickeddate = true"
+				ng-click="clickeddate = !clickeddate" data-target="#date-search"
+				class="no-border not-link cursor-display"><h6
+					class="filter-title">Date Range</h6>
+				<div class="relative">
+					<i ng-class="{'fa-plus' : clickeddate, 'fa-minus' : !clickeddate}"
+						class="fa text-right collapse-icon fa-minus"></i>
+				</div></a>
+
+			<div id="date-search" class="collapse" style="height: auto;">
+				<div class="filter-content shove25">
+					<div class="date-filter-title">From</div>
+					<input type="text" date-picker="data.filterDateStart"
+						ng-model="filterDateFromModel" name="inputDateRequestSelect"
+						is-today-selectable="true" placeholder="dd/mm/yy"
+						class="input-medium form-control ng-isolate-scope ng-pristine ng-valid"><br>
+					<div class="date-filter-title">To</div>
+					<input type="text" date-picker="data.filterDateEnd"
+						ng-model="filterDateToModel" name="inputDateRequestSelect"
+						placeholder="dd/mm/yy" end-date="config.dateEnd"
+						class="input-medium form-control ng-isolate-scope ng-pristine ng-valid">
+				</div>
+			</div>
+
+			<div>
+				<a data-toggle="collapse" ng-click="clickedminmax = !clickedminmax"
+					data-target="#minmax-search"
+					class="no-border not-link cursor-display collapsed"><h6
+						class="filter-title">Guest Number</h6>
+					<div class="relative">
+						<i
+							ng-class="{'fa-plus' : clickedminmax, 'fa-minus' : !clickedminmax}"
+							class="fa text-right collapse-icon fa-plus"></i>
+					</div></a>
+				<div id="minmax-search" class="collapse" style="height: 0px;">
+					<div class="filter-content shove25">
+						<div class="date-filter-title">Min</div>
+						<input type="number" ng-model="data.filterGuestConstraintMin"
+							name="inputGuestConstraintMin"
+							class="input-medium form-control  " style=""><br>
+						<div class="date-filter-title">Max</div>
+						<input type="number" ng-model="data.filterGuestConstraintMax"
+							class="input-medium form-control ng-pristine ng-valid ng-valid-number">
+					</div>
+				</div>
+			</div>
+
+			<div class="">
+				<a data-toggle="collapse" data-target="#diet-filter"
+					ng-click="clickeddp = !clickeddp"
+					class="no-border not-link cursor-display"><h6
+						class="filter-title">Dietary Preferences</h6>
+					<div class="relative">
+						<i ng-init="clickeddp = true"
+							ng-class="{'fa-minus' : clickeddp, 'fa-plus' : !clickeddp}"
+							class="fa text-right collapse-icon fa-minus"></i>
+					</div></a>
+				<div id="diet-filter" class="collapse in">
+					<div class="filter-content"></div>
+				</div>
+			</div>
+			<div>
+				<a data-toggle="collapse" data-target="#smoking-details-filter"
+					ng-click="clickedld = !clickedld"
+					class="no-border not-link cursor-display"><h6
+						class="filter-title">Location Details</h6>
+					<div class="relative">
+						<i ng-init="clickedld = true"
+							ng-class="{'fa-plus' : clickedld, 'fa-minus' : !clickedld}"
+							class="fa text-right collapse-icon fa-minus"></i>
+					</div></a>
+				<div id="smoking-details-filter" class="in collapse"
+					style="height: auto;">
+					<div class="filter-content">
+						<div>
+							<!-- ngRepeat: value in ["Allowed inside","Allowed outside","No smoking anywhere"] -->
+							<label
+								ng-repeat="value in [&quot;Allowed inside&quot;,&quot;Allowed outside&quot;,&quot;No smoking anywhere&quot;]"
+								="(stats.dataPoints['data.address.properties.smoking'][value] || 0)"
+								class="checkbox line-height15 ng-scope "><i
+								button-toggle="image-checkbox-checked" type="button"
+								ng-model="uiFilters['data.address.properties.smoking'][value]"
+								button-toggle-true="filterBy('data.address.properties.smoking', value);"
+								button-toggle-false="removeFilter('data.address.properties.smoking', value);"
+								class="fa fa-lg checkbox-pos fa-square-o"></i>&nbsp;<span
+								class="filterValue"><span class="semi-muted ng-binding">Smoking
+										inside</span></span><span class="muted number ng-binding">&nbsp;(0)</span></label>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+	</div>
+	<div id="list-cards-container" class="col-md-9">
+
+
+		<div class="list-action-bar">
+			<div class="left-bar">
+				Results in&nbsp;<span class="list-cards-results ng-binding">NewYork,
+					USA</span>
+			</div>
+			<div id="input" class="center-bar viewModeSearch">
+				<ul class="nav nav-tabs">
+					<li id="listNavContainer" class="active"><a id="listNav"
+						href="#" data-toggle="tab" data-target="#listContainer"><i
+							class="fa fa-bars"></i>&nbsp;List</a></li>
+					<li><a id="mapNav" href="#" data-toggle="tab"
+						data-target="#map" onclick="constructMaps()"><i
+							class="fa fa-map-marker"></i>&nbsp;Map</a></li>
+				</ul>
+			</div>
+			<div class="right-bar list-sort">
+				<span class="semi-muted">Sort by:</span><select type="Text"
+					id="sort-select" ng-model="sortBy"><option value="0"
+						selected="selected">Upcoming Events</option>
+					<option value="1">Date</option>
+					<option value="2">Price (high to low)</option>
+					<option value="3">Price (low to high)</option>
+					<option value="4">Verified Hosts</option></select>
+			</div>
+		</div>
+		<div style="overflow: visible" class="tab-content row-fluid">
+			<div id="listContainer" class="tab-pane  active">
+				<div class="col-md-4">
+
+
+					<div class="container angular-cities-slider"
+						ng-controller="sliderController">
+						<img
+							class="angular-slide slide-animation nonDraggableImage ng-scope"
+							ng-src="img/img00.jpg" src="img/img00.jpg">
+
+						<div>
+							<sup class="h6 text-contrast"><i class="fa fa-usd"></i></sup> <span
+								class="h3 text-contrast price-amount">734</span> <sup
+								class="h6 text-contrast"></sup> <span class="h3 icon-beach">
+								<i class="icon icon-instant-book icon-flush-sides"></i>
+							</span>
+						</div>
+
+						</a>
+					</div>
+
+					<div class="panel-body panel-card-section" style="background-color: white">
+						<div id="search-host-area">
+							<div class="row-fluid">
+								<div class="col-md-3 override-col-margin">
+									<a ng-href-once="'/user/' + meal.host._id" class="no-border"
+										href="/user/54dfcb0bfec99074222d038b"><div class="lite-host-pic ng-isolate-scope"
+											style="background-image: url(&quot;//d2j4un8xfk9t92.cloudfront.net/eW68VFMQu2ruAzqqnwCl_10205015698655065.jpg&quot;); background-size: cover; background-position: 50% 50%; background-repeat: no-repeat;"></div></a>
+
+								</div>
+								<div class="col-md-9">
+									<div class="lite-host-info">
+										<a 
+											href="/meal/55af7c22777823b7195cfb8f"><h5 
+												class="lite-meal-title">Juice Extractor Demo and
+												Degustation</h5></a>
+										<div class="lite-host-name">
+											<div class="manage-overflow">
+												<a ng-href-once="'/user/' + meal.host._id" itemprop="url"
+													class="no-border not-link"
+													href="/user/54dfcb0bfec99074222d038b">Bajla</a>
+											</div>
+										</div>
+										<div class="stars-area">
+											<div class="orange">
+												<small>NEW HOST</small>
+											</div>
+											<div class="lite-stars "></div>
+										</div>
+										
+										<div class="lite-meal-address">
+											<i class="fa fa-map-marker"></i><span
+												ng-once="' ' + meal.data.address.locality"
+												itemprop="addressLocality"> Schaerbeek</span><span
+												ng-show-once="meal.data.address.country == 'USA' || meal.data.address.country == 'United States'"
+												ng-once="', ' + (meal.data.address.state == 'District of Columbia' | conditional: 'DC' : meal.data.address.state)"
+												itemprop="addressRegion" style="display: none;">,
+												Bruxelles</span><span 
+												itemprop="addressCountry">, Belgium</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+
+				</div>
+
+
+
+			</div>
+			<div id="map" class="tab-pane">
+
+
+				<div class="map-container map-container-canvas"
+					ng-controller="guestConsoleController">
+					<ui-gmap-google-map center="map.center" zoom="map.zoom"
+						draggable="true" options="map.options" events="map.events"
+						control="googlemap"> <ui-gmap-window
+						coords="markers.coords" show="windowOptions.show"
+						options="windowOptions" closeClick="closeClick()">
+
+
+					</ui-gmap-window> <ui-gmap-markers models="markers" idkey="markers.id"
+						coords="'coords'" click="'onClick'" events="markers.events">
+					</ui-gmap-markers> </ui-gmap-google-map>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+</div>

@@ -1,0 +1,330 @@
+
+
+<section class="small-padding-top small-padding-bottom section-dark">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="text-center group-title">
+					<h2 class="headline">Eat around the world</h2>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-4">
+				<div class="text-center">
+					<img data-src="img/grid/eat.png"
+						class="img-responsive step-image lazy-loaded"
+						src="img/grid/eat.png">
+					<h4>1. Explore Unique Home Restaurants</h4>
+					<p>Discover home restaurants with unique dining experiences
+						like a cosy dinner on the rooftop in Rome, or a Paella-making
+						workshop in Barcelona.</p>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="text-center">
+					<img data-src="img/grid/laptop.jpg"
+						class="img-responsive step-image lazy-loaded"
+						src="img/grid/laptop.jpg">
+					<h4>2. Book a Dining & Experience</h4>
+					<p>Connect with hosts, confirm dates, arrange for any dining
+						preferences, and make payment through BonAppetour’s secured
+						services.</p>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="text-center">
+					<img data-src="img/grid/dine.jpg"
+						class="img-responsive step-image lazy-loaded"
+						src="img/grid/dine.jpg">
+					<h4>3. Enjoy dine</h4>
+					<p>Indulge yourself in in authentic home-cooked food, make
+						friends and have great fun. Bon Appetit!</p>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</section>
+
+<div class="home-private-events-bar"
+	style="background-image: url(img/grid/home_forest.jpg);"
+	data-bindattr-793="793">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-9">
+				<h4>Plan and Host</h4>
+				<h3>Celebrate your next special occasion with travelles around
+					the world</h3>
+			</div>
+			<div class="col-sm-3">
+				<a id="ember796" class="btn btn-primary" href="#/host"
+					data-analytics="home_page_private_events_bar">Become host</a>
+			</div>
+		</div>
+	</div>
+</div>
+<section id="about" class="jumbotron container ">
+	<div class="container">
+		<div class="row panel-host">
+			<div class="col-md-8 col-sm-8 col-xs-12 override-padding">
+				<div class="callbacks_container host-banner">
+					<ul class="rslides">
+						<li><img src="img/grid/img1.jpg" alt=""></li>
+						<li><img src="img/grid/img2.jpg" alt=""></li>
+						<li><img src="img/grid/img3.jpg" alt=""></li>
+						<li><img src="img/grid/img4.jpg" alt=""></li>
+						<li><img src="img/grid/img5.jpg" alt=""></li>
+						<li><img src="img/grid/img6.jpg" alt=""></li>
+						<li><img src="img/grid/img1.jpg" alt=""></li>
+						<li><img src="img/grid/img1.jpg" alt=""></li>
+
+					</ul>
+				</div>
+			</div>
+			<div class="col-md-4 col-sm-4 col-xs-12 box-padding">
+				<div class="about-text">
+					<div class="section-title">
+
+						<h3 class="small-text-bold">Hosting opens up a world of
+							opportunity</h3>
+
+					</div>
+					<h4 class="intro text-margin">share your delicious food with
+						travelers.</h4>
+					<br />
+					<div class="search-area btn-margin input-group-btn">
+						<button class="btn btn-primary" onclick="#/host">Search</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+<section class="small-padding-top top-cities section-light">
+	<div class="container locations">
+		<div class="text-center">
+			<h2 class="headline">Top cities around the world</h2>
+		</div>
+		<div class="row">
+			<div
+				class="col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0 col-xs-8 col-xs-offset-2">
+				<div class="shadow-layer-container">
+					<div class="shadow-layer-box">
+						<a href="/s/Rome--Italy">Rome</a> <img alt="Where to eat in Rome"
+							data-src="img/grid/rome.jpg" src="img/grid/rome.jpg"
+							class="lazy-loaded">
+					</div>
+					<a href="/s/Rome--Italy">
+						<div class="shadow-layer"></div>
+					</a>
+				</div>
+			</div>
+			<div
+				class="col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0 col-xs-8 col-xs-offset-2">
+				<div class="shadow-layer-container">
+					<div class="shadow-layer-box">
+						<a href="/s/Florence--Italy">Florence</a> <img
+							alt="Where to eat in Florence" data-src="img/grid/florence.jpg"
+							src="img/grid/florence.jpg" class="lazy-loaded">
+					</div>
+					<a href="/s/Florence--Italy">
+						<div class="shadow-layer"></div>
+					</a>
+				</div>
+			</div>
+			<div
+				class="col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0 col-xs-8 col-xs-offset-2">
+				<div class="shadow-layer-container">
+					<div class="shadow-layer-box">
+						<a href="/s/Barcelona--Barcelona--Spain">Barcelona</a> <img
+							alt="Where to eat in Barcelona" data-src="img/grid/barcelona.jpg"
+							src="img/grid/barcelona.jpg" class="lazy-loaded">
+					</div>
+					<a href="/s/Barcelona--Barcelona--Spain">
+						<div class="shadow-layer"></div>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div
+				class="col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0 col-xs-8 col-xs-offset-2">
+				<div class="shadow-layer-container">
+					<div class="shadow-layer-box">
+						<a href="/s/Paris--France">Paris</a> <img
+							alt="Where to eat in Paris" data-src="img/grid/paris.jpg"
+							src="img/grid/paris.jpg" class="lazy-loaded">
+					</div>
+					<a href="/s/Paris--France">
+						<div class="shadow-layer"></div>
+					</a>
+				</div>
+			</div>
+			<div
+				class="col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0 col-xs-8 col-xs-offset-2">
+				<div class="shadow-layer-container">
+					<div class="shadow-layer-box">
+						<a href="/s/Milan--Italy">Milan</a> <img
+							alt="Where to eat in Milan" data-src="img/grid/milan.jpg"
+							src="img/grid/milan.jpg" class="lazy-loaded">
+					</div>
+					<a href="/s/Milan--Italy">
+						<div class="shadow-layer"></div>
+					</a>
+				</div>
+			</div>
+			<div
+				class="col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0 col-xs-8 col-xs-offset-2">
+				<div class="shadow-layer-container">
+					<div class="shadow-layer-box">
+						<a href="/s/Stockholm--Sweden">Stockholm</a> <img
+							alt="Where to eat in Stockholm" data-src="img/grid/stockholm.jpg"
+							src="img/grid/stockholm.jpg" class="lazy-loaded">
+					</div>
+					<a href="/s/Stockholm--Sweden">
+						<div class="shadow-layer"></div>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div
+				class="col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0 col-xs-8 col-xs-offset-2">
+				<div class="shadow-layer-container">
+					<div class="shadow-layer-box">
+						<a href="/s/Singapore--Singapore">Singapore</a> <img
+							alt="Where to eat in Singapore" data-src="img/grid/singapore.jpg"
+							src="img/grid/singapore.jpg" class="lazy-loaded">
+					</div>
+					<a href="/s/Singapore--Singapore">
+						<div class="shadow-layer"></div>
+					</a>
+				</div>
+			</div>
+			<div
+				class="col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0 col-xs-8 col-xs-offset-2">
+				<div class="shadow-layer-container">
+					<div class="shadow-layer-box">
+						<a href="/s/Prague--Czech-Republic">Prague</a> <img
+							alt="Where to eat in Prague" data-src="img/grid/prague.jpg"
+							src="img/grid/prague.jpg" class="lazy-loaded">
+					</div>
+					<a href="/s/Prague--Czech-Republic">
+						<div class="shadow-layer"></div>
+					</a>
+				</div>
+			</div>
+			<div
+				class="col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0 col-xs-8 col-xs-offset-2">
+				<div class="shadow-layer-container">
+					<div class="shadow-layer-box">
+						<a href="/s/Berlin--Germany">Berlin</a> <img
+							alt="Where to eat in Berlin" data-src="img/grid/berlin.jpg"
+							src="img/grid/berlin.jpg" class="lazy-loaded">
+					</div>
+					<a href="/s/Berlin--Germany">
+						<div class="shadow-layer"></div>
+					</a>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</section>
+
+<div id="wrapper">
+
+	<div id="Carousel" class="carousel slide carousel-fade">
+		<ol class="carousel-indicators">
+			<li data-target="Carousel" data-slide-to="0" class="active"></li>
+			<li data-target="Carousel" data-slide-to="1"></li>
+			<li data-target="Carousel" data-slide-to="2"></li>
+		</ol>
+
+		<div class="carousel-inner">
+			<div class="item active">
+				<img src="img/grid/m1.gif" class="img-responsive">
+				<div class="container">
+
+					<div class="carousel-caption">
+						<div class="container">
+
+							<div class="row">
+								<div class="col-md-12">
+									<h2 class="text-bold-heading-main">Travel Worldwide</h2>
+									<h4 class="text-bold-heading">
+										Plan to travel beautiful cities of the world <strong></strong>.
+									</h4>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="item">
+				<img src="img/grid/m3.gif" class="img-responsive">
+				<div class="container">
+					<div class="carousel-caption">
+						<div class="container">
+
+							<div class="row">
+								<div class="col-md-12">
+									<h2 class="text-bold-heading-main">Find delicious food</h2>
+									<h4 class="text-bold-heading">
+										check out different hosts<strong>worldwide</strong>.
+									</h4>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="item">
+				<img src="img/grid/m2.gif" class="img-responsive">
+				<div class="container">
+					<div class="carousel-caption">
+						<div class="container">
+
+							<div class="row">
+								<div class="col-md-12">
+									<h2 class="text-bold-heading-main">Enjoy the delicious
+										food</h2>
+									<h4 class="text-bold-heading">
+										Travel around and find food <strong>in a nice contest</strong>.
+									</h4>
+									<a style="background: transparent;" href="#"
+										data-prevent-default="" id="belong-play-button"
+										class="link-reset"> <i
+										class="belong-anywhere__icon icon fa-play-circle fa  text-contrast text-jumbo"></i>
+										<span class="screen-reader-only"> Play Belong Anywhere
+											Video </span>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<a class="left carousel-control" href="#Carousel" data-slide="prev">
+			<span class="glyphicon glyphicon-chevron-left"></span>
+		</a> <a class="right carousel-control" href="#Carousel" data-slide="next">
+			<span class="glyphicon glyphicon-chevron-right"></span>
+		</a>
+	</div>
+
+</div>
+

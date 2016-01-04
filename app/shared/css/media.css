@@ -1,0 +1,384 @@
+@media ( min-width : 1199px) and (max-width: 2000px) {
+	body {
+		font-size: 16px;
+	}
+	/*h1 font size with override*/
+	h1 {
+		font-size: 60px;
+	}
+	h2 {
+		font-size: 40px;
+	}
+	/*h3,h4,h5,h6 common for all pages*/
+	h3 {
+		font-size: 30px;
+	}
+	h4 {
+		font-size: 24px;
+	}
+	h5 {
+		font-size: 20px;
+	}
+	h6 {
+		font-size: 16px;
+	}
+	.hero__content {
+		height: 450px;
+		padding-bottom: 104px;
+		top: 50px;
+	}
+	.navbar.navbar, .navbar-default.navbar {
+		background-color: rgba(0, 150, 136, 0);
+		color: rgba(255, 255, 255, .84);
+	}
+	.form-row .concierge-form {
+		float: none;
+		width: 50%;
+	}
+	.nav-tabs.nav-justified>li {
+		width: 234px;
+	}
+	.bg-clr {
+		background-color: rgba(0, 150, 136, 0.42);
+		padding-left: 16.5%;
+	}
+	/* Index page row content with 4 divisions */
+	/* style border added for each division , each division share */
+	/*option only for L M screens */
+	.row.equal [class*="col-"] {
+		margin-bottom: -99999px;
+		padding-bottom: 99999px;
+	}
+	.row.equal {
+		overflow: hidden;
+	}
+	.container {
+		width: 1200px;
+	}
+}
+
+@media ( min-width : 992px) and (max-width: 1199px) {
+	body {
+		font-size: 18px;
+	}
+
+	/*h1 font size with override*/
+	h1 {
+		font-size: 40px;
+	}
+
+	/*h2 font size with override*/
+	h2 {
+		font-size: 36px;
+	}
+
+	/*h3,h4,h5,h6 common for all pages*/
+	h3 {
+		font-size: 30px;
+	}
+	h4 {
+		font-size: 20px;
+	}
+	h5 {
+		font-size: 18px;
+	}
+	h6 {
+		font-size: 16px;
+	}
+	.hero__content {
+		height: 480px;
+		padding-bottom: 104px;
+		top: 50px;
+	}
+	.navbar.navbar, .navbar-default.navbar {
+		background-color: rgba(0, 150, 136, 0);
+		color: rgba(255, 255, 255, .84);
+	}
+	.gn-trigger {
+		display: none;
+	}
+	.form-row .concierge-form {
+		float: none;
+		width: 50%;
+	}
+	.nav-tabs.nav-justified>li {
+		width: 232px;
+	}
+	.bg-clr {
+		background-color: rgba(0, 150, 136, 0.42);
+		padding-left: 16.5%;
+	}
+	/* Index page row content with 4 divisions */
+	/* style border added for each division , each division share */
+	/*option only for L M screens */
+	.row.equal [class*="col-"] {
+		margin-bottom: -99999px;
+		padding-bottom: 99999px;
+	}
+	.row.equal {
+		overflow: hidden;
+	}
+}
+
+/* Portrait tablet to landscape and desktop */
+@media ( min-width : 768px) and (max-width: 992px) {
+	body {
+		font-size: 16px;
+	}
+	/*h1 font size with override*/
+	h1 {
+		font-size: 36px;
+	}
+
+	/*h2 font size with override*/
+	h2 {
+		font-size: 28px;
+	}
+
+	/*h3,h4,h5,h6 common for all pages*/
+	h3 {
+		font-size: 24px;
+	}
+	h4 {
+		font-size: 18px;
+	}
+	h5 {
+		font-size: 16px;
+	}
+	h6 {
+		font-size: 16px;
+	}
+	.h7 {
+		font-size: 14px;
+	}
+	.h8 {
+		font-size: 11px;
+		margin-top: 5px;
+	}
+	h1, .h1, h2, .h2, h3, .h3 {
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+	.hero__content {
+		height: 480px;
+		padding-bottom: 104px;
+		top: 50px;
+	}
+	.navbar.navbar, .navbar-default.navbar {
+		background-color: rgba(0, 150, 136, 0);
+		color: rgba(255, 255, 255, .84);
+	}
+	.gn-trigger {
+		display: none;
+	}
+	.form-row .concierge-form {
+		float: none;
+		width: 50%;
+	}
+	.nav-tabs.nav-justified>li {
+		width: 232px;
+	}
+	.bg-clr {
+		background-color: rgba(0, 150, 136, 0.42);
+		padding-left: 25.0%;
+	}
+	/* Index page row content with 4 divisions */
+	/* style border added for each division , each division share */
+	/*option only for L M screens */
+	.row.equal [class*="col-"] {
+		margin-bottom: -99999px;
+		padding-bottom: 99999px;
+	}
+	.row.equal {
+		overflow: hidden;
+	}
+}
+
+@media ( max-width : 860px) {
+	video {
+		display: none;
+	}
+}
+/* Landscape phones and portrait tablets */
+@media ( min-width : 480px) and (max-width: 767px) {
+	body {
+		font-size: 16px;
+	}
+	/*h1 font size with override*/
+	h1 {
+		font-size: 28px;
+	}
+
+	/*h2 font size with override*/
+	h2 {
+		font-size: 24px;
+	}
+
+	/*h3,h4,h5,h6 common for all pages*/
+	h3 {
+		font-size: 18px;
+	}
+	h4 {
+		font-size: 18px;
+	}
+	h5 {
+		font-size: 16px;
+	}
+	h6 {
+		font-size: 14px;
+	}
+	.h7 {
+		font-size: 12px;
+	}
+	.h8 {
+		font-size: 11px;
+		margin-top: 5px;
+	}
+	h1, .h1, h2, .h2, h3, .h3 {
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+	.hero__content {
+		height: 420px;
+		padding-bottom: 104px;
+		top: 50px;
+	}
+	.navbar.navbar, .navbar-default.navbar {
+		background-color: rgb(0, 170, 154);
+		color: rgba(255, 255, 255, .84);
+	}
+	.form-row .concierge-form {
+		float: none;
+		width: 100%;
+	}
+	.nav-tabs.nav-justified>li {
+		width: 100%;
+	}
+}
+/* Landscape phones and portrait tablets */
+@media ( max-width : 480px) {
+	body {
+		font-size: 14px;
+	}
+	/*h1 font size with override*/
+	h1 {
+		font-size: 22px;
+	}
+
+	/*h2 font size with override*/
+	h2 {
+		font-size: 20px;
+	}
+
+	/*h3,h4,h5,h6 common for all pages*/
+	h3 {
+		font-size: 16px;
+	}
+	h4 {
+		font-size: 16px;
+	}
+	h5 {
+		font-size: 16px;
+	}
+	h6 {
+		font-size: 14px;
+	}
+	h6.home {
+		font-size: 14px;
+		line-height: 1.5;
+	}
+	.cardesc {
+		font-size: 14px;
+		line-height: 1.4;
+	}
+	.h7 {
+		font-size: 12px;
+	}
+	.h8 {
+		font-size: 11px;
+		margin-top: 5px;
+	}
+	h1, .h1, h2, .h2, h3, .h3 {
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+	.hero__content {
+		height: 380px;
+		padding-bottom: 104px;
+		top: 50px;
+	}
+	.navbar.navbar, .navbar-default.navbar {
+		background-color: rgb(0, 170, 154);
+		color: rgba(255, 255, 255, .84);
+	}
+	.host-btn {
+		display: none;
+	}
+	.login-btn {
+		display: none;
+	}
+	.gn-trigger {
+		display: block;
+	}
+	.form-row .concierge-form {
+		float: none;
+		width: 100%;
+	}
+	.nav-tabs.nav-justified>li {
+		width: 100%;
+	}
+}
+
+/*  /* Custom, iPhone small devices Retina */
+@media only screen and (max-width : 343px) {
+	body {
+		font-size: 14px;
+	}
+	h1 {
+		font-size: 20px;
+	}
+
+	/*h2 font size with override*/
+	h2 {
+		font-size: 18px;
+	}
+
+	/*h3,h4,h5,h6 common for all pages*/
+	h3 {
+		font-size: 16px;
+	}
+	h4 {
+		font-size: 14px;
+	}
+	h5 {
+		font-size: 14px;
+	}
+	h6 {
+		font-size: 14px;
+	}
+	.hero__content {
+		height: 340px;
+		padding-bottom: 104px;
+		top: 50px;
+	}
+	.navbar.navbar, .navbar-default.navbar {
+		background-color: rgb(0, 170, 154);
+		color: rgba(255, 255, 255, .84);
+	}
+	.host-btn {
+		display: none;
+	}
+	.login-btn {
+		display: none;
+	}
+	.gn-trigger {
+		display: block;
+	}
+	.form-row .concierge-form {
+		float: none;
+		width: 100%;
+	}
+	.nav-tabs.nav-justified>li {
+		width: 100%;
+	}
+}

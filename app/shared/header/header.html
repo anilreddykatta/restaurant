@@ -1,0 +1,152 @@
+<nav class="navbar navbar-default " style="z-index: 1030;">
+	<div class="container header-bg">
+
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed"
+				data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+				aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span> <span
+					class="icon-bar"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span>
+			</button>
+			<a href="#/" ng-click="showMyStSerModal()"><img src="img/4.png"
+				class="navbar-brand" /></a>
+		</div>
+		<div id="navbar" class="navbar-collapse collapse">
+			<ul class="nav navbar-nav">
+				<li ng-if="state.current.name !== 'home'"
+					class="divider_vertical visible-lg visible-md ng-scope"></li>
+				<li ng-if="state.current.name !== 'home'" class="ng-scope"><a
+					href="#/"><i class="fa fa-home header-icon"></i> Home</a></li>
+
+			</ul>
+			<div ng-if="state.current.name === 'guest'" class="col-sm-5 col-md-5">
+				<form class="navbar-form" role="search" method="get"
+					id="search-form" name="search-form">
+
+					<div class="input-group" style="width: 100%;">
+						<input style="color: white;" type="text" class="form-control"
+							placeholder="search the location" id="Autocomplete"
+							class="form-control" vs-google-autocomplete
+							ng-model="query.name" vs-place="query.place"
+							vs-place-id="query.components.placeId"
+							vs-street-number="query.components.streetNumber"
+							vs-street="query.components.street"
+							vs-city="query.components.city"
+							vs-state="query.components.state"
+							vs-country-short="query.components.countryCode"
+							vs-country="query.components.country"
+							vs-post-code="query.components.postCode"
+							vs-latitude="query.components.location.lat"
+							vs-longitude="query.components.location.long" type="text"
+							name="query" id="query" class="form-control"
+							placeholder="Enter Location"> <span
+							class="input-group-addon"> <span class="fa fa-search"
+							style="color: white; font-size: 16px;"></span>
+						</span>
+					</div>
+				</form>
+			</div>
+
+			<ul class="nav navbar-nav navbar-right">
+				<li ng-if="state.current.name === 'home'"><a class="host-link"
+					href="#/host"><span
+						class="btn btn-flat btn-link  btn-small host-btn override-margin">
+							Become a Host </span></a></li>
+				<li class="header-font-style"><a href=""> <span
+						class="glyphicon custom-header-glyphicons header-icon glyphicon-globe"
+						aria-hidden="true"></span> English
+				</a></li>
+				<li class="divider_vertical visible-lg visible-md ng-scope"></li>
+				<li ng-if="isLoggedIn != true"><a href="#/login">Sign In</a></li>
+
+				<li ng-if="isLoggedIn == true" class="header-font-style"><a
+					href=""><i class="fa fa-envelope-o header-icon"></i> My
+						Messages </a></li>
+
+				<li ng-if="isLoggedIn == true"
+					class="divider_vertical visible-lg visible-md ng-scope"></li>
+
+
+				<li  ng-if="isLoggedIn == true"
+					class="dropdown open visible-lg visible-md visible-sm"><a
+					href="#" data-toggle="dropdown" class="no-border dropdown-toggle"><div
+							alt="User Thumbnail" class="userNavPic img-circle pull-left"
+							style="background-image: url('https://fbcdn-profile-a.akamaihd.net/hprofile-ak-xfp1/v/t1.0-1/p160x160/11012492_1046109752085971_4790600339148025262_n.jpg?oh=8586318f86ab46271837e5b965a7509d&oe=571F5EA6&__gda__=1457932208_79d5fbc5e3e57fa34e621cd8aabaec5d'); background-size: cover; background-position: 50% 50%; background-repeat: no-repeat;"></div>
+						<span id="layoutUsername" class="name-position ng-binding">&nbsp;&nbsp;{{currentUserName}}&nbsp;</span><i
+						class="fa fa-caret-down caret-position"></i></a>
+					<div id="userMenuPopup"
+						class="popover bottom dropdown-menu user-menu"
+						data-original-title="" title="">
+						<div class="popover-inner col-md-12 ">
+							<div class="col-md-6 col-sm-6 override-col-margin" style="border-right: 2px solid #f2f2f2;">
+								<ul style="padding-left: 0px">
+									<li><a href="#/dashboard" class="no-border"><i
+											class="fa fa-home medium-indent"></i> Dashboard</a></li>
+									<li><a href="/me/listings" class="no-border"><i
+											class="fa fa-cutlery medium-indent"></i> Events</a></li>
+									<li><a href="/me/reviews" class="no-border"><i
+											class="fa fa-star medium-indent"></i> Reviews</a></li>
+									<li class="divider"></li>
+
+									<li><a href="/me/profile" class="no-border"><i
+											class="fa fa-user medium-indent"></i> Edit Profile</a></li>
+									<li><a href="/me/credits" class="no-border"><i
+											class="fa fa-cogs medium-indent"></i> Account</a></li>
+									<li><a href="#/signout" class="no-border"><i
+											class="fa fa-sign-out medium-indent"></i> Log Out</a></li>
+								</ul>
+							</div>
+							<div class="col-md-6 col-sm-6 override-col-margin">
+
+								<div class="">
+
+									<ul style="padding-left: 0px">
+										<li><button href="/faq" class="btn btn-sm btn-primary"><i
+												class="fa fa-question-circle medium-indent"></i> Host an Event</button></li>
+										<li><a href="/faq" class="no-border"><i
+												class="fa fa-question-circle medium-indent"></i> FAQs</a></li>
+									
+										<li><a href="mailto:help@alakarte.com" class="no-border"><i
+												class="fa fa-envelope-o medium-indent"></i> Contact Us</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div></li>
+			</ul>
+
+		</div>
+		<!--/.nav-collapse -->
+	</div>
+</nav>
+
+<script>
+	$(function() {
+
+		$(function() {
+			$('[data-toggle="tooltip"]').tooltip()
+		})
+		// hide the popover 
+		$('body')
+				.on(
+						'click',
+						function(e) {
+							$('[data-toggle="popover"]')
+									.each(
+											function() {
+												//the 'is' for buttons that trigger popups
+												//the 'has' for icons within a button that triggers a popup
+												if (!$(this).is(e.target)
+														&& $(this)
+																.has(e.target).length === 0
+														&& $('.popover').has(
+																e.target).length === 0) {
+													$(this).popover('hide');
+												}
+											});
+						});
+
+	});
+</script>
+

@@ -1,0 +1,71 @@
+.myprofile-headers {
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+.dashboard-profile-pic {
+	padding: 0px;
+}
+
+.dashboard-right-widget {
+	width: 300px;
+	background-color: #fff;
+	padding: 30px;
+}
+
+.dashboard-verified img {
+	height: 25px;
+	width: 25px;
+}
+
+.semi-muted {
+	color: #555 !important;
+}
+
+.dashboard-right-widget {
+	width: 300px;
+	background-color: rgba(238, 238, 238, 0.18);
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-top: 10px;
+}
+
+.referral-desc {
+	font-size: 14px;
+}
+
+.push-ten {
+	margin-top: 10px;
+}
+
+/********************  tab forms***********/
+.form-horizontal .control-group {
+	margin-bottom: 20px;
+}
+
+.row-fluid .offset1:first-child {
+	margin-left: 40px;
+}
+
+.form-horizontal .control-label {
+	width: 145px;
+}
+
+.form-horizontal .controls {
+	margin-left: 160px;
+}
+
+.alert-error {
+	padding-bottom: 5px;
+	background-color: #fff;
+}
+#info i {
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+.input-prepend .add-on:first-child, .input-prepend .btn:first-child {
+    -webkit-border-radius: 4px 0 0 4px;
+    -moz-border-radius: 4px 0 0 4px;
+    border-radius: 4px 0 0 4px;
+}

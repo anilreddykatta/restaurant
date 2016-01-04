@@ -1,0 +1,87 @@
+<div class="container-fluid">
+	<div role="tabpanel " class="row equal">
+		<div
+			class="col-lg-2 col-md-2 col-sm-3 override-col-margin col-xs-12 column-style">
+			<ul class="nav nav-tabs nav-stacked " role="tablist"
+				id="non-printable">
+
+
+				<li role="presentation"
+					ui-sref="hostregister.eventPreviewtabs.preview"
+					ui-sref-active="active"><a
+					ui-sref="hostregister.eventPreviewtabs.preview"
+					ui-sref-active="active" aria-controls="questions"
+					data-ng-click="toggleTabs()" role="tab">
+						<table>
+							<tbody>
+								<tr>
+									<td><i
+										class="fa fa-users vertical-nav-icon-enabled"></i></td>
+									<td class="spacing-table-td leftnavcommon">Events</td>
+								</tr>
+							</tbody>
+						</table>
+				</a></li>
+
+
+				<li role="presentation" ui-sref="hostregister.registertabs.menu"
+					ui-sref-active="active"><a
+					ui-sref="hostregister.registertabs.menu" ui-sref-active="active"
+					aria-controls="questions" data-ng-click="toggleTabs()" role="tab">
+						<table>
+							<tbody>
+								<tr>
+									<td><i
+										class=" glyphicon glyphicon-menu-hamburger vertical-nav-icon-enabled"></i></td>
+									<td class="spacing-table-td leftnavcommon">Menu Details</td>
+								</tr>
+							</tbody>
+						</table>
+				</a></li>
+				<li role="presentation" ui-sref="hostregister.registertabs.pricing"
+					ui-sref-active="active"><a
+					ui-sref="hostregister.registertabs.pricing" ui-sref-active="active"
+					aria-controls="questions" data-ng-click="toggleTabs()" role="tab">
+						<table>
+							<tbody>
+								<tr>
+									<td><i class=" fa fa-usd fa vertical-nav-icon-enabled"></i></td>
+									<td class="spacing-table-td leftnavcommon">Pricing
+										Details</td>
+								</tr>
+							</tbody>
+						</table>
+				</a></li>
+				<li role="presentation" ui-sref="hostregister.registertabs.location"
+					ui-sref-active="active"><a
+					ui-sref="hostregister.registertabs.location"
+					ui-sref-active="active" aria-controls="questions"
+					data-ng-click="toggleTabs()" role="tab">
+						<table>
+							<tbody>
+								<tr>
+									<td><i
+										class="glyphicon glyphicon-map-marker vertical-nav-icon-enabled"></i></td>
+									<td class="spacing-table-td leftnavcommon">Location
+										details</td>
+								</tr>
+							</tbody>
+						</table>
+				</a></li>
+			</ul>
+		</div>
+		<div
+			class="col-lg-10 col-md-10 override-col-margin col-sm-9 col-xs-12">
+			<div class="tab-content">
+				<div role="tabpanel" class="tab-pane active" id="questions">
+					<div data-ui-view></div>
+
+				</div>
+			</div>
+		</div>
+
+
+		<!-- List group -->
+
+	</div>
+</div>

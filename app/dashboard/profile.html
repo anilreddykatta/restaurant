@@ -1,0 +1,63 @@
+<div class="container-fluid">
+	<div role="tabpanel " class="row equal">
+		<div class="col-lg-9 col-md-9 col-sm-9 col-xs-12 override-col-margin">
+
+
+			<div class="row well">
+				<div class="col-md-12 col-md-offset-0 override-col-margin">
+
+					<div class="panel panel-handler panel-primary"
+						ng-class="application-applicant-panel">
+						<!--   If NickName is not available  -->
+
+						<div class="panel-heading panel-links">
+							<a style="color: white;" 
+								class="accordion-toggle collapsed panel-links"
+								data-toggle="collapse" data-parent="#applicant"
+								href="#applicant1">Applicant </a>
+
+							<div class="btn-group pull-right" ng-hide="{{$index==0}}">
+								<a href="" class="review-panel-text" data-toggle="modal"
+									ng-click="setParentIndex(parentIndex)"
+									data-target="#removeParticipantDialog"><h5
+										class="application-panel-txt">
+										<span class="glyphicon myglyphicon-pencil"></span> &nbsp;
+										Remove
+									</h5></a>
+							</div>
+
+						</div>
+
+
+						<div id="applicant1" aria-expanded="true"
+							class="panel-collapse collapse">
+							<div class="panel-body">
+								<div class="media accordion-inner">
+									<div class="pull-left"></div>
+									<div class="media-body responsepanelbody">
+										<div
+											ng-include="'app/benefitapplication/partials/panel-personal.html'"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+
+
+		</div>
+		<div class="col-lg-3 col-md-3 col-sm-3 override-col-margin col-xs-12 ">
+			<div class="tab-content">
+				<div role="tabpanel" class="tab-pane active main-page-container"
+					id="questions"></div>
+			</div>
+		</div>
+
+
+		<!-- List group -->
+
+	</div>
+</div>

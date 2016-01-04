@@ -1,0 +1,195 @@
+<div class="container-fluid">
+	<div role="tabpanel " class="row equal">
+		<div class="col-lg-9 col-md-9 col-sm-9 col-xs-12  override-col-margin">
+
+
+			<div class="row ">
+				<div class="col-md-12 col-md-offset-0 override-col-margin">
+					<h4 class="myprofile-headers">Pending Requests</h4>
+					<div class="panel panel-handler panel-primary"
+						ng-class="application-applicant-panel">
+						<!--   If NickName is not available  -->
+
+						<div class="panel-heading panel-links">
+							<a style="color: white;"
+								class="accordion-toggle collapsed panel-links"
+								data-toggle="collapse" data-parent="#applicant"
+								href="#applicant1"> &nbsp;&nbsp;Pending Requests </a>
+
+
+						</div>
+
+					</div>
+					<div id="applicant1" aria-expanded="true"
+						class="panel-collapse collapse">
+						<div class="panel-body">
+							<div class="media accordion-inner">
+								<div class="pull-left"></div>
+								<div class="media-body responsepanelbody">You have no
+									pending requests at the moment.</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-12 col-md-offset-0 override-col-margin">
+					<h4 class="myprofile-headers">Events I'm Attending</h4>
+					<div class="panel panel-handler panel-primary"
+						ng-class="application-applicant-panel">
+						<!--   If NickName is not available  -->
+
+						<div class="panel-heading panel-links">
+							<a style="color: white;"
+								class="accordion-toggle collapsed panel-links"
+								data-toggle="collapse" data-parent="#applicant"
+								href="#applicant2"> &nbsp;&nbsp;Events I'm Attending </a>
+
+
+						</div>
+
+					</div>
+					<div id="applicant2" aria-expanded="true"
+						class="panel-collapse collapse">
+						<div class="panel-body">
+							<div class="media accordion-inner">
+								<div class="pull-left"></div>
+								<div class="media-body responsepanelbody">You have no
+									reservations at the moment.</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-12 col-md-offset-0 override-col-margin">
+					<h4 class="myprofile-headers">Events I'm Hosting (At least one guest signed up)</h4>
+					<div class="panel panel-handler panel-primary"
+						ng-class="application-applicant-panel">
+						<!--   If NickName is not available  -->
+
+						<div class="panel-heading panel-links">
+							<a style="color: white;"
+								class="accordion-toggle collapsed panel-links"
+								data-toggle="collapse" data-parent="#applicant"
+								href="#applicant3"> &nbsp;&nbsp;Events I'm Hosting (At least
+								one guest signed up)</a>
+
+
+						</div>
+
+					</div>
+					<div id="applicant3" aria-expanded="true"
+						class="panel-collapse collapse">
+						<div class="panel-body">
+							<div class="media accordion-inner">
+								<div class="pull-left"></div>
+								<div class="media-body responsepanelbody">You have no
+									scheduled events at the moment.</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+
+
+
+		</div>
+		<div class="col-lg-3 col-md-3 col-sm-3 override-col-margin col-xs-12 ">
+
+			<div class="dashboard-right-widget text-center">
+				<img
+					ng-src="https://graph.facebook.com/1047588155271464/picture?type=large"
+					class="dashboard-profile-pic"
+					src="https://graph.facebook.com/1047588155271464/picture?type=large">
+			</div>
+			<div class="row-fluid dashboard-right-widget text-center">
+				<h4 class="ng-binding">Tarun</h4>
+				<div ng-show="user.host.verified =='Verified'"
+					class="dashboard-verified text-center ng-hide">
+					<img
+						src="//s3.amazonaws.com/bookalokal-assets/images/bookalokal_glass.png"><span
+						class="raleway semi-muted">Verified</span>
+				</div>
+				<div class="push-twenty">
+					<a href="/me/profile"><button class="btn btn-primary btn-mini">Edit
+							Profile</button></a>
+				</div>
+				<div class="push-ten">
+					<a ng-href="/user/5652fb9e326d1feb2d0fac0f"
+						href="/user/5652fb9e326d1feb2d0fac0f">View Public Profile</a>
+				</div>
+			</div>
+
+			<div ng-controller="ReferralController"
+				class="row-fluid dashboard-right-widget text-center push-thirty-top ng-scope">
+				<h6>Invite friends, earn credit!</h6>
+				<p class="push-ten referral-desc">
+					They earn&nbsp;<strong class="ng-binding">$10</strong>&nbsp;when
+					they sign up. You earn&nbsp;<strong class="ng-binding">$10</strong>&nbsp;when
+					they attend a meal and&nbsp;<strong class="ng-binding">$20</strong>&nbsp;when
+					they host a meal.
+				</p>
+				<div class="push-ten">
+					<a href="/me/referrals"><button class="btn btn-orange">Invite
+							Friends</button></a>
+				</div>
+			</div>
+
+			<div
+				class="row-fluid dashboard-right-widget text-center push-thirty-top">
+				<h6>Quick Stats</h6>
+				<div class="row-fluid push-twenty">
+					<table class="table">
+						<tr>
+							<td class="span3"><i class="muted main-icons fa fa-cutlery"></i>
+							</td>
+							<td class="span9 text-left"><span
+								class="main-stats helvetica ng-binding">0</span>
+								<div>
+									<small class="muted main-meal-details">Attended</small>
+								</div></td>
+						</tr>
+					</table>
+				</div>
+				<hr class="small-margin">
+				<div class="row-fluid">
+					<table class="table">
+						<tr>
+							<td class="span3"><img
+								src="//s3.amazonaws.com/bookalokal-assets/icons/serving2.png"
+								style="width: 23px; margin-left: -2px;"></td>
+							<td class="span9 text-left"><span id="mealsHosted"
+								class="main-stats helvetica ng-binding">0</span>
+								<div>
+									<small class="muted main-meal-details">Hosted</small>
+								</div></td>
+						</tr>
+					</table>
+				</div>
+				<div class="">
+					<hr class="small-margin">
+					<div class="row-fluid">
+						<table class="table">
+							<tr>
+								<td class="span3"><i
+									class="muted main-icons fa fa-star-o orange"></i></td>
+								<td class="span9 text-left"><span
+									id="averageReviewsDisplay"
+									class="main-stats helvetica ng-binding">0.0</span>
+									<div>
+										<small class="muted main-meal-details">Average Rating</small>
+									</div></td>
+							</tr>
+						</table>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+
+		<!-- List group -->
+
+	</div>
+</div>
