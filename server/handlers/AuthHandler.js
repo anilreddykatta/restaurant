@@ -1,5 +1,5 @@
 var User = require('../models/user')
-	,MailHandler = require('./MainHandler');
+	,MailHandler = require('./MailHandler');
 
 var AuthHandler = function() {
 	this.googleSignIn = googleSignIn;
@@ -94,7 +94,7 @@ function registerLocal(req, res, next) {
 				res.send("Not able to register user");
 			}
 
-			
+
 			MailHandler.sendRegisterMail(req.body.email,true)
 			res.send({'success': true});
 		}
@@ -129,4 +129,4 @@ function SignOut(req, res, next) {
 	}
 }
 
-module.exports = AuthHandler; 
+module.exports = AuthHandler;

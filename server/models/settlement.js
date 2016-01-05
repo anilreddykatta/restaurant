@@ -1,5 +1,3 @@
-
-
 var mongoose = require('mongoose');
 
 var snippet_schema = new mongoose.Schema(
@@ -7,7 +5,7 @@ var snippet_schema = new mongoose.Schema(
 		author: {type: String, required: true}
 		,text: {type: String, required: true}
 	}
-)
+);
 
 var qa_schema = new mongoose.Schema(
 	{
@@ -43,6 +41,6 @@ var user_schema = new mongoose.Schema(
 		,'post code': {type: String, required: true}
 		,settlements: [set_schema]
 	}
-)
+);
 
 module.exports = mongoose.model('Settlement',set_schema);

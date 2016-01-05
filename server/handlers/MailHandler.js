@@ -21,16 +21,13 @@ var ResetPasswordMailOptions = {
 	subject : 'Reset Password Token'
 };
 
-var MailHandler = function() {
-
-};
-
-MailHandler.prototype.sendRegisterMail = function(emailAddress, isHost) {
+function SendRegisterMail(emailAddress, isHost) {
 	RegisterMailOptions['to'] = emailAddress;
+	var RegistrationsMailTemplates = new RegisterEmailTemplate();
 	if(isHost) {
-		RegisterMailOptions['html'] = RegisterEmailTemplate.HostEmailTemplate();
+		RegisterMailOptions['html'] = RegistrationsMailTemplates.HostEmailTemplate();
 	} else {
-		RegisterMailOptions['html'] = RegisterEmailTemplate.UserEmailTemplate();
+		RegisterMailOptions['html'] = RegistrationsMailTemplates.UserEmailTemplate();
 	}
 
 	//Sending Email After Registration
@@ -40,17 +37,23 @@ MailHandler.prototype.sendRegisterMail = function(emailAddress, isHost) {
 		}
 		console.log('Registration success Email Sent: '+info.response);
 	});
-};
+}
 
-MailHandler.prototype.sendResetPasswordToken = function(user) {
+function SendResetPasswordToken(user) {
+	var ResetMailTemplate = new ResetEmailTemplate();
 	ResetPasswordMailOptions['to'] = user.email;
-	ResetPasswordMailOptions['html'] = ResetEmailTemplate.EmailTemplate(user.email, user.reset_token);
+	ResetPasswordMailOptions['html'] = ResetMailTemplate.EmailTemplate(user.email, user.reset_token);
 	Transporter.sendMail(ResetPasswordMailOptions, function(error, info){
 		if(error) {
 			return console.log(error);
 		}
 		console.log('Email Sent'+info.response);
 	});
+}
+
+var MailHandler = function() {
+	this.SendRegisterMail = SendRegisterMail;
+	this.SendResetPasswordToken = SendResetPasswordToken;
 };
 
-module.exports = new MailHandler();
+module.exports = MailHandler;

@@ -19,14 +19,14 @@ function handleGetUsersRequest(req,res) {
 	user.find({}, function (err, users) {
 		if(err) {
 			console.log(err);
-		}	
+		}
 		else {
 			res.send(users);
 		}
-	});	
+	});
 };
 
-function handleGetUserRequest(req,res) {
+function handleGetUserRequest(req, res) {
 	console.log("At User Request");
 	console.log(req.query.token);
 	user.findOne().where('token').equals(req.query.token).exec(function( err, user) {

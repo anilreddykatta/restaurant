@@ -1,15 +1,15 @@
 var Constants = require("../../constants");
 
 var ResetPasswordEmailTemplate = function(){
-
+	this.EmailTemplate = EmailTemplate;
 };
 
 /**
  * @return {string}
  */
-ResetPasswordEmailTemplate.prototype.EmailTemplate = function(email, token) {
+function EmailTemplate(email, token) {
 	return "<h1>"+ Constants.DEV_DOMAIN+"/#/changepassword/"+email+"/"+token;
-};
+}
 
 
-module.exports = new ResetPasswordEmailTemplate();
+module.exports = ResetPasswordEmailTemplate;

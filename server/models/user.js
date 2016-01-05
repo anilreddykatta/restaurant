@@ -21,17 +21,19 @@ var TokenModel = Mongoose.model('Token', Token);
 
 var UserSchema =  new Schema(
 		{
-			firstname: {type: String, required: false}
-		,lasttname: {type: String, required: false}
-		,email: {type: String, required: true}
-		,access_token: {type: String, required: false}
-		,city: {type:String, required:false}
-		,token: {type: Object}
-		,date_created: {type: Date, default: Date.now}
-		,reset_token: {type: String}
-		,reset_token_expires_millis: {type: Number}
-		,facebook_profile_id: {type: String, required: false}
-		,google_profile_id: {type: String, required: false}
+			  firstname: {type: String, required: false}
+			, lasttname: {type: String, required: false}
+			, email: {type: String, required: true}
+			, access_token: {type: String, required: false}
+			, city: {type:String, required:false}
+			, token: {type: Object}
+			, date_created: {type: Date, default: Date.now}
+			, reset_token: {type: String}
+			, reset_token_expires_millis: {type: Number}
+			, facebook_profile_id: {type: String, required: false}
+			, google_profile_id: {type: String, required: false}
+			, role : {type: String, required: true}
+			, last_updated : {type: Date, default: Date.now()}
 		}
 );
 
@@ -146,19 +148,19 @@ UserSchema.statics.findUserByResetToken = function(email, resetToken, callback) 
 	this.findOne({reset_token: resetToken}, function(err, user){
 		console.log("findOne...");
 		if(err) {
-			
+
 			callback(new Error("Reset Token not found ..."), null);
 		} else if (user) {
-			
+
 			var now = new Date();
 			console.log(now.getTime());
 			if(user.email == email &&  user.reset_token_expires_millis < now.getTime()) {
-				 
+
 				user.setPassword("demo", function(){
 					user.save();
 					callback(false, user);
 				        });
-				   
+
 				//callback(false, user);
 			} else {
 				callback(new Error("Reset Token is not valid anymore"), null);
