@@ -12,7 +12,7 @@ var UserHandler = function() {
 
 function handleCreateUserRequest(req,res) {
 	console.log(req.params);
-};
+}
 
 function handleGetUsersRequest(req,res) {
 	console.log("I am here");
@@ -24,7 +24,7 @@ function handleGetUsersRequest(req,res) {
 			res.send(users);
 		}
 	});
-};
+}
 
 function handleGetUserRequest(req, res) {
 	console.log("At User Request");
@@ -46,17 +46,17 @@ function handleGetUserRequest(req, res) {
 			});
 		}
 	});
-};
+}
 
 function handleUpdateUserRequest(req,res) {
 	var dummy = {text: "dummy get"};
 	res.json = (200, dummy);
-};
+}
 
 function handleDeleteUserRequest(req,res) {
 	var dummy = {text: "dummy get"};
-	res.json = (200, dummy);
-};
+	res.json = (200,dummy);
+}
 
 module.exports = UserHandler;
 

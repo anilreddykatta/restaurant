@@ -11,6 +11,14 @@ var Token = new Schema({
 	date_created: {type: Date, default: Date.now}
 });
 
+
+var CreditCardSchema = new Schema({
+	Number : {type: String, required: false},
+	CVV : {type: String, required: false},
+	ExpirationDate : {type: Date, required: false},
+	CardHoldersName : {type: String, required: false}
+});
+
 Token.statics.hasExpired= function(created) {
 	var now = new Date();
 	var diff = (now.getTime() - created);
@@ -23,6 +31,14 @@ var UserSchema =  new Schema(
 		{
 			  firstname: {type: String, required: false}
 			, lasttname: {type: String, required: false}
+			, birthdata: {type: Date, required: false}
+			, description: {type: String, required: false}
+			, email_business: {type: String, required: false}
+			, personal_mobile: {type: String, required: false}
+			, business_mobile: {type: String, required: false}
+			, fixed_number: {type: String, required: false}
+			, credit_card : {type: Schema.ObjectId, ref: CreditCardSchema, get: Obfuscate}
+			, profile_photo: {type: String, required: false}
 			, email: {type: String, required: true}
 			, access_token: {type: String, required: false}
 			, city: {type:String, required:false}
@@ -36,6 +52,10 @@ var UserSchema =  new Schema(
 			, last_updated : {type: Date, default: Date.now()}
 		}
 );
+
+function Obfuscate(CreditCard) {
+	return '****-****-****-' + CreditCard.Number.slice(CreditCard.Number.length-4, CreditCard.Number.length);
+}
 
 UserSchema.plugin(PassportLocalMongoose);
 
@@ -148,19 +168,15 @@ UserSchema.statics.findUserByResetToken = function(email, resetToken, callback) 
 	this.findOne({reset_token: resetToken}, function(err, user){
 		console.log("findOne...");
 		if(err) {
-
 			callback(new Error("Reset Token not found ..."), null);
 		} else if (user) {
-
 			var now = new Date();
 			console.log(now.getTime());
 			if(user.email == email &&  user.reset_token_expires_millis < now.getTime()) {
-
 				user.setPassword("demo", function(){
 					user.save();
 					callback(false, user);
-				        });
-
+				});
 				//callback(false, user);
 			} else {
 				callback(new Error("Reset Token is not valid anymore"), null);
@@ -171,4 +187,5 @@ UserSchema.statics.findUserByResetToken = function(email, resetToken, callback) 
 
 module.exports = Mongoose.model('User', UserSchema);
 module.exports.Token = TokenModel;
+module.exports.UserSchema = UserSchema;
 
