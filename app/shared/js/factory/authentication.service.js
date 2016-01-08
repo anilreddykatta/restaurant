@@ -21,6 +21,7 @@
 		service.ResetPassword = ResetPassword;
 		service.SignOut = SignOut;
 		service.changepassword = changepassword;
+		service.LoginUsingToken = LoginUsingToken;
 		//service.UserchangePassword = UserchangePassword
 
 		$rootScope.globals = {
@@ -30,7 +31,7 @@
 
 
 		function getToken(){
-			return $window.localStorage['alakarte-food']; 
+			return $window.localStorage['alakarte-food'];
 		}
 		function saveToken(token){
 			$window.localStorage['alakarte-food'] = token;
@@ -54,18 +55,25 @@
 			}
 		}
 
-		function changepassword(email,token){			
+		function changepassword(email,token){
 			$rootScope.resetuseremail = email;
 			$rootScope.userresettoken = token;
 			return;
-			
+
 		}
-		
+
 		function Login(username, password, callback) {
 			UserService.GetByUserNameAndPassword(username, password)
 			.then(function(response) {
 				callback(response);
 			});
+		}
+
+		function LoginUsingToken(username, token, callback) {
+			UserService.GetByUserNameAndToken(username, token)
+				.then(function(response){
+					callback(response);
+				});
 		}
 
 		function  LoginFacebook(callback) {

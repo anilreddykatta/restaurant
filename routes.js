@@ -1,12 +1,13 @@
 var passport = require('passport');
 function setup(app, handlers) {
 	app.get('/api/users/google', passport.authenticate('google', {scope: ['email']}), handlers.auth.googleSignIn);
-	app.get('/api/users/google/callback', passport.authenticate('google', {failureRedirect: '/login', session: false, scope: 'https://www.googleapis.com/auth/plus.login'}),  handlers.auth.googleSignInCallback);
-	
-	
+	app.get('/api/users/google/callback', passport.authenticate('google', {failureRedirect: '/#/login', session: false, scope: 'https://www.googleapis.com/auth/plus.login'}),  handlers.auth.googleSignInCallback);
+
+
 	app.get('/api/users/facebook', passport.authenticate('facebook', { failureRedirect: '/login',successRedirect : '/welcome', session: false, scope: ['email'] }), handlers.auth.facebookSignIn);
 	app.get('/api/users/facebook/callback', passport.authenticate('facebook', { failureRedirect: '/login', session: false, scope: [] }), handlers.auth.facebookSignInCallback);
 	app.post('/api/users/login', passport.authenticate('local', {session: false}), handlers.auth.localSignIn);
+	app.post('/api/users/login/social',  handlers.auth.LocalSignInWithSocial);
 	//app.post('/api/users/logout', passport.authenticate('local', {session: false}), handlers.auth.SignOut);
 	app.post('/api/users', handlers.auth.registerLocal);
 	app.get('/auth/local/callback', handlers.auth.localSignInCallback);

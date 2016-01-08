@@ -12,6 +12,7 @@ var AuthHandler = function() {
 	this.ResetPassword = ResetPassword;
 	this.ResetPasswordCallback = ResetPasswordCallback;
 	this.SignOut = SignOut;
+	this.LocalSignInWithSocial = LocalSignInWithSocial;
 };
 
 function googleSignIn(req, res, next) {
@@ -22,21 +23,11 @@ function googleSignIn(req, res, next) {
 
 function googleSignInCallback(req, res, next) {
 	console.log(req.toString());
-	passport = req._passport.instance;
-	passport.authenticate('google',function(err, user, info) {
-		if(err) {
-			return next(err);
-		}
-		if(!user) {
-			return res.redirect('http://localhost:8000');
-		}
-		User.findOne({email: user._json.email},function(err, usr) {
-			res.writeHead(302, {
-				'Location': 'http://localhost:8000/#/index?token=' + usr.token + '&user=' + usr.email
-			});
-			res.end();
-		});
-	})(req,res,next);
+	if(req.user) {
+		return res.redirect('#/login?token=' + req.user.token.token + '&user=' + req.user.email);
+	} else {
+		return res.redirect('#/login');
+	}
 }
 
 function facebookSignIn(req, res, next) {
@@ -45,21 +36,11 @@ function facebookSignIn(req, res, next) {
 
 function facebookSignInCallback(req, res, next) {
 	console.log(req.toString());
-	passport = req._passport.instance;
-	passport.authenticate('facebook',function(err, user, info) {
-		if(err) {
-			return next(err);
-		}
-		if(!user) {
-			return res.redirect('http://allakarte.herokuapp.com/#/welcome');
-		}
-		User.findOne({email: user._json.email},function(err, usr) {
-			res.writeHead(302, {
-				'Location': 'http://allakarte.herokuapp.com//#/welcome?token=' + usr.token + '&user=' + usr.email
-			});
-			res.end();
-		});
-	})(req,res,next);
+	if(req.user) {
+		return res.redirect('#/login?token=' + req.user.token.token + '&user=' + req.user.email);
+	} else {
+		return res.redirect('#/login');
+	}
 }
 
 function localSignIn(req, res, next) {
@@ -69,6 +50,21 @@ function localSignIn(req, res, next) {
 				res.json({success: false, message: 'Issue generating token'});
 			} else {
 				res.send({'success': true, token : usersToken});
+			}
+		});
+	} else {
+		res.json({success: false, message: 'AuthError'});
+	}
+}
+
+function LocalSignInWithSocial(req, res, next) {
+	if(req.body.token && req.body.username) {
+		User.findUser(req.body.username, req.body.token, function(err, user){
+			if(err) {
+				res.json({success: false, message: 'AuthError'});
+			} else {
+				res.send({'success': true, token: user.token.token});
+				req.user = user;
 			}
 		});
 	} else {
@@ -93,8 +89,6 @@ function registerLocal(req, res, next) {
 				console.log("Error Registering User");
 				res.send("Not able to register user");
 			}
-
-
 			MailHandler.sendRegisterMail(req.body.email,true)
 			res.send({'success': true});
 		}

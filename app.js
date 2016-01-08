@@ -75,7 +75,7 @@ passport.use('google', new GoogleStrategy({
   	},
 	function(accessToken, refreshToken, profile, done) {
 		process.nextTick(function () {
-			User.findByGoogleProfileId(profile.id, function(err, usr){
+			User.findUserByEmailId(profile.emails[0 ].value, function(err, usr){
 				if(err)
 					return done(err);
 				if(usr) {
@@ -84,8 +84,10 @@ passport.use('google', new GoogleStrategy({
 					var UserToBeSaved = new User();
 					UserToBeSaved.google_profile_id = profile.id;
 					UserToBeSaved.access_token = accessToken;
+					UserToBeSaved.token = User.Token({token: accessToken});
 					UserToBeSaved.name = profile.name.givenName +' '+ profile.name.familyName;
 					UserToBeSaved.email = profile.emails[0].value;
+					UserToBeSaved.role = 'guest';
 					UserToBeSaved.save(function(err){
 						if(err)
 							throw err;
@@ -105,18 +107,19 @@ passport.use('facebook', new FacebookStrategy({
 		},
 		function(accessToken, refreshToken, profile, done) {
 			process.nextTick(function () {
-				User.findByFacebookProfileId(profile.id, function(err, usr){
+				User.findUserByEmailId(profile.emails[0].value, function(err, usr){
 					if(err)
 						return done(err);
 					if(usr) {
 						return done(null, usr);
 					} else {
 						var UserToBeSaved = new User();
-						console.log(profile);
 						UserToBeSaved.facebook_profile_id = profile.id;
 						UserToBeSaved.access_token = accessToken;
+						UserToBeSaved.token = User.Token({token: accessToken});
 						UserToBeSaved.name = profile.name.givenName +' '+ profile.name.familyName;
 						UserToBeSaved.email = profile.emails[0].value;
+						UserToBeSaved.role = 'guest';
 						UserToBeSaved.save(function(err){
 							if(err) {
 								throw err;

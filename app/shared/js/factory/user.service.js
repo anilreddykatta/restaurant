@@ -21,6 +21,7 @@
         service.ResetPassword = ResetPassword;
         service.SignOut = SignOut;
         service.UserchangePassword = UserchangePassword;
+		service.GetByUserNameAndToken = GetByUserNameAndToken;
 
         return service;
 
@@ -39,6 +40,11 @@
         function GetByUserNameAndPassword(username, password) {
             return $http.post('/api/users/login', {username: username, password: password}).then(handleSuccess, handleError('Error in authenticating user'));
         }
+
+		function GetByUserNameAndToken(username, token) {
+			return $http.post('/api/users/login/social', {username: username, token: token} ).then(handleSuccess, handleError("Error in authenticating user with google"));
+		}
+
         //register user
         function Create(user) {
             return $http.post('/api/users', user).then(handleSuccess, handleError('Error creating user'));
@@ -69,7 +75,7 @@
         function SignOut(username, accessToken) {
             return $http.post('/api/users/signout', {email: username, access_token: accessToken}).then(handleSuccess, handleError("Error in Signing out"));
         }
-        
+
 
         // private functions
 
