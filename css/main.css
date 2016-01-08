@@ -100,8 +100,8 @@ h1, h2, h3, h4, h5, h6, p {
 .user-menu {
 	position: absolute !important;
 	top: 62px;
-	max-width: 400px !important;
-	width: 300px !important;
+	/*max-width: 400px !important;*/
+	width: 150% !important;
 }
 
 body, html {
@@ -427,7 +427,7 @@ ul.slides-container li img {
 }
 
 .modal-dialog {
-	
+
 }
 
 .thumbnail {

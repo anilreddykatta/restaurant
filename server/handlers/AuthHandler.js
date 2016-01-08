@@ -98,17 +98,12 @@ function registerLocal(req, res, next) {
 function localSignInCallback(req, res, next) {}
 
 function ResetPassword(req, res, next) {
-	console.log(req.body);
 	User.generateResetToken(req.body.email, function(err, user){
-		console.log(user);
-		MailHandler.sendResetPasswordToken(user);
+		MailHandler.SendResetPasswordToken(user);
 	});
 }
 
 function ResetPasswordCallback(req, res, next) {
-	console.log(req.body);
-	console.log(req.body.email);
-	console.log(req.body.access_token);
 	User.findUserByResetToken(req.body.email, req.body.access_token, function(err, user){
 		res.send(user);
 	});

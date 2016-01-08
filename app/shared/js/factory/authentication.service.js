@@ -50,7 +50,6 @@
 			if (service.isLoggedIn()) {
 				var token = service.getToken();
 				var payload = Base64.decode(token);
-
 				return payload.substr(0, payload.indexOf(':'));
 			}
 		}
@@ -58,8 +57,6 @@
 		function changepassword(email,token){
 			$rootScope.resetuseremail = email;
 			$rootScope.userresettoken = token;
-			return;
-
 		}
 
 		function Login(username, password, callback) {
@@ -70,6 +67,7 @@
 		}
 
 		function LoginUsingToken(username, token, callback) {
+			this.saveToken(token);
 			UserService.GetByUserNameAndToken(username, token)
 				.then(function(response){
 					callback(response);
