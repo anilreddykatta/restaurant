@@ -1,10 +1,11 @@
 var Mongoose = require("mongoose")
-,Schema = Mongoose.Schema
-,path = require('path')
-,PassportLocalMongoose = require("passport-local-mongoose")
-,Crypto = require("crypto")
-,JWT = require("jwt-simple")
-,Constants = require('../../constants');
+	, Schema = Mongoose.Schema
+	, path = require('path')
+	, PassportLocalMongoose = require("passport-local-mongoose")
+	, Crypto = require("crypto")
+	, JWT = require("jwt-simple")
+	, Constants = require('../../constants')
+	, UUID = require("node-uuid");
 
 var Token = new Schema({
 	token: {type: String},
@@ -29,7 +30,10 @@ var TokenModel = Mongoose.model('Token', Token);
 
 var UserSchema =  new Schema(
 		{
-			  firstname: {type: String, required: false}
+			user_id : {type: String, default: function getUUID(){
+				return UUID.v1();
+			}}
+			, firstname: {type: String, required: false}
 			, lasttname: {type: String, required: false}
 			, birthdata: {type: Date, required: false}
 			, description: {type: String, required: false}
@@ -73,6 +77,26 @@ UserSchema.statics.findUserByEmailId = function(email, callback) {
 			callback(err, null);
 		} else {
 			callback(false, usr);
+		}
+	});
+};
+
+UserSchema.statics.findByUserId = function (user_id, callback) {
+	this.findOne({user_id: user_id}, function(err, user){
+		if(err || !user) {
+			callback(err, null);
+		} else {
+			callback(false, user);
+		}
+	});
+};
+
+UserSchema.statics.findByUserToken = function(token, callback) {
+	this.findOne( {'token.token': token}, function(err, user){
+		if(err || !user) {
+			callback(err, null);
+		} else {
+			callback(false, user);
 		}
 	});
 };

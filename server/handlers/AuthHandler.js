@@ -2,13 +2,13 @@ var User = require('../models/user')
 	,MailHandler = require('./MailHandler');
 
 var AuthHandler = function() {
-	this.googleSignIn = googleSignIn;
-	this.googleSignInCallback = googleSignInCallback;
-	this.facebookSignIn = facebookSignIn;
-	this.facebookSignInCallback = facebookSignInCallback;
-	this.localSignIn = localSignIn;
-	this.localSignInCallback = localSignInCallback;
-	this.registerLocal = registerLocal;
+	this.GoogleSignIn = googleSignIn;
+	this.GoogleSignInCallback = googleSignInCallback;
+	this.FacebookSignIn = facebookSignIn;
+	this.FacebookSignInCallback = facebookSignInCallback;
+	this.LocalSignIn = localSignIn;
+	this.LocalSignInCallback = localSignInCallback;
+	this.RegisterLocal = registerLocal;
 	this.ResetPassword = ResetPassword;
 	this.ResetPasswordCallback = ResetPasswordCallback;
 	this.SignOut = SignOut;
@@ -24,9 +24,9 @@ function googleSignIn(req, res, next) {
 function googleSignInCallback(req, res, next) {
 	console.log(req.toString());
 	if(req.user) {
-		return res.redirect('#/login?token=' + req.user.token.token + '&user=' + req.user.email);
+		return res.redirect('/#/login?token=' + req.user.token.token + '&user=' + req.user.email);
 	} else {
-		return res.redirect('#/login');
+		return res.redirect('/#/login');
 	}
 }
 
@@ -37,9 +37,9 @@ function facebookSignIn(req, res, next) {
 function facebookSignInCallback(req, res, next) {
 	console.log(req.toString());
 	if(req.user) {
-		return res.redirect('#/login?token=' + req.user.token.token + '&user=' + req.user.email);
+		return res.redirect('/#/login?token=' + req.user.token.token + '&user=' + req.user.email);
 	} else {
-		return res.redirect('#/login');
+		return res.redirect('/#/login');
 	}
 }
 
@@ -89,7 +89,7 @@ function registerLocal(req, res, next) {
 				console.log("Error Registering User");
 				res.send("Not able to register user");
 			}
-			MailHandler.sendRegisterMail(req.body.email,true)
+			MailHandler.sendRegisterMail(req.body.email,true);
 			res.send({'success': true});
 		}
 	);
@@ -118,4 +118,4 @@ function SignOut(req, res, next) {
 	}
 }
 
-module.exports = AuthHandler;
+module.exports = new AuthHandler();

@@ -4,44 +4,44 @@ var express = require('express')
 	,AuthHandler = require('./server/handlers/AuthHandler')
 	,passport = require('passport')
 	,mongoose = require('mongoose')
-	,User = require('./server/models/user')
 	,session = require('express-session')
 	,LocalStrategy = require('passport-local').Strategy
 	,GoogleStrategy = require('passport-google-oauth').OAuth2Strategy
 	,FacebookStrategy = require('passport-facebook').Strategy
-	,Constants = require('./constants');
+	,Constants = require('./constants' )
+	,User = require('./server/models/user' )
+	,BodyParser = require("body-parser")
+	,ExpressLogger = require("express-logger")
+	,UrlEncode = require("urlencode")
+	,MethodOverride = require("method-override")
+	,CookieParser = require("cookie-parser")
+	,Errorhandler = require("errorhandler");
 
 
 var app = express();
-app.set('');
 
+app.set('client-url','http://localhost:8000');
+app.set('client-google-signin','/google?action=signin');
+app.disable('x-powered-by');
+app.use(ExpressLogger({path: "./logfile.txt"}));
+app.use(BodyParser());
+app.use(MethodOverride());
+app.use(session({
+	secret:'allcarte secret'
+}));
+app.use(CookieParser());
+app.use(passport.initialize());
+app.use(passport.session());
 
-app.configure(function() {
-	app.set('client-url','http://localhost:8000');
-	app.set('client-google-signin','/google?action=signin');
-	app.disable('x-powered-by');
-	app.use(express.logger('dev'));
-	app.use(express.json());
-	app.use(express.urlencoded());
-	app.use(express.methodOverride());
-	app.use(session({
-		secret:'allcarte secret'
-	}));
-	app.use(express.cookieParser());
-	app.use(passport.initialize());
-	app.use(passport.session());
+//User profile for authentication
+passport.use(new LocalStrategy(User.authenticate()));
 
-	//User profile for authentication
-	var User = require('./server/models/user');
-	passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 
-	passport.serializeUser(User.serializeUser());
-	passport.deserializeUser(User.deserializeUser());
-
-	app.use(app.router);
-	app.use(express.static(__dirname + '/'));
-	app.use(function(req, res, next){allowCrossDomain(req, res, next);});
-});
+app.use('/', routes);
+app.use(express.static(__dirname + '/'));
+app.use(function(req, res, next){allowCrossDomain(req, res, next);});
 
 var allowCrossDomain = function(req, res, next) {
     res.header('Access-Control-Allow-Origin', Constants.DEV_DOMAIN);
@@ -62,10 +62,8 @@ mongoose.connect(Constants.MONGO_DB_URI, function (error) {
 });
 
 
-app.configure('development', function() {
-	app.use(express.errorHandler({dumpExceptions: true, showStack: true}));
-	console.log("Starting in development mode");
-});
+app.use(Errorhandler({dumpExceptions: true, showStack: true}));
+console.log("Starting in development mode");
 
 
 passport.use('google', new GoogleStrategy({
@@ -131,15 +129,7 @@ passport.use('facebook', new FacebookStrategy({
 			});
 		}
 ));
-
-
-var handlers = {
-	user: new UserHandler(),
-	auth: new AuthHandler()
-};
-
-routes.setup(app,handlers);
-app.listen(process.env.PORT || 5000)
+app.listen(process.env.PORT || 5000);
 console.log('Listening on port 5000');
 
 

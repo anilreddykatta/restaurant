@@ -12,12 +12,12 @@ var Transporter = NodeMailer.createTransport({
 });
 
 var RegisterMailOptions = {
-	from : 'AllKarte Registration Confirmation<allkarte@gmail.com>',
+	from : 'allakarte Registration Confirmation<allakarte@gmail.com>',
 	subject : 'Registration Confirmation'
 };
 
 var ResetPasswordMailOptions = {
-	from : 'AllKarte Reset Password Confirmation<allkarte@gmail.com>',
+	from : 'allakarte Reset Password Confirmation<allakarte@gmail.com>',
 	subject : 'Reset Password Token'
 };
 

@@ -1,24 +1,64 @@
 var passport = require('passport');
-function setup(app, handlers) {
-	app.get('/api/users/google', passport.authenticate('google', {scope: ['email']}), handlers.auth.googleSignIn);
-	app.get('/api/users/google/callback', passport.authenticate('google', {failureRedirect: '/#/login', session: false, scope: 'https://www.googleapis.com/auth/plus.login'}),  handlers.auth.googleSignInCallback);
+var express = require('express' );
+
+var AuthHandler = require('./server/handlers/AuthHandler');
+var allakarteHandler = require('./server/handlers/AllakarteHandler');
+var User = require('./server/models/user');
+var Constants = require('./constants');
 
 
-	app.get('/api/users/facebook', passport.authenticate('facebook', { failureRedirect: '/login',successRedirect : '/welcome', session: false, scope: ['email'] }), handlers.auth.facebookSignIn);
-	app.get('/api/users/facebook/callback', passport.authenticate('facebook', { failureRedirect: '/login', session: false, scope: [] }), handlers.auth.facebookSignInCallback);
-	app.post('/api/users/login', passport.authenticate('local', {session: false}), handlers.auth.localSignIn);
-	app.post('/api/users/login/social',  handlers.auth.LocalSignInWithSocial);
-	//app.post('/api/users/logout', passport.authenticate('local', {session: false}), handlers.auth.SignOut);
-	app.post('/api/users', handlers.auth.registerLocal);
-	app.get('/auth/local/callback', handlers.auth.localSignInCallback);
-	app.get('/user', handlers.user.getUsers);
-	app.get('/user/:id', handlers.user.getUser);
-	app.put('/user/:id', handlers.user.updateUser);
-	app.get('/user/:first/:last/:email', handlers.user.createUser);
-	app.post('/api/users/reset', handlers.auth.ResetPassword);
-	app.post('/api/users/login/resetpassword', handlers.auth.ResetPasswordCallback);
-	app.post('/api/users/signout', handlers.auth.SignOut);
-	console.log("Successfully set up routes");
-};
+var ApiRouter = express.Router();
+var UserRouter = express.Router({mergeParams: true});
+var AllakarteRouter = express.Router({mergeParams: true});
+var DishItemRouter = express.Router({mergeParams: true});
 
-exports.setup = setup;
+AllakarteRouter.use('/:allakarte_id/dishitems', is_authenticated, DishItemRouter);
+UserRouter.use('/:user_id/allakartes', is_authenticated, AllakarteRouter);
+ApiRouter.use('/api/users/', UserRouter);
+
+//User Routes
+UserRouter.get('/google', passport.authenticate('google', {scope: ['email']}), AuthHandler.GoogleSignIn);
+UserRouter.get('/google/callback', passport.authenticate('google', {failureRedirect: '/#/login', session: false, scope: 'https://www.googleapis.com/auth/plus.login'}), AuthHandler.GoogleSignInCallback);
+UserRouter.get('/facebook', passport.authenticate('facebook', { failureRedirect: '/login',successRedirect : '/welcome', session: false, scope: ['email'] }), AuthHandler.FacebookSignIn);
+UserRouter.get('/facebook/callback', passport.authenticate('facebook', { failureRedirect: '/login', session: false, scope: [] }), AuthHandler.FacebookSignInCallback);
+UserRouter.post('/login',passport.authenticate('local', {session: false}), AuthHandler.LocalSignIn);
+UserRouter.post('/login/social', AuthHandler.LocalSignInWithSocial);
+UserRouter.post('/', AuthHandler.RegisterLocal);
+
+
+//Allakarte Routes
+AllakarteRouter.post('/', allakarteHandler.CreateAllaKarte);
+
+
+//DishItemRoutes
+DishItemRouter.post('/', allakarteHandler.AddDishItemToExistingAllakarte);
+
+
+function is_authenticated (req, res, next) {
+	if(Constants.IS_AUTHENTICATION_DISABLED_FOR_REST_API_TESTING) {
+		if(req.body.token) {
+			User.findByUserToken(req.body.token, function(err, user){
+				if(err || !user) {
+					res.redirect('/#/login');
+				} else {
+					next();
+				}
+			})
+		} else if (req.params.token) {
+			User.findByUserToken(req.params.token, function(err, user){
+				if(err || !user) {
+					res.redirect('/#/login');
+				} else {
+					next();
+				}
+			})
+		} else {
+			res.redirect('/#/login');
+		}
+	} else {
+		next();
+	}
+}
+
+module.exports = ApiRouter;
+

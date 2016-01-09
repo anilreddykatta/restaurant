@@ -58,5 +58,5 @@ function handleDeleteUserRequest(req,res) {
 	res.json = (200,dummy);
 }
 
-module.exports = UserHandler;
+module.exports = new UserHandler();
 
