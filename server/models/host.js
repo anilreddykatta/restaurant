@@ -7,78 +7,77 @@ var Model = Mongoose.model;
 var UserSchema = requires("user" ).UserSchema;
 
 var HostingStyleSchema = new Schema({
-	HostStyle : {type: String, required: false},
-	HostStyleDescription : {type: String, required: false}
+	host_style : {type: String, required: false},
+	host_style_description : {type: String, required: false}
 });
 
 var HostingTagSchema = new Schema({
-	HostingTagName : {type: String, required: false},
-	HostingTagDescription : {type: String, required: false}
+	hosting_tag_name : {type: String, required: false},
+	hosting_tag_description : {type: String, required: false}
 });
 
 var AddressSchema = new Schema({
-	City: {type: String, required: false},
-	State: {type: String, required: false},
-	Country: {type: String, required: false},
-	PinCode: {type: String, required: false},
-	Address : {type: String, required: false}
+	city: {type: String, required: false},
+	state: {type: String, required: false},
+	country: {type: String, required: false},
+	pin_code: {type: String, required: false},
+	address : {type: String, required: false}
 });
 
 var BankDetailsSchema = new Schema({
-	IsPrimary: {type: Boolean, required: false}
+	is_primary: {type: Boolean, required: false}
 });
 
 var PaypalDetailsSchema = new Schema({
-	IsPrimary: {type: Boolean, required: false}
+	is_primary: {type: Boolean, required: false}
 });
 
 var HostingAccessibilitySchema = new Schema({
-	HostingAccessibility: {type: String, required: false},
-	HostingAccessibilityDescription: {type: String, required: false}
+	hosting_accessibility: {type: String, required: false},
+	hosting_accessbility_description: {type: String, required: false}
 });
 
 var HostingFoodPreferencesSchema = new Schema({
-	FoodPreference: {type: String, required: false},
-	FoodPreferenceDescription: {type: String, required: false}
+	food_preference: {type: String, required: false},
+	food_preference_description: {type: String, required: false}
 });
 
 var DishDetailsSchema = new Schema({
-	DishName: {type: String, required: false},
-	DishDescription: {type: String, required: false},
-	DishPrice: {type: Number, required: false},
-	DishPhotoLinks: {type: [String], required: false},
-	DishAdvanceBookingTime: {type: Number, required: false},
-	DishAllergens: {type: [String], required: false },
-	IsShowOrCookingRecipeShared: {type: Boolean, required: false}
+	dish_name: {type: String, required: false},
+	dish_description: {type: String, required: false},
+	dish_price: {type: Number, required: false},
+	dish_photo_links: {type: [String], required: false},
+	dish_advance_booking_time: {type: Number, required: false},
+	dish_allergens: {type: [String], required: false },
+	is_show_or_cooking_recipe_shared: {type: Boolean, required: false}
 });
 
 
 var EventSchema = new Schema({
-	EventName : {type: String, required: false},
-	EventVenue : {type: Schema.ObjectId, ref: AddressSchema, required: false},
-	MaxNumberOfGuests : {type: Number, required: false},
-	MinNumberOfGuests: {type: Number, required: false},
-	ExpectedNumberOfGuests: {type: Number, required: false},
-	EventPrice: {type: Number, required: false},
-	EventDate: {type: Date, required: false},
-	EventDishDetails: {type: [DishDetailsSchema], required: false},
-	EventPhotoLinks: {type: [String], required: false}
+	event_name : {type: String, required: false},
+	even_venue : {type: Schema.ObjectId, ref: AddressSchema, required: false},
+	max_number_of_guests : {type: Number, required: false},
+	min_number_of_guests: {type: Number, required: false},
+	expected_number_of_guests: {type: Number, required: false},
+	event_price: {type: Number, required: false},
+	event_date: {type: Date, required: false},
+	event_dish_details: {type: [DishDetailsSchema], required: false},
+	event_photo_links: {type: [String], required: false}
 });
 
 
 var HostSchema = UserSchema.extend({
-	Message: {type: [String], required: false},
-	BankDetails: {type: [BankDetailsSchema], required: false},
-	PayPalDetails: {type: [PaypalDetailsSchema], required: false},
-	MaximumNumberOfGuests: {type: Number, required: false},
-	AreBioProducts: {type: String, required: false},
-	HostingDiskDetails: {type: [String], required: false},
-	HostingStyle: {type:[HostingStyleSchema], required: false},
-	HostingTag: {type: [HostingTagSchema], required: false},
-	HostingDiskDetails: {type: [DishDetailsSchema], required: false},
-	HostingAccessibility: {type: [HostingStyleSchema], required: false},
-	HostingFoodPreferences: {type: [HostingFoodPreferencesSchema], required: false},
-	Events: {type: [EventSchema], required: false}
+	message: {type: [String], required: false},
+	bank_details: {type: [BankDetailsSchema], required: false},
+	paypal_details: {type: [PaypalDetailsSchema], required: false},
+	max_number_of_guests: {type: Number, required: false},
+	are_bio_products: {type: String, required: false},
+	hosting_styles: {type:[HostingStyleSchema], required: false},
+	hosting_tags: {type: [HostingTagSchema], required: false},
+	hosting_dish_details: {type: [DishDetailsSchema], required: false},
+	hosting_accessibilities: {type: [HostingStyleSchema], required: false},
+	hosting_food_preferences: {type: [HostingFoodPreferencesSchema], required: false},
+	events: {type: [EventSchema], required: false}
 }, {discriminatorKey: '_type'});
 
 module.exports = Model('Host', HostSchema);

@@ -27,11 +27,18 @@ UserRouter.post('/', AuthHandler.RegisterLocal);
 
 
 //Allakarte Routes
-AllakarteRouter.post('/', allakarteHandler.CreateAllaKarte);
-
+AllakarteRouter.post('/', allakarteHandler.CreateAllakarte);
+AllakarteRouter.get('/', allakarteHandler.GetAllKartes);
+AllakarteRouter.get('/:allakarte_id', allakarteHandler.GetAllkarte);
+AllakarteRouter.delete('/:allakarte_id', allakarteHandler.DeleteAllakarte);
+AllakarteRouter.put('/:allakarte_id', allakarteHandler.UpdateAllakarte);
 
 //DishItemRoutes
 DishItemRouter.post('/', allakarteHandler.AddDishItemToExistingAllakarte);
+DishItemRouter.get('/', allakarteHandler.GetAllDishItemsForAllkarte);
+DishItemRouter.delete('/:dish_item_id', allakarteHandler.DeleteDishItem);
+DishItemRouter.put('/:dish_item_id', allakarteHandler.UpdateDishItem);
+
 
 
 function is_authenticated (req, res, next) {
@@ -47,13 +54,15 @@ function is_authenticated (req, res, next) {
 		} else if (req.params.token) {
 			User.findByUserToken(req.params.token, function(err, user){
 				if(err || !user) {
-					res.redirect('/#/login');
+					res.status(403)
+						.send({'status': false, 'error': 'Auth Error'});
 				} else {
 					next();
 				}
 			})
 		} else {
-			res.redirect('/#/login');
+			res.status(403)
+				.send({'status': false, 'error': 'Auth Error'});
 		}
 	} else {
 		next();

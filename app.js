@@ -11,7 +11,7 @@ var express = require('express')
 	,Constants = require('./constants' )
 	,User = require('./server/models/user' )
 	,BodyParser = require("body-parser")
-	,ExpressLogger = require("express-logger")
+	,ExpressLogger = require("morgan")
 	,UrlEncode = require("urlencode")
 	,MethodOverride = require("method-override")
 	,CookieParser = require("cookie-parser")
@@ -23,8 +23,9 @@ var app = express();
 app.set('client-url','http://localhost:8000');
 app.set('client-google-signin','/google?action=signin');
 app.disable('x-powered-by');
-app.use(ExpressLogger({path: "./logfile.txt"}));
-app.use(BodyParser());
+app.use(ExpressLogger("dev"));
+app.use(BodyParser.json());
+app.use(BodyParser.urlencoded({extended: false}));
 app.use(MethodOverride());
 app.use(session({
 	secret:'allcarte secret'

@@ -14,10 +14,10 @@ var Token = new Schema({
 
 
 var CreditCardSchema = new Schema({
-	Number : {type: String, required: false},
-	CVV : {type: String, required: false},
-	ExpirationDate : {type: Date, required: false},
-	CardHoldersName : {type: String, required: false}
+	number : {type: String, required: false},
+	css : {type: String, required: false},
+	expiration_date : {type: Date, required: false},
+	card_holders_name : {type: String, required: false}
 });
 
 Token.statics.hasExpired= function(created) {
@@ -58,7 +58,7 @@ var UserSchema =  new Schema(
 );
 
 function Obfuscate(CreditCard) {
-	return '****-****-****-' + CreditCard.Number.slice(CreditCard.Number.length-4, CreditCard.Number.length);
+	return '****-****-****-' + CreditCard.number.slice(CreditCard.number.length-4, CreditCard.number.length);
 }
 
 UserSchema.plugin(PassportLocalMongoose);
