@@ -38,6 +38,7 @@ DishItemRouter.post('/', allakarteHandler.AddDishItemToExistingAllakarte);
 DishItemRouter.get('/', allakarteHandler.GetAllDishItemsForAllkarte);
 DishItemRouter.delete('/:dish_item_id', allakarteHandler.DeleteDishItem);
 DishItemRouter.put('/:dish_item_id', allakarteHandler.UpdateDishItem);
+DishItemRouter.get('/:dish_item_id', allakarteHandler.GetDishItem);
 
 
 

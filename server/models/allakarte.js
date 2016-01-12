@@ -63,7 +63,7 @@ AllaKarteSchema.statics.FindByAllakarteId = function(user_id, allakarte_id, call
 };
 
 AllaKarteSchema.statics.FindByDishItemId = function(dish_item_id, callback) {
-	this.findOne( {'dish_items.dish_id' : dish_item_id}, function(err, dish_item){
+	this.findOne( {'dish_items.dish_item_id' : dish_item_id}, function(err, dish_item){
 		if(err || !dish_item) {
 			callback(err, null);
 		} else {
@@ -74,7 +74,7 @@ AllaKarteSchema.statics.FindByDishItemId = function(dish_item_id, callback) {
 
 AllaKarteSchema.statics.DeleteDishItemFromAllakarte = function(allakarte_id, dish_item_id, callback) {
 	this.findOne({allakarte_id: allakarte_id}, function(err, allakarte){
-		if(err || !allakarte) {
+		if(err || !allakarte || !allakarte.dish_items) {
 			callback(err, null);
 		} else {
 			for(var index = 0; index < allakarte.dish_items.length; index++) {
@@ -89,7 +89,6 @@ AllaKarteSchema.statics.DeleteDishItemFromAllakarte = function(allakarte_id, dis
 					});
 				}
 			}
-			callback(false, allakarte);
 		}
 	});
 };
@@ -104,8 +103,31 @@ AllaKarteSchema.statics.DeleteAllakarte = function(allakarte_id, callback) {
 	});
 };
 
-AllaKarteSchema.statics.UpdateDishItem = function(dish_item_id, callback) {
-	//TODO: We need to update the dish item which is a subdocument in the allakarte
+AllaKarteSchema.statics.UpdateDishItem = function(allkarte_id, dish_item_id, p_dish_item, callback) {
+	this.findOne({allakarte_id : allkarte_id}, function(err, allakarte){
+		if(err || !allakarte || !allakarte.dish_items) {
+			callback(err, null);
+		} else {
+			var found_value = false;
+			for(var index = 0; index < allakarte.dish_items.length; index++) {
+				var dish_item = allakarte.dish_items[index];
+				if(dish_item.dish_item_id == dish_item_id) {
+					found_value = true;
+					allakarte.dish_items[index] = p_dish_item;
+					allakarte.save(function(err, allakarte){
+						if(err || !allakarte) {
+							callback(false, allakarte);
+						} else {
+							callback(err, null);
+						}
+					});
+				}
+			}
+			if(!found_value) {
+				callback(false, allakarte);
+			}
+		}
+	});
 };
 
 module.exports = Mongoose.model("AllaKarte", AllaKarteSchema);

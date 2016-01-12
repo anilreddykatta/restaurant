@@ -96,7 +96,13 @@ AllakarteHandler.prototype.GetAllKartes = function(req, res, next) {
 
 AllakarteHandler.prototype.UpdateDishItem = function(req, res, next) {
 	if(req.params.allakarte_id && req.params.user_id && req.params.dish_item_id) {
-		//TODO: We need to implement a way to update dish item which is a sub document of allakarte
+		Allakarte.UpdateDishItem(req.params.allakarte_id, req.params.dish_item_id, req.body.dish_item, function(err, allakarte) {
+			if(err || !allakarte) {
+				res.send({'sucess' : false, 'error' : err});
+			} else {
+				res.send({'sucess': true, 'allakarte': allakarte});
+			}
+		});
 	} else {
 		res.send({'success': false, 'error': 'Not a valid request'});
 	}
@@ -126,6 +132,7 @@ AllakarteHandler.prototype.DeleteAllakarte = function(req, res, next) {
 			}
 		});
 	} else {
+		res.status(400);
 		res.send({'success': false, 'error': 'Not a valid request'});
 	}
 };
@@ -142,11 +149,27 @@ AllakarteHandler.prototype.UpdateAllakarte = function(req, res, next) {
 				});
 				res.send({'sucess': true, 'allakarte': allakarte});
 			} else {
+				res.status(400);
 				res.send({'sucess': false, 'error': 'Nothing to update'});
 			}
 		});
 	} else {
 		res.send({'success': false, 'error': 'Not a valid request'});
+	}
+};
+
+AllakarteHandler.prototype.GetDishItem = function(req, res, next) {
+	if(req.params.allakarte_id && req.params.dish_item_id) {
+		Allakarte.FindByDishItemId(req.params.dish_item_id, function(err, dish_item){
+			if(err || !dish_item) {
+				res.send({'sucess': false, 'error': err});
+			} else {
+				res.send({'sucess': true, 'dish_item': dish_item});
+			}
+		});
+	} else {
+		res.status(400);
+		res.send({'sucess': false, 'error': 'Not a valid request'});
 	}
 };
 
