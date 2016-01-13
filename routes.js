@@ -2,7 +2,7 @@ var passport = require('passport');
 var express = require('express' );
 
 var AuthHandler = require('./server/handlers/AuthHandler');
-var allakarteHandler = require('./server/handlers/AllakarteHandler');
+var AllakarteHandler = require('./server/handlers/AllakarteHandler');
 var User = require('./server/models/user');
 var Constants = require('./constants');
 
@@ -28,18 +28,18 @@ UserRouter.post('/:user_id/login', AuthHandler.LoginWithToken);
 
 
 //Allakarte Routes
-AllakarteRouter.post('/', allakarteHandler.CreateAllakarte);
-AllakarteRouter.get('/', allakarteHandler.GetAllKartes);
-AllakarteRouter.get('/:allakarte_id', allakarteHandler.GetAllkarte);
-AllakarteRouter.delete('/:allakarte_id', allakarteHandler.DeleteAllakarte);
-AllakarteRouter.put('/:allakarte_id', allakarteHandler.UpdateAllakarte);
+AllakarteRouter.post('/', AllakarteHandler.CreateAllakarte);
+AllakarteRouter.get('/', AllakarteHandler.GetAllKartes);
+AllakarteRouter.get('/:allakarte_id', AllakarteHandler.GetAllkarte);
+AllakarteRouter.delete('/:allakarte_id', AllakarteHandler.DeleteAllakarte);
+AllakarteRouter.put('/:allakarte_id', AllakarteHandler.UpdateAllakarte);
 
 //DishItemRoutes
-DishItemRouter.post('/', allakarteHandler.AddDishItemToExistingAllakarte);
-DishItemRouter.get('/', allakarteHandler.GetAllDishItemsForAllkarte);
-DishItemRouter.delete('/:dish_item_id', allakarteHandler.DeleteDishItem);
-DishItemRouter.put('/:dish_item_id', allakarteHandler.UpdateDishItem);
-DishItemRouter.get('/:dish_item_id', allakarteHandler.GetDishItem);
+DishItemRouter.post('/', AllakarteHandler.AddDishItemToExistingAllakarte);
+DishItemRouter.get('/', AllakarteHandler.GetAllDishItemsForAllkarte);
+DishItemRouter.delete('/:dish_item_id', AllakarteHandler.DeleteDishItem);
+DishItemRouter.put('/:dish_item_id', AllakarteHandler.UpdateDishItem);
+DishItemRouter.get('/:dish_item_id', AllakarteHandler.GetDishItem);
 
 
 

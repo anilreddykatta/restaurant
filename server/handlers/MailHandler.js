@@ -56,4 +56,4 @@ var MailHandler = function() {
 	this.SendResetPasswordToken = SendResetPasswordToken;
 };
 
-module.exports = MailHandler;
+module.exports = new MailHandler();

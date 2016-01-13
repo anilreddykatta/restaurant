@@ -106,7 +106,7 @@ function registerLocal(req, res, next) {
 				console.log("Error Registering User");
 				res.send("Not able to register user");
 			}
-			MailHandler.sendRegisterMail(req.body.email,true);
+			MailHandler.SendRegisterMail(req.body.email,true);
 			res.send({'success': true});
 		}
 	);

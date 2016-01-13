@@ -14,6 +14,8 @@
 			AuthenticationService.LoginUsingToken($scope.user.email, $scope.user.token, function(response){
 				if(response.success) {
 					$scope.user.user_id = response.user.user_id;
+					$scope.user.email = response.user.username;
+					$scope.user.token = response.user.token;
 					$(".page-loading").addClass("hidden");
 					AuthenticationService.SetCredentials($scope.user.email, $scope.user.token, $scope.user.user_id);
 					AuthenticationService.saveToken($scope.user.token);
@@ -40,6 +42,9 @@
 			AuthenticationService.Login($scope.user.email, $scope.user.password, function (response) {
 				if (response.success) {
 					$scope.user.user_id = response.user.user_id;
+					$scope.user.user_id = response.user.user_id;
+					$scope.user.email = response.user.username;
+					$scope.user.token = response.user.token;
 					$(".page-loading").addClass("hidden");
 					AuthenticationService.SetCredentials($scope.user.email, $scope.user.token, $scope.user.user_id);
 					AuthenticationService.saveToken($scope.user.token);
@@ -50,7 +55,6 @@
 				} else {
 					$(".page-loading").addClass("hidden");
 					$rootScope.$broadcast(AUTH_EVENTS.loginFailed);
-					//FlashService.Error(response.message);
 					$scope.loginerrormessage = "The Password/Email you entered is incorrect";
 				}
 			});
