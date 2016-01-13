@@ -1,0 +1,34 @@
+<link href="css/header.css" rel="stylesheet">
+<div class="container-fluid" ng-controller="MyAllakarteController">
+	<div class="row col-md-12">
+
+		<h3 class='benefit-header3 common'>
+			<span class=" fa-bookmark fa   "></span> My Dishes
+
+		</h3>
+		<h5 class="headertxt">
+			<b>Enter a few details about your experience </b> <br> Below you
+			can view applications you have submitted and continue editing open
+			applications.<br>
+		</h5>
+	</div>
+	<div class="col-md-12">
+		<div class="panel-group" id="accordion">
+			<div class="panel panel-primary">
+				<div ng-repeat="dish_item in allakartes.dish_items">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a class="accordion-toggle" data-toggle="collapse"
+							   data-parent="#accordion" href="#collapse{$index}"> <i
+									class="indicator glyphicon glyphicon-minus"></i> {{dish_item.name}}
+							</a>
+						</h4>
+					</div>
+					<div id="collapse{$index}" class="panel-collapse collapse in">
+						<div class="panel-body">{{dish_item.description}}</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
