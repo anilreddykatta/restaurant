@@ -22,6 +22,7 @@
         service.SignOut = SignOut;
         service.UserchangePassword = UserchangePassword;
 		service.GetByUserNameAndToken = GetByUserNameAndToken;
+		service.GetByUserIdAndToken = GetByUserIdAndToken;
 
         return service;
 
@@ -43,6 +44,10 @@
 
 		function GetByUserNameAndToken(username, token) {
 			return $http.post('/api/users/login/social', {username: username, token: token} ).then(handleSuccess, handleError("Error in authenticating user with google"));
+		}
+
+		function GetByUserIdAndToken(user_id, token) {
+			return $http.post('/api/users/'+user_id+'/login', {token: token} ).then(handleSuccess, handleError("Error in Authenticating user with token"));
 		}
 
         //register user

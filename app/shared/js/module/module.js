@@ -1,23 +1,25 @@
 /**
  * global declaration of all angular modules Modules related to resource design
  * can be added to this root module & should be added in every file
- * 
+ *
  * @setting global module with ngRoute as Dependancy @ global custom directive @ added
  *          ui.bootstrap.modal to provide angular + bootstrap in built
  *          functionality
  * @UITK component for HTML form components
  */
 (function() {
-	angular.module('Alacarte', [ 'ui.router','uiSlider','ngCookies','rzModule','ui.bootstrap.datepicker','ui.bootstrap.modal','ngStorage','uiGmapgoogle-maps','vsGoogleAutocomplete'])
+	angular.module('Alacarte', [ 'ui.router','uiSlider','ngCookies','rzModule','ui.bootstrap.datepicker','ui.bootstrap.modal','ngStorage','uiGmapgoogle-maps','vsGoogleAutocomplete', 'ngResource'])
 
 	.config(function ($httpProvider, $provide ,uiGmapGoogleMapApiProvider) {
-		$provide.factory('httpInterceptor', function ($q, $rootScope,$localStorage , AUTH_EVENTS) {
+		$provide.factory('httpInterceptor', function ($q, $rootScope, $localStorage , AUTH_EVENTS, $window) {
 			return {
 				'request': function (config) {
 					// intercept and change config: e.g. change the URL
 
-					if ($localStorage.token) {
-						// config.headers.Authorization = 'Basic ' + $localStorage.token;
+					if ($window.localStorage['alakarte-food.token']) {
+						config.headers['x-access-token'] = $window.localStorage['alakarte-food.token'];
+						config.headers['x-user-id'] = $window.localStorage['alakarte-food.user_id'];
+						 //config.headers.Authorization = 'Token token=" ' + $window.localStorage['alakarte-food.token'] +'"';
 					}
 					return config || $q.when(config);
 				},
@@ -32,7 +34,7 @@
 					//$rootScope.$broadcast('httpRequestError', rejection);
 					return $q.reject(rejection);
 				},
-				'responseError': function (rejection) { 
+				'responseError': function (rejection) {
 					$rootScope.$broadcast({
 						401: AUTH_EVENTS.notAuthenticated,
 						403: AUTH_EVENTS.notAuthorized,

@@ -147,9 +147,23 @@ UserSchema.statics.createToken = function(email, callback) {
 				callback(err, null);
 			} else {
 				console.log("about to cb with usr.token.token: " + usr.token.token);
-				callback(false, usr.token.token);//token object, in turn, has a token property :)
+				callback(false, {token: usr.token.token, user_id: usr.user_id});//token object, in turn, has a token property :)
 			}
 		});
+	});
+};
+
+UserSchema.statics.FindByUserIdAndToken = function(user_id, token, callback) {
+	this.findOne({user_id:user_id}, function(err, user){
+		if(err || !user) {
+			callback(err, null);
+		} else {
+			if(user.token.token == token) {
+				callback(false, user);
+			} else {
+				callback(err, null);
+			}
+		}
 	});
 };
 

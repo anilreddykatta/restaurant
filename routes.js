@@ -24,6 +24,7 @@ UserRouter.get('/facebook/callback', passport.authenticate('facebook', { failure
 UserRouter.post('/login',passport.authenticate('local', {session: false}), AuthHandler.LocalSignIn);
 UserRouter.post('/login/social', AuthHandler.LocalSignInWithSocial);
 UserRouter.post('/', AuthHandler.RegisterLocal);
+UserRouter.post('/:user_id/login', AuthHandler.LoginWithToken);
 
 
 //Allakarte Routes
@@ -44,19 +45,34 @@ DishItemRouter.get('/:dish_item_id', allakarteHandler.GetDishItem);
 
 function is_authenticated (req, res, next) {
 	if(Constants.IS_AUTHENTICATION_DISABLED_FOR_REST_API_TESTING) {
+		var token = null;//req.body.token || req.query.token || req.headers['x-access-token'];
+
 		if(req.body.token) {
-			User.findByUserToken(req.body.token, function(err, user){
+			token = req.body.token;
+		} else if(req.query.token) {
+			token = req.query.token;
+		} else if(req.params.token) {
+			token = req.params.token;
+		} else if(req.headers['x-access-token']) {
+			token = req.headers['x-access-token'];
+		}
+
+		var user_id = null;
+
+		if(req.body.user_id) {
+			user_id = req.body.user_id;
+		} else if(req.query.user_id) {
+			user_id = req.query.user_id;
+		} else if(req.params.user_id) {
+			user_id = req.params.user_id;
+		} else if(req.headers['x-user-id']) {
+			user_id = req.headers['x-user-id'];
+		}
+
+		if(token && user_id) {
+			User.FindByUserIdAndToken(user_id, token, function(err, user){
 				if(err || !user) {
 					res.redirect('/#/login');
-				} else {
-					next();
-				}
-			})
-		} else if (req.params.token) {
-			User.findByUserToken(req.params.token, function(err, user){
-				if(err || !user) {
-					res.status(403)
-						.send({'status': false, 'error': 'Auth Error'});
 				} else {
 					next();
 				}

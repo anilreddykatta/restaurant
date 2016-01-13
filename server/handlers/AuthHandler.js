@@ -13,6 +13,7 @@ var AuthHandler = function() {
 	this.ResetPasswordCallback = ResetPasswordCallback;
 	this.SignOut = SignOut;
 	this.LocalSignInWithSocial = LocalSignInWithSocial;
+	this.LoginWithToken  = LoginWithToken;
 };
 
 function googleSignIn(req, res, next) {
@@ -45,11 +46,11 @@ function facebookSignInCallback(req, res, next) {
 
 function localSignIn(req, res, next) {
 	if (req.user) {
-		User.createToken(req.user.email, function(err, usersToken) {
+		User.createToken(req.user.email, function(err, user) {
 			if (err) {
 				res.json({success: false, message: 'Issue generating token'});
 			} else {
-				res.send({'success': true, token : usersToken});
+				res.send({'success': true, user : {token: user.token, user_id: user.user_id, username: user.email}});
 			}
 		});
 	} else {
@@ -63,12 +64,28 @@ function LocalSignInWithSocial(req, res, next) {
 			if(err) {
 				res.json({success: false, message: 'AuthError'});
 			} else {
-				res.send({'success': true, token: user.token.token});
 				req.user = user;
+				res.send({'success': true, user : {token: user.token, user_id: user.user_id, username: user.email}});
 			}
 		});
 	} else {
 		res.json({success: false, message: 'AuthError'});
+	}
+}
+
+function LoginWithToken(req, res, next) {
+	if(req.params.user_id && req.body.token) {
+		User.FindByUserIdAndToken(req.params.user_id, req.body.token, function(err, user){
+			if(err || !user) {
+				res.status(403);
+				res.send({'sucess': false, 'error': err});
+			} else {
+				res.send({'success': true, user : {token: user.token, user_id: user.user_id, username: user.email}});
+			}
+		});
+	} else {
+		res.status(403);
+		res.send({'success': false, message: 'AuthError'});
 	}
 }
 
@@ -82,7 +99,7 @@ function registerLocal(req, res, next) {
 			firstname: req.body.firstname,
 			lastname: req.body.lastname,
 			city: req.body.city,
-			role: req.body.role
+			role: 'guest'
 		}), req.body.password, function(err){
 			if(err) {
 				console.log(err);

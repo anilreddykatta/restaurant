@@ -13,8 +13,12 @@
 			$scope.user["token"] = searchObject["token"];
 			AuthenticationService.LoginUsingToken($scope.user.email, $scope.user.token, function(response){
 				if(response.success) {
+					$scope.user.user_id = response.user.user_id;
 					$(".page-loading").addClass("hidden");
-					AuthenticationService.SetCredentials($scope.user.email, $scope.user.token);
+					AuthenticationService.SetCredentials($scope.user.email, $scope.user.token, $scope.user.user_id);
+					AuthenticationService.saveToken($scope.user.token);
+					AuthenticationService.saveUserId($scope.user.user_id);
+					AuthenticationService.saveUserName($scope.user.email);
 					$rootScope.$broadcast(AUTH_EVENTS.loginSuccess);
 					$state.go('welcome');
 				} else {
@@ -35,8 +39,12 @@
 			$(".page-loading").removeClass("hidden");
 			AuthenticationService.Login($scope.user.email, $scope.user.password, function (response) {
 				if (response.success) {
+					$scope.user.user_id = response.user.user_id;
 					$(".page-loading").addClass("hidden");
-					AuthenticationService.SetCredentials($scope.user.email, $scope.user.password);
+					AuthenticationService.SetCredentials($scope.user.email, $scope.user.token, $scope.user.user_id);
+					AuthenticationService.saveToken($scope.user.token);
+					AuthenticationService.saveUserId($scope.user.user_id);
+					AuthenticationService.saveUserName($scope.user.username);
 					$rootScope.$broadcast(AUTH_EVENTS.loginSuccess);
 					$state.go('welcome');
 				} else {
@@ -59,7 +67,11 @@
 				console.log(response);
 				if (response.success) {
 					$(".page-loading").addClass("hidden");
-					AuthenticationService.SetCredentials($scope.user.email, $scope.user.password);
+					$scope.user.user_id = response.user.user_id;
+					AuthenticationService.SetCredentials($scope.user.email, $scope.user.token, $scope.user.user_id);
+					AuthenticationService.saveToken($scope.user.token);
+					AuthenticationService.saveUserId($scope.user.user_id);
+					AuthenticationService.saveUserName($scope.user.username);
 					$rootScope.$broadcast(AUTH_EVENTS.loginSuccess);
 					$state.go('hostregister.registertabs.introduction');
 				} else {

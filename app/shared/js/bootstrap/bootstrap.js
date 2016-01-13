@@ -1,6 +1,6 @@
-/* bootstrap  Angular app for fetching common resources 
+/* bootstrap  Angular app for fetching common resources
  * removed ng-app from index page to use manual bootstrap
- * @ bootstrap module added 
+ * @ bootstrap module added
  */
 
 var myApplication = angular.module("Alacarte.food", [ 'Alacarte' ]);
@@ -55,14 +55,14 @@ myApplication
 			 $scope.logOut = function()
 			 {
 				 AuthenticationService.ClearCredentials();
-			 }
+			 };
 			 $scope.query = {
 					 dob: '',
 					 name: '',
 					 place: '',
 					 components: {
 						 placeId: '',
-						 streetNumber: '', 
+						 streetNumber: '',
 						 street: '',
 						 city: '',
 						 state: '',
@@ -83,7 +83,7 @@ myApplication
 					 $scope.mainformsubmitted = true;
 					 return ;
 					 }
-				 // call api here to fetch data 
+				 // call api here to fetch data
 				 console.log($scope.query);
 				 $scope.searchButtonText = "Searching";
 
@@ -91,8 +91,8 @@ myApplication
 			            $scope.searchButtonText = "Search";
 			            $state.go('guest');
 			        }, 3000);
-				 
-			 }
+
+			 };
 			 console.log($scope.address);
 			 $scope.state = $state;
 			 $scope.result1 = '';
