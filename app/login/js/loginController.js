@@ -14,8 +14,6 @@
 			AuthenticationService.LoginUsingToken($scope.user.email, $scope.user.token, function(response){
 				if(response.success) {
 					$scope.user.user_id = response.user.user_id;
-					$scope.user.email = response.user.username;
-					$scope.user.token = response.user.token;
 					$(".page-loading").addClass("hidden");
 					AuthenticationService.SetCredentials($scope.user.email, $scope.user.token, $scope.user.user_id);
 					AuthenticationService.saveToken($scope.user.token);
@@ -42,14 +40,12 @@
 			AuthenticationService.Login($scope.user.email, $scope.user.password, function (response) {
 				if (response.success) {
 					$scope.user.user_id = response.user.user_id;
-					$scope.user.user_id = response.user.user_id;
-					$scope.user.email = response.user.username;
 					$scope.user.token = response.user.token;
 					$(".page-loading").addClass("hidden");
 					AuthenticationService.SetCredentials($scope.user.email, $scope.user.token, $scope.user.user_id);
 					AuthenticationService.saveToken($scope.user.token);
 					AuthenticationService.saveUserId($scope.user.user_id);
-					AuthenticationService.saveUserName($scope.user.username);
+					AuthenticationService.saveUserName($scope.user.email);
 					$rootScope.$broadcast(AUTH_EVENTS.loginSuccess);
 					$state.go('welcome');
 				} else {
