@@ -173,4 +173,37 @@ AllakarteHandler.prototype.GetDishItem = function(req, res, next) {
 	}
 };
 
+AllakarteHandler.prototype.GetAllDishItemsMatchingSearchString = function(req, res, next) {
+	if(req.params.allakarte_id && req.params.user_id) {
+		if(req.params.search_string) {
+			Allakarte.FindByAllakarteId(req.params.user_id, req.params.allakarte_id, function(err, allakarte){
+				if(err || !allakarte) {
+					res.send({success: false, error: err});
+				} else {
+					var dish_items = [];
+					for(var index = 0; index < allakarte.dish_items.length; index++) {
+						var dish_item = allakarte.dish_items[index];
+						if(dish_item.name.toLowerCase().indexOf(req.params.search_string.toLowerCase()) != -1) {
+							dish_items.push(dish_item);
+						}
+					}
+					res.send({success: true, dish_items : dish_items});
+				}
+			});
+		} else {
+			Allakarte.FindByAllakarteId(req.params.user_id, req.params.allakarte_id, function(err, allakarte){
+				if(err || !allakarte) {
+					res.send({success: false, error: err});
+				} else {
+					var dish_items = [];
+					for(var index = 0; index < allakarte.dish_items.length; index++) {
+						dish_items.push(allakarte.dish_items[index]);
+					}
+					res.send({success: true, dish_items : dish_items});
+				}
+			});
+		}
+	}
+};
+
 module.exports = new AllakarteHandler();

@@ -37,6 +37,8 @@ AllakarteRouter.put('/:allakarte_id', AllakarteHandler.UpdateAllakarte);
 //DishItemRoutes
 DishItemRouter.post('/', AllakarteHandler.AddDishItemToExistingAllakarte);
 DishItemRouter.get('/', AllakarteHandler.GetAllDishItemsForAllkarte);
+DishItemRouter.get('/name/', AllakarteHandler.GetAllDishItemsMatchingSearchString);
+DishItemRouter.get('/name/:search_string', AllakarteHandler.GetAllDishItemsMatchingSearchString);
 DishItemRouter.delete('/:dish_item_id', AllakarteHandler.DeleteDishItem);
 DishItemRouter.put('/:dish_item_id', AllakarteHandler.UpdateDishItem);
 DishItemRouter.get('/:dish_item_id', AllakarteHandler.GetDishItem);

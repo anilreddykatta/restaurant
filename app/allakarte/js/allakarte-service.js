@@ -16,6 +16,7 @@
 		service.UpdateDishItem = UpdateDishItem;
 		service.RemoveDishItem = RemoveDishItem;
 		service.CreateDishItem = CreateDishItem;
+		service.GetAllDishItems =  GetAllDishItems;
 		return service;
 
 		function CreateAllkarte(user_id, callback) {
@@ -24,6 +25,10 @@
 
 		function GetAllAllkartes ( user_id, callback ) {
 			return $http.get( '/api/users/' + user_id + "/allakartes" ).then ( handleSuccess, handleError ( "Error in fetching allakartes" ) );
+		}
+
+		function GetAllDishItems(user_id, allakarte_id, search_text_for_name, callback) {
+			return $http.get('/api/users/' + user_id + "/allakartes/"+allakarte_id+"/dish_items/name/"+search_text_for_name ).then(handleSuccess, handleError("Error in fetching dish items"));
 		}
 
 		function RemoveDishItem (user_id, allakarte_id, dish_item, callback) {

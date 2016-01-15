@@ -16,13 +16,13 @@
 				<h3 class="modal-title">Confirm Delete</h3>
 			</div>
 			<div class="modal-body">
-				Are you sure you want to delete {{dish_item.name}} ?
+				Are you sure you want to delete <b>{{dish_item.name}}</b> ?
 			</div>
 			<div class="modal-footer">
 				<div class="col-sm-3"></div>
 				<div class="col-sm-4">
 					<button class="btn btn-danger" type="button" ng-click="delete()">Delete</button>
-					<button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+					<button class="btn btn-primary" type="button" ng-click="cancel()">Cancel</button>
 				</div>
 				<div class="col-sm-5"></div>
 			</div>
@@ -40,7 +40,7 @@
 			<div class="modal-body">
 				<div class="container-fluid">
 					<form class="form-horizontal">
-						<div class="form-group">
+						<div class="form-group label-floating">
 							<label for="dish_item_name"  class="col-sm-4 control-label modal-label">Name</label>
 							<div class="col-sm-8">
 								<input type="text" class="form-control" ng-model="dish_item.name" id="dish_item_name" placeholder="Name"/>
@@ -82,9 +82,9 @@
 			</div>
 			<div class="modal-footer">
 				<div class="col-sm-3"></div>
-				<div class="col-sm-4">
+				<div class="col-sm-4 form-group">
 					<button class="btn btn-primary" type="button" ng-click="save()">Save</button>
-					<button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+					<button class="btn btn-default" type="button" ng-click="cancel()">Cancel</button>
 				</div>
 				<div class="col-sm-5"></div>
 			</div>
@@ -116,7 +116,7 @@
 				<tbody>
 					<tr ng-repeat-start="dish_item in allakarte.dish_items" data-toggle="collapse" data-target="#demo{{$index}}" class="accordion-toggle">
 						<td class="col-md-1">
-							<span>{{$index}}</span>
+							<span>{{$index + 1}}</span>
 							<button class="btn btn-default btn-xs" ng-show="dish_item.expanded" ng-click="dish_item.expanded = false"><i class="material-icons">expand_less</i></button>
 							<button class="btn btn-default btn-xs" ng-show="!dish_item.expanded" ng-click="dish_item.expanded = true"><i class="material-icons">expand_more</i></button>
 						</td>
@@ -174,6 +174,9 @@
 			<div class="pull-left">
 				<button class="btn-default btn btn-primary" ng-click="AddItem(allakarte)"><i class="fa fa-plus"></i>&nbsp;&nbsp;Create Dish Item</button>
 			</div>
+			<ul class="pagination pull-right" ng-show="showPagination">
+				<li><a ng-click="goToPage($index)">{{$index + 1}}</a></li>
+			</ul>
 		</div>
 	</div>
 </div>

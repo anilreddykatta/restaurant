@@ -13,12 +13,27 @@
 				$scope.test = null;
 				$scope.pagination = [];
 				$scope.PAGINATION_LIMIT = 5;
+				$scope.showPagination = false;
 
 				$scope.$watch('searchText', function(newValue, oldValue){
 					console.log(newValue);
 					console.log(oldValue);
-					//TODO: fech dish items for allakarte which matches with typed name
-
+					AllakarteService.GetAllDishItems(AuthenticationService.getUserId(), $scope.allakarte.allakarte_id, newValue ).then(function(response){
+						if(response.success) {
+							$scope.allakarte.dish_items = [];
+							if(response.dish_items) {
+								for(var dish_item_index = 0; dish_item_index < response.dish_items.length; dish_item_index++) {
+									response.dish_items[dish_item_index]['expanded'] = false;
+									$scope.allakarte.dish_items.push(response.dish_items[dish_item_index]);
+								}
+								$scope.allakarte['expanded'] = true;
+							} else {
+								$scope.allakarte['expanded'] = false;
+							}
+						} else {
+							console.log("Error in fetching dish items based on search queries");
+						}
+					});
 				});
 
 				AllakarteService.GetAllAllkartes ( AuthenticationService.getUserId () ).then ( function ( response ) {
@@ -46,6 +61,18 @@
 							$scope.allakarte = response.allakarte;
 						}
 					});
+				};
+
+				$scope.initPagination = function() {
+					if($scope.allakarte.dish_items && $scope.allakarte.dish_items.length > $scope.PAGINATION_LIMIT) {
+						$scope.showPagination = true;
+					} else {
+						$scope.showPagination = false;
+					}
+				};
+
+				$scope.goToPage = function(pageNumber) {
+					//TODO: implement pagination logic, should we fetch results as required or just manipulate results in javascript
 				};
 
 				$scope.CreateModalInstance = function() {
