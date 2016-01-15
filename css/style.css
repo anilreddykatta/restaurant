@@ -677,3 +677,12 @@ a.text-muted {
     opacity: 1;
     filter: alpha(opacity=100);
 }
+
+.price-class {
+	width: 65% !important;
+	padding-left: 1.5% !important;
+}
+
+.modal-label {
+	width: 25% !important;
+}

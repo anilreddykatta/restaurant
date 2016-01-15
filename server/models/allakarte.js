@@ -6,6 +6,8 @@ var Mongoose = require("mongoose");
 var Schema = Mongoose.Schema;
 var User = require("./user");
 var UUID = require("node-uuid");
+var Photo = require("./photo");
+var AllakarteUtils = require("./../utils/AllakarteHandlerUtils");
 
 var DishItemSchema = new Schema({
 	dish_item_id: {type: String, default: function getUUID(){
@@ -14,7 +16,7 @@ var DishItemSchema = new Schema({
 	name: {type: String, required: true},
 	description: {type: String, required: false},
 	price: {type: String, required: false},
-	photo_links: {type: [String], required: false},
+	photo_links: {type: [Photo], required: false},
 	allergens: {type: String, required: false},
 	advance_booking_time: {type: Number, required: false},
 	is_show_or_cooking_recipe_shared: {type: Boolean, required: false, default: false}
@@ -113,12 +115,12 @@ AllaKarteSchema.statics.UpdateDishItem = function(allkarte_id, dish_item_id, p_d
 				var dish_item = allakarte.dish_items[index];
 				if(dish_item.dish_item_id == dish_item_id) {
 					found_value = true;
-					allakarte.dish_items[index] = p_dish_item;
+					AllakarteUtils.UpdateOneModalFromJSONData(allakarte.dish_items[index], p_dish_item);
 					allakarte.save(function(err, allakarte){
 						if(err || !allakarte) {
-							callback(false, allakarte);
+							callback(false, null);
 						} else {
-							callback(err, null);
+							callback(err, allakarte);
 						}
 					});
 				}

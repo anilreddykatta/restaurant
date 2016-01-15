@@ -37,13 +37,13 @@ AllakarteHandler.prototype.AddDishItemToExistingAllakarte = function(req, res, n
 			if(!allakarte.dish_items) {
 				allakarte.dish_items = [];
 			}
-			var dish_item = AllakarteUtils.CreateDishItemFromRequestBody(req.body);
+			var dish_item = AllakarteUtils.CreateDishItemFromRequestBody(req.body.dish_item);
 			allakarte.dish_items.push(dish_item);
 			allakarte.save(function(err, allakarte){
 				if(err) {
 					res.send({'error': err, 'status': false});
 				} else {
-					res.send({'success': true, 'dish_items': allakarte.dish_items});
+					res.send({'success': true, 'allakarte': allakarte});
 				}
 			});
 		});
@@ -56,9 +56,9 @@ AllakarteHandler.prototype.GetAllDishItemsForAllkarte = function(req, res, next)
 	if(req.params.allakarte_id && req.params.user_id) {
 		Allakarte.FindByAllakarteId(req.params.user_id, req.params.allakarte_id, function(err, allakarte){
 			if(err || !allakarte || !allakarte.dish_items) {
-				res.send({'sucess': false, 'error': err});
+				res.send({'success': false, 'error': err});
 			} else {
-				res.send({'sucess': true, 'dish_items': allakarte.dish_items});
+				res.send({'success': true, 'allakarte': allakarte});
 			}
 		});
 	} else {
@@ -70,9 +70,9 @@ AllakarteHandler.prototype.GetAllkarte = function(req, res, next) {
 	if(req.params.allakarte_id && req.params.user_id) {
 		Allakarte.FindByAllakarteId(req.params.user_id, req.params.allakarte_id, function(err, allakarte){
 			if(err || !allakarte) {
-				res.send({'sucess': false, 'error': err});
+				res.send({'success': false, 'error': err});
 			} else {
-				res.send({'sucess': true, 'allakarte': allakarte});
+				res.send({'success': true, 'allakarte': allakarte});
 			}
 		});
 	} else {
@@ -84,9 +84,9 @@ AllakarteHandler.prototype.GetAllKartes = function(req, res, next) {
 	if(req.params.user_id) {
 		Allakarte.FindByUserId(req.params.user_id, function(err, allakartes) {
 			if(err || !allakartes) {
-				res.send({'sucess': false, 'error': err});
+				res.send({'success': false, 'error': err});
 			} else {
-				res.send({'sucess': true, 'allakartes': allakartes});
+				res.send({'success': true, 'allakartes': allakartes});
 			}
 		});
 	} else {
@@ -98,9 +98,9 @@ AllakarteHandler.prototype.UpdateDishItem = function(req, res, next) {
 	if(req.params.allakarte_id && req.params.user_id && req.params.dish_item_id) {
 		Allakarte.UpdateDishItem(req.params.allakarte_id, req.params.dish_item_id, req.body.dish_item, function(err, allakarte) {
 			if(err || !allakarte) {
-				res.send({'sucess' : false, 'error' : err});
+				res.send({'success' : false, 'error' : err});
 			} else {
-				res.send({'sucess': true, 'allakarte': allakarte});
+				res.send({'success': true, 'allakarte': allakarte});
 			}
 		});
 	} else {
@@ -112,9 +112,9 @@ AllakarteHandler.prototype.DeleteDishItem = function(req, res, next) {
 	if(req.params.allakarte_id && req.params.user_id && req.params.dish_item_id) {
 		Allakarte.DeleteDishItemFromAllakarte(req.params.allakarte_id, req.params.dish_item_id, function(err, allakarte){
 			if(err || !allakarte) {
-				res.send({'sucess': false, 'error': err});
+				res.send({'success': false, 'error': err});
 			} else {
-				res.send({'sucess': true, 'allakarte': allakarte});
+				res.send({'success': true, 'allakarte': allakarte});
 			}
 		});
 	} else {
@@ -126,9 +126,9 @@ AllakarteHandler.prototype.DeleteAllakarte = function(req, res, next) {
 	if(req.params.allakarte_id && req.params.user_id) {
 		Allakarte.DeleteAllakarte(req.params.allakarte_id, function(err, result){
 			if(err == false) {
-				res.send({'sucess': true});
+				res.send({'success': true});
 			} else {
-				res.send({'sucess': false});
+				res.send({'success': false});
 			}
 		});
 	} else {
@@ -144,13 +144,13 @@ AllakarteHandler.prototype.UpdateAllakarte = function(req, res, next) {
 				allakarte.dish_items = req.body.dish_items;
 				allakarte.save(function(err, allakarte){
 					if(err || !allakarte) {
-						res.send({'sucess': true, 'allakarte': allakarte});
+						res.send({'success': true, 'allakarte': allakarte});
 					}
 				});
-				res.send({'sucess': true, 'allakarte': allakarte});
+				res.send({'success': true, 'allakarte': allakarte});
 			} else {
 				res.status(400);
-				res.send({'sucess': false, 'error': 'Nothing to update'});
+				res.send({'success': false, 'error': 'Nothing to update'});
 			}
 		});
 	} else {
@@ -162,14 +162,14 @@ AllakarteHandler.prototype.GetDishItem = function(req, res, next) {
 	if(req.params.allakarte_id && req.params.dish_item_id) {
 		Allakarte.FindByDishItemId(req.params.dish_item_id, function(err, dish_item){
 			if(err || !dish_item) {
-				res.send({'sucess': false, 'error': err});
+				res.send({'success': false, 'error': err});
 			} else {
-				res.send({'sucess': true, 'dish_item': dish_item});
+				res.send({'success': true, 'dish_item': dish_item});
 			}
 		});
 	} else {
 		res.status(400);
-		res.send({'sucess': false, 'error': 'Not a valid request'});
+		res.send({'success': false, 'error': 'Not a valid request'});
 	}
 };
 

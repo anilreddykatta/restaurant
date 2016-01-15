@@ -12,19 +12,22 @@
 	background-color: rgb(54, 163, 153);
 }
 
+.my-profile {
+	background-color: rgb(54, 163, 153) !important;
+	color: white !important;
+}
+
 .search-btn input[name="location"] {
 	height: auto;
 	width: 357px;
 	border: none;
-	font-family: RobotoDraft;
-	color:;
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 }
 
 .override-col-margin {
-	padding: 0px;
+	padding: 0;
 }
 
 .col-margin-top {
@@ -73,7 +76,7 @@
     padding: 5px;
 }
 
-.btn-default:clicked, .btn-default.clicked {
+.btn-default.clicked, .btn-default.clicked {
 	color: #333;
 	background-color: #e6e6e6;
 	border-color: #adadad;
@@ -108,8 +111,8 @@
 }
 
 .override-col-margin {
-	padding-left: 0px;
-	padding-right: 0px;
+	padding-left: 0;
+	padding-right: 0;
 }
 
 .right-inner-addon {
@@ -118,7 +121,7 @@
 
 .right-inner-addon i {
 	position: absolute;
-	right: 0px;
+	right: 0;
 	padding: 10px 20px;
 	pointer-events: none;
 }
@@ -162,6 +165,30 @@
 
 .nav>li>a:hover, .nav>li>a:focus {
 	background-color: rgba(0, 150, 136, 0.08);
-	color: none;
 	text-decoration: none;
 }
+
+.border-zero {
+	border: 0 !important;
+}
+
+.centered-table td, th {
+	text-align: center !important;
+}
+
+.width-5-percent {
+	width: 5% !important;
+}
+
+.width-10-percent {
+	width: 12% !important;
+}
+
+.wrap-word-class {
+	word-wrap: break-word !important;
+}
+
+.margin-bottom-0-5-percent {
+	margin-bottom: 0.5% !important;
+}
+

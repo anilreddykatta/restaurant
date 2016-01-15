@@ -11,11 +11,31 @@
 
 	function AlakarteService ( $http ) {
 		var service = {};
+		service.CreateAllkarte = CreateAllkarte;
 		service.GetAllAllkartes = GetAllAllkartes;
+		service.UpdateDishItem = UpdateDishItem;
+		service.RemoveDishItem = RemoveDishItem;
+		service.CreateDishItem = CreateDishItem;
 		return service;
 
+		function CreateAllkarte(user_id, callback) {
+			return $http.post('/api/users/' + user_id + "/allakartes" ).then(handleSuccess, handleError("Error in creating allakarte"));
+		}
+
 		function GetAllAllkartes ( user_id, callback ) {
-			return $http.get ( '/api/users/' + user_id + "/allakartes" ).then ( handleSuccess, handleError ( "Error in fetching allakartes" ) );
+			return $http.get( '/api/users/' + user_id + "/allakartes" ).then ( handleSuccess, handleError ( "Error in fetching allakartes" ) );
+		}
+
+		function RemoveDishItem (user_id, allakarte_id, dish_item, callback) {
+			return $http.delete('/api/users/' + user_id + "/allakartes/"+allakarte_id+"/dish_items/"+dish_item.dish_item_id ).then(handleSuccess, handleError("Error in deleting"));
+		}
+
+		function UpdateDishItem (user_id, allakarte_id, dish_item, callback) {
+			return $http.put('/api/users/' + user_id + "/allakartes/"+allakarte_id+"/dish_items/"+dish_item.dish_item_id, {dish_item: dish_item}).then(handleSuccess, handleError("Error in Updating"));
+		}
+
+		function CreateDishItem(user_id, allakarte_id, dish_item, callback) {
+			return $http.post('/api/users/' + user_id + "/allakartes/"+allakarte_id+"/dish_items", {dish_item: dish_item}).then(handleSuccess, handleError("Error in Updating"));
 		}
 
 		function handleSuccess ( res ) {

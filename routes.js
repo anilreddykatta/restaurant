@@ -12,7 +12,7 @@ var UserRouter = express.Router({mergeParams: true});
 var AllakarteRouter = express.Router({mergeParams: true});
 var DishItemRouter = express.Router({mergeParams: true});
 
-AllakarteRouter.use('/:allakarte_id/dishitems', is_authenticated, DishItemRouter);
+AllakarteRouter.use('/:allakarte_id/dish_items', is_authenticated, DishItemRouter);
 UserRouter.use('/:user_id/allakartes', is_authenticated, AllakarteRouter);
 ApiRouter.use('/api/users/', UserRouter);
 
@@ -46,7 +46,6 @@ DishItemRouter.get('/:dish_item_id', AllakarteHandler.GetDishItem);
 function is_authenticated (req, res, next) {
 	if(Constants.IS_AUTHENTICATION_DISABLED_FOR_REST_API_TESTING) {
 		var token = null;//req.body.token || req.query.token || req.headers['x-access-token'];
-
 		if(req.body.token) {
 			token = req.body.token;
 		} else if(req.query.token) {

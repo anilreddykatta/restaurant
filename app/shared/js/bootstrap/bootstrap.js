@@ -2,6 +2,15 @@
  * removed ng-app from index page to use manual bootstrap
  * @ bootstrap module added
  */
+(function(orig) {
+	angular.modules = [];
+	angular.module = function() {
+		if (arguments.length > 1) {
+			angular.modules.push(arguments[0]);
+		}
+		return orig.apply(null, arguments);
+	}
+})(angular.module);
 
 var myApplication = angular.module("Alacarte.food", [ 'Alacarte' ]);
 var initInjector = angular.injector([ "ng" ]);
@@ -142,4 +151,5 @@ myApplication
 			 host: 'host'
 		 });
 
-
+console.log("Modules in the applciation bootstrap");
+console.log(angular.modules);

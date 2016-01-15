@@ -148,60 +148,50 @@
 
 </div>
 
-<div ng-controller="WelcomeController" class="modal fade"
-	modal="IntroModal" id="infoModal" tabindex="-1" role="dialog"
-	aria-labelledby="myModalLabel" aria-hidden="false"
-	style="display: block;">
-	<div class="modal-dialog" role="document">
-		<div class="modal-content info-modal-content modal-content-four">
-			<div class="modal-header">
-				<button type="button" ng-click="close()" class="close"
-					data-dismiss="modal">
-					<span aria-hidden="true"><i class="fa fa-times"
-						style="font-size: 30px;"></i></span><span class="sr-only">Close</span>
-				</button>
-				<h4 class="modal-title" id="myModalLabel">Lets Start from Here!</h4>
-			</div>
-			<div class="modal-body">
+<script type="text/ng-template" id="infoModal.html">
+	<div class="modal-header modal-content info-modal-content modal-content-four border-zero">
+		<button type="button" ng-click="close()" class="close"
+				data-dismiss="modal">
+		<span aria-hidden="true"><i class="fa fa-times"
+									style="font-size: 30px;"></i></span><span class="sr-only">Close</span>
+		</button>
+		<h4 class="modal-title" id="myModalLabel">Lets Start from Here!</h4>
+	</div>
+	<div class="modal-body info-modal-content">
 
-				<div class=" panel-contrast text-contrast">
+		<div class=" panel-contrast text-contrast">
 
-					<h2 class="screen-reader-only">How It Works</h2>
+			<h2 class="screen-reader-only">How It Works</h2>
 
-					<div class="row space-top-8 text-center">
+			<div class="row space-top-8 text-center">
 
-						<div class="how-it-works__step how-it-works__step-one col-md-6">
-							<div class="panel-body">
-								<a href="#/guest"><img
-									src="//s3.amazonaws.com/bookalokal-assets/icons/plate.png"
-									alt="Plate icon"></a>
-								<h3>Discover Amazing Places</h3>
-								<p>Find hosts Who can provide amazing food around the world</p>
+				<div class="how-it-works__step how-it-works__step-one col-md-6">
+					<div class="panel-body">
+						<a href="#/guest"><img
+								src="//s3.amazonaws.com/bookalokal-assets/icons/plate.png"
+								alt="Plate icon"></a>
+						<h3>Discover Amazing Places</h3>
+						<p>Find hosts Who can provide amazing food around the world</p>
 
-							</div>
-						</div>
-
-
-						<div class="how-it-works__step how-it-works__step-three col-md-6">
-							<div class="panel-body">
-								<a href="#/host"><img
-									src="//s3.amazonaws.com/bookalokal-assets/icons/chefhat.png"
-									alt="Chef's hat icon"></a>
-								<h3>Become Host</h3>
-								<p>
-									Feel at home, anywhere you go in the world. <a
-										href="/help/getting-started/how-to-travel">Learn more</a>
-									about how to get good food
-								</p>
-
-							</div>
-						</div>
 					</div>
 				</div>
 
 
+				<div class="how-it-works__step how-it-works__step-three col-md-6">
+					<div class="panel-body">
+						<a href="#/host"><img
+								src="//s3.amazonaws.com/bookalokal-assets/icons/chefhat.png"
+								alt="Chef's hat icon"></a>
+						<h3>Become Host</h3>
+						<p>
+							Feel at home, anywhere you go in the world. <a
+								href="/help/getting-started/how-to-travel">Learn more</a>
+							about how to get good food
+						</p>
 
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
+</script>

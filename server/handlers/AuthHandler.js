@@ -1,5 +1,6 @@
 var User = require('../models/user')
-	,MailHandler = require('./MailHandler');
+	,MailHandler = require('./MailHandler')
+	,Allakarte = require('./../models/allakarte');
 
 var AuthHandler = function() {
 	this.GoogleSignIn = googleSignIn;
@@ -78,7 +79,7 @@ function LoginWithToken(req, res, next) {
 		User.FindByUserIdAndToken(req.params.user_id, req.body.token, function(err, user){
 			if(err || !user) {
 				res.status(403);
-				res.send({'sucess': false, 'error': err});
+				res.send({'success': false, 'error': err});
 			} else {
 				res.send({'success': true, user : {token: user.token, user_id: user.user_id, username: user.email}});
 			}

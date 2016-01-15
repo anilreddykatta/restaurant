@@ -7,10 +7,12 @@
  *          functionality
  * @UITK component for HTML form components
  */
-(function() {
-	angular.module('Alacarte', [ 'ui.router','uiSlider','ngCookies','rzModule','ui.bootstrap.datepicker','ui.bootstrap.modal','ngStorage','uiGmapgoogle-maps','vsGoogleAutocomplete', 'ngResource'])
 
-	.config(function ($httpProvider, $provide ,uiGmapGoogleMapApiProvider) {
+
+(function() {
+	//'uiGmapgoogle-maps', uiGmapGoogleMapApiProvider
+	angular.module('Alacarte', ['ngAnimate', 'ui.bootstrap', 'ui.router','uiSlider','ngCookies','rzModule','ngStorage','vsGoogleAutocomplete', 'ngResource'])
+	.config(function ($httpProvider, $provide ) {
 		$provide.factory('httpInterceptor', function ($q, $rootScope, $localStorage , AUTH_EVENTS, $window) {
 			return {
 				'request': function (config) {
@@ -19,7 +21,8 @@
 					if ($window.localStorage['alakarte-food.token']) {
 						config.headers['x-access-token'] = $window.localStorage['alakarte-food.token'];
 						config.headers['x-user-id'] = $window.localStorage['alakarte-food.user_id'];
-						 //config.headers.Authorization = 'Token token=" ' + $window.localStorage['alakarte-food.token'] +'"';
+						 //config.headers.Authorization = 'Token token=" ' +
+						 // $window.localStorage['alakarte-food.token'] +'"';
 					}
 					return config || $q.when(config);
 				},
@@ -46,13 +49,14 @@
 			};
 		});
 		$httpProvider.interceptors.push('httpInterceptor');
-		uiGmapGoogleMapApiProvider.configure({
-			key: '',
-			v: '3',
-			libraries: 'weather,geometry,visualization'
-		});
+		//uiGmapGoogleMapApiProvider.configure({
+		//	key: '',
+		//	v: '3',
+		//	libraries: 'weather,geometry,visualization'
+		//});
 	});
-
-
-
+	console.log("Modules in the applciation");
+	angular.module ( 'Alacarte' )[ '_invokeQueue' ].forEach ( function ( value ) { console.log ( value[ 2 ][ 1 ] ) } )
 })();
+
+
