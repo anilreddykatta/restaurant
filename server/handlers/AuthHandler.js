@@ -1,6 +1,8 @@
 var User = require('../models/user')
 	,MailHandler = require('./MailHandler')
-	,Allakarte = require('./../models/allakarte');
+	,Allakarte = require('./../models/allakarte')
+	,Crypto = require('crypto')
+	,Constants = require('./../../constants');
 
 var AuthHandler = function() {
 	this.GoogleSignIn = googleSignIn;
@@ -15,6 +17,7 @@ var AuthHandler = function() {
 	this.SignOut = SignOut;
 	this.LocalSignInWithSocial = LocalSignInWithSocial;
 	this.LoginWithToken  = LoginWithToken;
+	this.ChangePassword = ChangePassword;
 };
 
 function googleSignIn(req, res, next) {
@@ -107,8 +110,25 @@ function registerLocal(req, res, next) {
 				console.log("Error Registering User");
 				res.send("Not able to register user");
 			}
-			MailHandler.SendRegisterMail(req.body.email,true);
-			res.send({'success': true});
+			var user = User.findOne({email : req.body.email}, function(err, user) {
+				if(err || !user) {
+					console.log("Inside");
+				} else {
+					var allakarte = new Allakarte();
+					allakarte.user_id = user.user_id;
+					allakarte.dish_items = [];
+					allakarte.save(function(err, allakarte) {
+						if(err || !allakarte) {
+							console.log("Failed to create allakarte");
+						} else {
+							console.log("Created allakarte for user when registered");
+						}
+					});
+				}
+				MailHandler.SendRegisterMail(req.body.email,true);
+				res.send({'success': true});
+			});
+
 		}
 	);
 }
@@ -134,6 +154,42 @@ function SignOut(req, res, next) {
 			console.log(req.body.email+ " successfully logged out");
 		});
 	}
+}
+
+function ChangePassword(req, res, next) {
+	console.log(req.body);
+	if(req.body.password) {
+		User.findUserByEmailId(req.body.email, function(err, user) {
+			var currentHash = user.hash;
+			var currentSalt = user.salt;
+			var regenHash;
+			Crypto.randomBytes(Constants.CRYPO_SETTINGS.SALT_LEN, function(err, buf) {
+				if(err) {
+					res.send({success : false, error: 'Failed to change'});
+				} else {
+					var salt = buf.toString('hex');
+					Crypto.pbkdf2(req.body.password, salt, Constants.CRYPO_SETTINGS.ITERATIONS, Constants.CRYPO_SETTINGS.KEY_LENGTH, function(err, hashRow) {
+						if(err) {
+							res.send({success : false, error: 'Failed to change'});
+						}
+						var newHash = new Buffer(hashRow ).toString('hex');
+						user.salt = salt;
+						user.hash = newHash;
+						user.save(function(err){
+							if(err) {
+								res.send({success : false, error: 'Failed to change'});
+							} else {
+								res.send({success: true, message: 'Successfully changed password'});
+							}
+						});
+					});
+				}
+			});
+		});
+	} else {
+		res.send({success: false, error: 'No password given to change'});
+	}
+
 }
 
 module.exports = new AuthHandler();

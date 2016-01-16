@@ -105,7 +105,7 @@
 				return;
 			}
 			$(".page-loading").removeClass("hidden");
-			UserService.UserchangePassword($scope.user.newpassword1,$rootScope.resetuseremail,$rootScope.userresettoken)
+			UserService.UserChangePassword($scope.user.newpassword1,$rootScope.resetuseremail,$rootScope.userresettoken)
 			.then(function(response) {
 				$(".page-loading").addClass("hidden");
 			});

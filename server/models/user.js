@@ -7,6 +7,7 @@ var Mongoose = require("mongoose")
 	, Constants = require('../../constants')
 	, UUID = require("node-uuid");
 
+
 var Token = new Schema({
 	token: {type: String},
 	date_created: {type: Date, default: Date.now}

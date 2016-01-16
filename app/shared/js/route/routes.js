@@ -123,8 +123,7 @@ function config ( $stateProvider, $urlRouterProvider, USER_ROLES ) {
 					if ( AuthenticationService.changepassword ( $stateParams.email, $stateParams.token ) ) {
 						//$state.go('home');
 						console.log ( $stateParams.email );
-					}
-					;
+					};
 				} ]
 
 			} )

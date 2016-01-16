@@ -7,7 +7,7 @@ var FACEBOOK_APP_ID = '1086250834720928';
 var FACEBOOK_SECRET_KEY = '888f1a92dd4b0341e7b62b21d553704c';
 var FACEBOOK_CALLBACK_URL = '/api/users/facebook/callback';
 
-var DEV_DOMAIN = 'http://localhost:5000';
+var DEV_DOMAIN = 'ec2-52-11-38-198.us-west-2.compute.amazonaws.com:5000';
 
 var TOKEN_SECRET = 'awesomeallakarte';
 //for Dev and production
@@ -18,6 +18,10 @@ var RESET_TOKEN_IN_HOURS = 6;
 
 var GMAIL_SMTP_EMAIL_ID = 'alacarte4313@gmail.com';
 var GMAIL_SMTP_PASSWORD = 'alacarte2015';
+
+var SALT_LEN = 32;
+var ITERATIONS = 25000;
+var KEY_LENGTH = 512;
 
 
 module.exports =
@@ -36,6 +40,11 @@ module.exports =
         GMAIL_SMTP_EMAIL_ID : GMAIL_SMTP_EMAIL_ID,
         GMAIL_SMTP_PASSWORD : GMAIL_SMTP_PASSWORD
     },
+	CRYPO_SETTINGS : {
+		SALT_LEN : SALT_LEN,
+		ITERATIONS : ITERATIONS,
+		KEY_LENGTH : KEY_LENGTH
+	},
     DEV_DOMAIN : DEV_DOMAIN,
     TOKEN_SECRET: TOKEN_SECRET,
     MONGO_DB_URI: MONGO_DB_URI,

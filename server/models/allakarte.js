@@ -132,5 +132,5 @@ AllaKarteSchema.statics.UpdateDishItem = function(allkarte_id, dish_item_id, p_d
 	});
 };
 
-module.exports = Mongoose.model("AllaKarte", AllaKarteSchema);
 module.exports.DishItem = Mongoose.model('DishItem', DishItemSchema);
+module.exports = Mongoose.model("AllaKarte", AllaKarteSchema);

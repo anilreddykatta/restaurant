@@ -11,5 +11,4 @@ function EmailTemplate(email, token) {
 	return "<h1>"+ Constants.DEV_DOMAIN+"/#/changepassword/"+email+"/"+token;
 }
 
-
 module.exports = ResetPasswordEmailTemplate;

@@ -25,6 +25,8 @@ UserRouter.post('/login',passport.authenticate('local', {session: false}), AuthH
 UserRouter.post('/login/social', AuthHandler.LocalSignInWithSocial);
 UserRouter.post('/', AuthHandler.RegisterLocal);
 UserRouter.post('/:user_id/login', AuthHandler.LoginWithToken);
+UserRouter.post('/login/changepassword', AuthHandler.ChangePassword);
+UserRouter.post('/login/resetpassword', AuthHandler.ResetPassword);
 
 
 //Allakarte Routes

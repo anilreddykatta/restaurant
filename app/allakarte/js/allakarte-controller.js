@@ -15,27 +15,6 @@
 				$scope.PAGINATION_LIMIT = 5;
 				$scope.showPagination = false;
 
-				$scope.$watch('searchText', function(newValue, oldValue){
-					console.log(newValue);
-					console.log(oldValue);
-					AllakarteService.GetAllDishItems(AuthenticationService.getUserId(), $scope.allakarte.allakarte_id, newValue ).then(function(response){
-						if(response.success) {
-							$scope.allakarte.dish_items = [];
-							if(response.dish_items) {
-								for(var dish_item_index = 0; dish_item_index < response.dish_items.length; dish_item_index++) {
-									response.dish_items[dish_item_index]['expanded'] = false;
-									$scope.allakarte.dish_items.push(response.dish_items[dish_item_index]);
-								}
-								$scope.allakarte['expanded'] = true;
-							} else {
-								$scope.allakarte['expanded'] = false;
-							}
-						} else {
-							console.log("Error in fetching dish items based on search queries");
-						}
-					});
-				});
-
 				AllakarteService.GetAllAllkartes ( AuthenticationService.getUserId () ).then ( function ( response ) {
 					if(response.success) {
 						$scope.allakarte = response.allakartes[0];
@@ -45,6 +24,28 @@
 							}
 							$scope.allakarte['expanded'] = true;
 							//TODO: Logic for pagination limit
+
+							//Adding watch in case we have some dish_items otherwise doesn't make any sense
+							$scope.$watch('searchText', function(newValue, oldValue){
+								console.log(newValue);
+								console.log(oldValue);
+								AllakarteService.GetAllDishItems(AuthenticationService.getUserId(), $scope.allakarte.allakarte_id, newValue ).then(function(response){
+									if(response.success) {
+										$scope.allakarte.dish_items = [];
+										if(response.dish_items) {
+											for(var dish_item_index = 0; dish_item_index < response.dish_items.length; dish_item_index++) {
+												response.dish_items[dish_item_index]['expanded'] = false;
+												$scope.allakarte.dish_items.push(response.dish_items[dish_item_index]);
+											}
+											$scope.allakarte['expanded'] = true;
+										} else {
+											$scope.allakarte['expanded'] = false;
+										}
+									} else {
+										console.log("Error in fetching dish items based on search queries");
+									}
+								});
+							});
 
 						} else {
 							$scope.allakarte['expanded'] = false;
