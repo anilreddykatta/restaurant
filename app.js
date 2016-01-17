@@ -59,7 +59,7 @@ var allowCrossDomain = function(req, res, next) {
 
 mongoose.connect(Constants.MONGO_DB_URI, function (error) {
     if (error) console.error(error);
-    else console.log('mongo connected');
+    else console.log('mongo connected ..................................');
 });
 
 
