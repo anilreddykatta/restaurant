@@ -12,7 +12,7 @@
     "express-session": "~1.12.1",
 	"express-logger": "~0.0.3",
     "jwt-simple": "~0.3.1",
-    "mongoose": "~4.0.6",
+    "mongoose": "~4.1.9",
     "passport": "~0.1.17",
     "passport-facebook": ">= 0.0.0",
     "passport-google-oauth": "~0.1.5",
