@@ -9,6 +9,7 @@ var FACEBOOK_CALLBACK_URL = '/api/users/facebook/callback';
 
 var DEV_DOMAIN = 'http://ec2-52-11-38-198.us-west-2.compute.amazonaws.com:5000';
 
+
 var TOKEN_SECRET = 'awesomeallakarte';
 //for Dev and production
 var MONGO_DB_URI='mongodb://alla1:alla1@ec2-52-11-38-198.us-west-2.compute.amazonaws.com:27017/myproject';
