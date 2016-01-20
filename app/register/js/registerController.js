@@ -29,7 +29,7 @@
 				} else {
 					$(".page-loading")
 					.addClass("hidden");
-					$scope.registererrormessage = "Unable to resgister user"
+					$scope.registererrormessage = response.error;
 						//FlashService.Error(response);
 						$scope.dataLoading = false;
 				}

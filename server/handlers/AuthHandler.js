@@ -108,27 +108,27 @@ function registerLocal(req, res, next) {
 			if(err) {
 				console.log(err);
 				console.log("Error Registering User");
-				res.send("Not able to register user");
+				res.send({success: false, error: err.message+", use username and password, if you have forgotten password, please request for reset password."});
+			} else {
+				var user = User.findOne({email : req.body.email}, function(err, user) {
+					if(err || !user) {
+						console.log("Inside");
+					} else {
+						var allakarte = new Allakarte();
+						allakarte.user_id = user.user_id;
+						allakarte.dish_items = [];
+						allakarte.save(function(err, allakarte) {
+							if(err || !allakarte) {
+								console.log("Failed to create allakarte");
+							} else {
+								console.log("Created allakarte for user when registered");
+							}
+						});
+					}
+					MailHandler.SendRegisterMail(req.body.email,true);
+					res.send({'success': true});
+				});
 			}
-			var user = User.findOne({email : req.body.email}, function(err, user) {
-				if(err || !user) {
-					console.log("Inside");
-				} else {
-					var allakarte = new Allakarte();
-					allakarte.user_id = user.user_id;
-					allakarte.dish_items = [];
-					allakarte.save(function(err, allakarte) {
-						if(err || !allakarte) {
-							console.log("Failed to create allakarte");
-						} else {
-							console.log("Created allakarte for user when registered");
-						}
-					});
-				}
-				MailHandler.SendRegisterMail(req.body.email,true);
-				res.send({'success': true});
-			});
-
 		}
 	);
 }
@@ -137,7 +137,12 @@ function localSignInCallback(req, res, next) {}
 
 function ResetPassword(req, res, next) {
 	User.generateResetToken(req.body.email, function(err, user){
-		MailHandler.SendResetPasswordToken(user);
+		if(err || !user) {
+			res.send({success: false, error: "Unable to send mail to the user"});
+		} else {
+			MailHandler.SendResetPasswordToken(user);
+			res.send({success: true, error: null});
+		}
 	});
 }
 

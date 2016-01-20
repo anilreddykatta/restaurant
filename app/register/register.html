@@ -2,6 +2,10 @@
 .js-hero {
 	display: none;
 }
+
+	.margin-botton-3-0-percent {
+		margin-bottom: 3.0% !important;
+	}
 </style>
 <link href="css/header.css" rel="stylesheet">
 <div class="row-fluid login-bg landing-hero"
@@ -21,7 +25,7 @@
 									class="fa fa-google-plus "></i> Google</a>
 							</div>
 							or
-							<div class="bg-danger">{{registererrormessage}}</div>
+							<div class="bg-danger margin-botton-3-0-percent">{{registererrormessage}}</div>
 							<form class="form" novalidate role="form" name="registerform"
 								ng-submit="register(registerform)"
 								ng-class="{ 'submitted' : registersubmitted === true}"

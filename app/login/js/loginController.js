@@ -91,10 +91,17 @@
 			$(".page-loading").removeClass("hidden");
 
 			AuthenticationService.ResetPassword($scope.user.email, function(response){
-				//console.log(response);
-				$(".page-loading")
-				.addClass("hidden");
-				$scope.resetmessage = "Reset password will be sent to your registered email id please check your email";
+				console.log(response);
+				if(response.success) {
+					$ ( ".page-loading" )
+						.addClass ( "hidden" );
+					$scope.resetmessage = "Reset password will be sent to your registered email id please check your email";
+				} else {
+					$ ( ".page-loading" )
+						.addClass ( "hidden" );
+					$scope.resetsubmitted = true;
+					$scope.notregisteredmail = true;
+				}
 			});
 		};
 
