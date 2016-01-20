@@ -27,8 +27,6 @@
 
 							//Adding watch in case we have some dish_items otherwise doesn't make any sense
 							$scope.$watch('searchText', function(newValue, oldValue){
-								console.log(newValue);
-								console.log(oldValue);
 								AllakarteService.GetAllDishItems(AuthenticationService.getUserId(), $scope.allakarte.allakarte_id, newValue ).then(function(response){
 									if(response.success) {
 										$scope.allakarte.dish_items = [];
@@ -217,7 +215,7 @@
 					if(response.success) {
 						$uibModalInstance.close($scope.dish_item);
 					} else {
-						$scope.error = 'Failed to create dish item';
+						$scope.error = 'Failed to delete dish item';
 						$scope.showError = true;
 					}
 				});

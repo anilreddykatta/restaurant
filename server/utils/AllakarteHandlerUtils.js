@@ -5,7 +5,7 @@ var Allakarte = require("./../models/allakarte");
 
 var allakarteUtils = function() {
 	this.CreateDishItemFromRequestBody = CreateDishItemFromRequestBody;
-	this.UpdateOneModalFromJSONData = UpdateOneModalFromJSONData;
+	this.UpdateOneModalFromJSONData = updateonemodalfromjsondata;
 };
 
 function CreateDishItemFromRequestBody(jsonData) {

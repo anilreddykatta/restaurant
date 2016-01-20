@@ -155,7 +155,6 @@ function SignOut(req, res, next) {
 		});
 	}
 }
-
 function ChangePassword(req, res, next) {
 	console.log(req.body);
 	if(req.body.password) {
