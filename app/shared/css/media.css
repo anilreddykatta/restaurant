@@ -28,7 +28,7 @@
 		top: 50px;
 	}
 	.navbar.navbar, .navbar-default.navbar {
-		background-color: rgba(0, 150, 136, 0);
+		background-color: transparent;
 		color: rgba(255, 255, 255, .84);
 	}
 	.form-row .concierge-form {
@@ -91,7 +91,7 @@
 		top: 50px;
 	}
 	.navbar.navbar, .navbar-default.navbar {
-		background-color: rgba(0, 150, 136, 0);
+		background-color: #273b47;
 		color: rgba(255, 255, 255, .84);
 	}
 	.gn-trigger {
@@ -165,7 +165,7 @@
 		top: 50px;
 	}
 	.navbar.navbar, .navbar-default.navbar {
-		background-color: rgba(0, 150, 136, 0);
+		background-color: #273b47;
 		color: rgba(255, 255, 255, .84);
 	}
 	.gn-trigger {
@@ -244,7 +244,7 @@
 		top: 50px;
 	}
 	.navbar.navbar, .navbar-default.navbar {
-		background-color: rgb(0, 170, 154);
+		background-color: #273b47;
 		color: rgba(255, 255, 255, .84);
 	}
 	.form-row .concierge-form {
@@ -308,7 +308,7 @@
 		top: 50px;
 	}
 	.navbar.navbar, .navbar-default.navbar {
-		background-color: rgb(0, 170, 154);
+		background-color: #273b47;
 		color: rgba(255, 255, 255, .84);
 	}
 	.host-btn {
@@ -362,7 +362,7 @@
 		top: 50px;
 	}
 	.navbar.navbar, .navbar-default.navbar {
-		background-color: rgb(0, 170, 154);
+		background-color: #273b47;
 		color: rgba(255, 255, 255, .84);
 	}
 	.host-btn {

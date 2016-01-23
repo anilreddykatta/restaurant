@@ -33,9 +33,10 @@
 							<div class="right-inner-addon ">
 								<i class="fa fa-map-marker"></i> <input type="text"
 									class="form-control header-form-control " id="Autocomplete"
-									class="form-control" ng-autocomplete="result1" ng-model="meal.place"
-									name="Autocomplete" details="details1" options="options1" /> <span
-									class=" label label-danger" required
+									class="form-control" ng-autocomplete="result1"
+									ng-model="meal.place" name="Autocomplete" details="details1"
+									options="options1" /> <span class=" label label-danger"
+									required
 									data-ng-show="starthostingsubmitted  && starthosting.Autocomplete.$error.required">Please
 									enter Location data !</span>
 							</div>
@@ -44,7 +45,8 @@
 						<div class="form-group">
 							<label for="exampleInputEmail2"> <i class="fa fa-home"></i>
 								Type of event
-							</label> <select required ng-model="meal.occassion" class="form-control" name="concierge_type" id="concierge_type" required >
+							</label> <select required ng-model="meal.occassion" class="form-control"
+								name="concierge_type" id="concierge_type" required>
 								<option value="" class="" selected="selected">Type of
 									event</option>
 								<option value="string:Business/Corporate"
@@ -64,16 +66,14 @@
 								<option value="string:Wedding Event" label="Wedding Event">Wedding
 									Event</option>
 								<option value="string:Other" label="Other">Other</option>
-							</select>
-							<span
-									class=" label label-danger" required
-									data-ng-show="starthostingsubmitted  && starthosting.concierge_type.$error.required">Please
-									enter occassion !</span>
+							</select> <span class=" label label-danger" required
+								data-ng-show="starthostingsubmitted  && starthosting.concierge_type.$error.required">Please
+								enter occassion !</span>
 						</div>
 						<div class="form-group">
 							<label for="exampleInputEmail2"><i class="fa-cutlery fa"></i>
-								Food Type </label> 
-								<select required id="inputMealType" name="inputMealType" data-placeholder="Select"
+								Food Type </label> <select required id="inputMealType"
+								name="inputMealType" data-placeholder="Select"
 								ng-model="meal.foodtype"
 								class="form-control override-form-control"><option
 									value="0">Breakfast</option>
@@ -86,16 +86,16 @@
 								<option value="5">Wine/Drink Tasting</option>
 								<option value="6">Food Tour</option>
 								<option value="7">Cooking Class</option>
-								<option value="8">Food Experience</option></select>
-								<span
-									class=" label label-danger" required
-									data-ng-show="starthostingsubmitted  && starthosting.inputMealType.$error.required">Please
-									enter MealType !</span>
+								<option value="8">Food Experience</option></select> <span
+								class=" label label-danger" required
+								data-ng-show="starthostingsubmitted  && starthosting.inputMealType.$error.required">Please
+								enter MealType !</span>
 						</div>
 						<div class="form-group">
 							<div class=" override-col-margin pull-right">
 
-								<a href="" ng-click="openHostModal(starthosting)" class="btn btn-primary">Continue</a>
+								<a href="" ng-click="openHostModal(starthosting)"
+									class="btn btn-primary">Continue</a>
 							</div>
 						</div>
 					</form>
@@ -139,93 +139,6 @@
 			<div style="clear: both;"></div>
 		</div>
 	</section>
-	<div id="wrapper">
-
-		<div id="Carousel" class="carousel slide carousel-fade">
-			<ol class="carousel-indicators">
-				<li data-target="Carousel" data-slide-to="0" class="active"></li>
-				<li data-target="Carousel" data-slide-to="1"></li>
-				<li data-target="Carousel" data-slide-to="2"></li>
-			</ol>
-
-			<div class="carousel-inner">
-				<div class="item">
-					<div class="row-fluid meet-host-section shove40">
-						<div class="meet-host-description meet-host-vertical">
-							<h2>
-								Meet&nbsp;<a href="/user/527b26a17f8b9aa7048b4c04"
-									class="orange">John</a>
-							</h2>
-							<p class="host-city">Washington DC, United States</p>
-							<div class="landing-divider push-twenty"></div>
-							<h6 style="text-align: left">Drawing from her childhood in
-								Puerto Rico and six years living in Europe, Jessica hosts a
-								diverse array of international-themed dinners in her DC home.
-								When she's not busy hosting, Jessica can be found working on her
-								blog, The Dining Traveler, where she inspires others to eat well
-								and travel often.</h6>
-						</div>
-						<div class="meet-host-pic visible-md visible-lg">
-							<a href=""><img class="img-responsive img-thumbnail "
-								src="img/meal_1.jpg" class="img-polaroid vertical-pic"></a>
-						</div>
-					</div>
-				</div>
-				<div class="item">
-					<div class="row-fluid meet-host-section shove40">
-						<div class="meet-host-description meet-host-vertical">
-							<h2>
-								Meet&nbsp;<a href="/user/527b26a17f8b9aa7048b4c04"
-									class="orange">Jessica</a>
-							</h2>
-							<p class="host-city">WestVerginia WV, United States</p>
-							<div class="landing-divider push-twenty"></div>
-							<h6 style="text-align: left">Drawing from her childhood in
-								Puerto Rico and six years living in Europe, Jessica hosts a
-								diverse array of international-themed dinners in her DC home.
-								When she's not busy hosting, Jessica can be found working on her
-								blog, The Dining Traveler, where she inspires others to eat well
-								and travel often.</h6>
-						</div>
-						<div class="meet-host-pic visible-md visible-lg">
-							<a href=""><img class="img-responsive img-thumbnail "
-								src="img/meal_3.jpg" class="img-polaroid vertical-pic"></a>
-						</div>
-					</div>
-				</div>
-				<div class="item active">
-					<div class="row-fluid meet-host-section shove40">
-						<div class="meet-host-description meet-host-vertical">
-							<h2>
-								Meet&nbsp;<a href="/user/527b26a17f8b9aa7048b4c04"
-									class="orange">Anny</a>
-							</h2>
-							<p class="host-city">Newyork NY, United States</p>
-							<div class="landing-divider push-twenty"></div>
-							<h6 style="text-align: left">Drawing from her childhood in
-								Puerto Rico and six years living in Europe, Jessica hosts a
-								diverse array of international-themed dinners in her DC home.
-								When she's not busy hosting, Jessica can be found working on her
-								blog, The Dining Traveler, where she inspires others to eat well
-								and travel often.</h6>
-						</div>
-						<div class="meet-host-pic visible-md visible-lg">
-							<a href=""><img class="img-responsive img-thumbnail "
-								src="img/meal_1.jpg" class="img-polaroid vertical-pic"></a>
-						</div>
-					</div>
-				</div>
-
-			</div>
-
-			<a class="left carousel-control" href="#Carousel" data-slide="prev">
-				<span class="glyphicon glyphicon-chevron-left"></span>
-			</a> <a class="right carousel-control" href="#Carousel" data-slide="next">
-				<span class="glyphicon glyphicon-chevron-right"></span>
-			</a>
-		</div>
-
-	</div>
 
 
 
