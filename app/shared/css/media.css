@@ -39,8 +39,11 @@
 		width: 234px;
 	}
 	.bg-clr {
-		background-color: rgba(0, 150, 136, 0.42);
+		background-color: #B7D5E8;
 		padding-left: 16.5%;
+	}
+	.footer {
+		background-color: #0A2235;
 	}
 	/* Index page row content with 4 divisions */
 	/* style border added for each division , each division share */
@@ -53,7 +56,7 @@
 		overflow: hidden;
 	}
 	.container {
-		width: 96.5%;
+		width: 1200px;
 	}
 }
 
@@ -105,7 +108,7 @@
 		width: 232px;
 	}
 	.bg-clr {
-		background-color: rgba(0, 150, 136, 0.42);
+		background-color: #B7D5E8;
 		padding-left: 16.5%;
 	}
 	/* Index page row content with 4 divisions */
@@ -179,7 +182,7 @@
 		width: 232px;
 	}
 	.bg-clr {
-		background-color: rgba(0, 150, 136, 0.42);
+		background-color: #B7D5E8;
 		padding-left: 25.0%;
 	}
 	/* Index page row content with 4 divisions */
