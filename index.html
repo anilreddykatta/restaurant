@@ -3,141 +3,148 @@
 
 
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1"/>
-	<meta name="description" content="">
-	<meta name="author" content="">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1" />
+<meta name="description" content="">
+<meta name="author" content="">
 
-	<title></title>
+<title></title>
 
-	<!-- Bootstrap Core CSS -->
-	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css"/>
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
-		  integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous"/>
-	<link href="http://roboto-webfont.googlecode.com/svn/trunk/roboto.all.css" rel="stylesheet" type="text/css">
-	<link href="lib/css/material.css" rel="stylesheet" type="text/css">
-	<link href="css/main.css" rel="stylesheet">
-	<link href="app/shared/css/media.css" rel="stylesheet">
-	<link href="app/shared/css/global.css" rel="stylesheet">
-	<link href="app/shared/css/override.css" rel="stylesheet">
-	<link href="css/angular-slider.min.css" rel="stylesheet">
-	<link href="css/angular-ui-slider.css" rel="stylesheet">
-	<!-- Google Maps JavaScript API -->
-	<link href="app/dashboard/css/dashboard.css" rel="stylesheet">
-	<link href="app/hostconsole/css/hostevents.css" rel="stylesheet">
-	<!-- Fonts -->
-	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet"
-		  type="text/css">
-	<!-- Squad theme CSS -->
-	<link href="css/style.css" rel="stylesheet">
+<!-- Bootstrap Core CSS -->
+
+<link href="lib/css/material.css" rel="stylesheet" type="text/css">
+<link href="lib/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+<link href="css/main.css" rel="stylesheet">
+<link href="css/roboto.css" rel="stylesheet">
+<link href="app/shared/css/media.css" rel="stylesheet">
+<link href="app/shared/css/global.css" rel="stylesheet">
+<link href="app/shared/css/override.css" rel="stylesheet">
+<link href="css/angular-slider.min.css" rel="stylesheet">
+<link href="css/angular-ui-slider.css" rel="stylesheet">
+<!-- Google Maps JavaScript API -->
+<link href="app/dashboard/css/dashboard.css" rel="stylesheet">
+<link href="app/hostconsole/css/hostevents.css" rel="stylesheet">
+<!-- Fonts -->
+<link
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
+	rel="stylesheet" type="text/css">
+<!-- Squad theme CSS -->
+<link href="css/style.css" rel="stylesheet">
 
 
 </head>
 
 
 <body data-spy="scroll" ng-controller="parentCntl">
-<div class="page-loading hidden">
-	<img src="img/loading.gif" class="ajax-loader">
-</div>
-<header ng-include="'app/shared/header/header.html'"></header>
+	<div class="page-loading hidden">
+		<img src="img/loading.gif" class="ajax-loader">
+	</div>
+	<header ng-include="'app/shared/header/header.html'"></header>
 
-<div ui-view></div>
+	<div ui-view></div>
 
-<header ng-include="'app/shared/footer/footer.html'"></header>
+	<header ng-include="'app/shared/footer/footer.html'"></header>
 
-<!-- Core JavaScript Files -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.js"></script>
-<script src="lib/js/material/material.min.js"></script>
-<script src="lib/js/material/ripples.min.js"></script>
+	<!-- Core JavaScript Files -->
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.js"></script>
+	<script src="lib/js/material/material.min.js"></script>
+	<script src="lib/js/material/ripples.min.js"></script>
 
-<!-- Core JavaScript Files -->
-<script src="js/slide-show.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-<script src="js/classie.js"></script>
-<script src="js/jquery.scrollTo.js"></script>
-<script src="js/modernizr.js"></script>
-<script src="js/functions.js"></script>
+	<!-- Core JavaScript Files -->
+	<script src="js/slide-show.js"></script>
+	<script
+		src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+		integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+		crossorigin="anonymous"></script>
+	<script src="js/classie.js"></script>
+	<script src="js/jquery.scrollTo.js"></script>
+	<script src="js/modernizr.js"></script>
+	<script src="js/functions.js"></script>
 
 
-<!-- Angular libs -->
-<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.js"></script>
-<script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-1.0.3.js"></script>
-<script src='lib/js/angular/lodash.js'></script>
-<!--<script src='lib/js/angular/simplelogger.js'></script>-->
+	<!-- Angular libs -->
+	<script
+		src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
+	<script
+		src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.js"></script>
+	<script
+		src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-1.0.3.js"></script>
+	<script src='lib/js/angular/lodash.js'></script>
+	<!--<script src='lib/js/angular/simplelogger.js'></script>-->
 
-<script type="text/javascript" src="https://code.angularjs.org/1.4.8/angular-resource.js"></script>
+	<script type="text/javascript"
+		src="https://code.angularjs.org/1.4.8/angular-resource.js"></script>
 
-<script type="text/javascript"
+	<script type="text/javascript"
 		src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
 
-<script type="text/javascript"
+	<script type="text/javascript"
 		src="https://code.angularjs.org/1.4.8/angular-cookies.js"></script>
 
-<script type="text/javascript"
+	<script type="text/javascript"
 		src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.6/ngStorage.js"></script>
-<script type="text/javascript"
+	<script type="text/javascript"
 		src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&callback=onGoogleReady"></script>
 
-<!--<script type="text/javascript"-->
-		<!--src="app/shared/js/directive/angular-google-maps.js"></script>-->
+	<!--<script type="text/javascript"-->
+	<!--src="app/shared/js/directive/angular-google-maps.js"></script>-->
 
-<script type="text/javascript"
+	<script type="text/javascript"
 		src="app/shared/js/directive/search-box-autocomplete.js"></script>
-<script type="text/javascript"
+	<script type="text/javascript"
 		src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
 
-<script type="text/javascript" src="app/shared/js/module/module.js"></script>
-<script type="text/javascript"
+	<script type="text/javascript" src="app/shared/js/module/module.js"></script>
+	<script type="text/javascript"
 		src="https://code.angularjs.org/1.4.8/angular-animate.js"></script>
 
-<script type="text/javascript"
+	<script type="text/javascript"
 		src="app/shared/js/bootstrap/bootstrap.js"></script>
-<script type="text/javascript" src="app/shared/js/route/routes.js"></script>
-<script type="text/javascript"
+	<script type="text/javascript" src="app/shared/js/route/routes.js"></script>
+	<script type="text/javascript"
 		src="app/shared/js/controller/sliderController.js"></script>
 
-<script type="text/javascript"
+	<script type="text/javascript"
 		src="app/hostconsole/js/hostConsoleController.js"></script>
-<script type="text/javascript"
+	<script type="text/javascript"
 		src="app/guestconsole/js/guestConsoleController.js"></script>
-<script type="text/javascript"
+	<script type="text/javascript"
 		src="app/register/js/registerController.js"></script>
-<script type="text/javascript" src="app/login/js/loginController.js"></script>
-<script type="text/javascript"
+	<script type="text/javascript" src="app/login/js/loginController.js"></script>
+	<script type="text/javascript"
 		src="app/startapp/js/WelcomeController.js"></script>
 
-<script type="text/javascript"
+	<script type="text/javascript"
 		src="app/shared/js/factory/authentication.service.js"></script>
-<script type="text/javascript"
+	<script type="text/javascript"
 		src="app/shared/js/factory/flashService.js"></script>
-<script type="text/javascript"
+	<script type="text/javascript"
 		src="app/shared/js/factory/user.service.js"></script>
 
-<script type="text/javascript" src="js/angular-slider.min.js"></script>
-<script type="text/javascript" src="lib/js/slider/angular-ui-slider.js"></script>
+	<script type="text/javascript" src="js/angular-slider.min.js"></script>
+	<script type="text/javascript" src="lib/js/slider/angular-ui-slider.js"></script>
 
-<script type="text/javascript"
+	<script type="text/javascript"
 		src="lib/js/angular-ui-bootstrap/ui-bootstrap-datapicker.js"></script>
-<script type="text/javascript"
+	<script type="text/javascript"
 		src="lib/js/angular-ui-bootstrap/data-position.js"></script>
-<script type="text/javascript"
+	<script type="text/javascript"
 		src="lib/js/angular-ui-bootstrap/date-parser.js"></script>
-<!--<script type="text/javascript"-->
-		<!--src="lib/js/angular-ui-bootstrap/angular-ui-model-bootstrap.js"></script>-->
+	<!--<script type="text/javascript"-->
+	<!--src="lib/js/angular-ui-bootstrap/angular-ui-model-bootstrap.js"></script>-->
 
-<script type="text/javascript"
+	<script type="text/javascript"
 		src="app/shared/js/directive/UtilityDirective.js"></script>
 
-<script type="text/javascript"
+	<script type="text/javascript"
 		src="app/allakarte/js/allakarte-service.js"></script>
-<script type="text/javascript"
+	<script type="text/javascript"
 		src="app/allakarte/js/allakarte-controller.js"></script>
 
 
-<script>
+	<script>
 	$ ( document )
 			.ready (
 					function () {

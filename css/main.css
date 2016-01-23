@@ -2,7 +2,7 @@
 /*************header and body landing page************/
 /************************************************/
 body {
-	font-family: Circular, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: "Roboto Light",  sans-serif;
 	font-size: 14px;
 	line-height: 1.43;
 	color: #565a5c;
@@ -12,7 +12,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6, p {
-	font-family: RobotoDraft;
+	font-family: Roboto Light;
 }
 
 .ajax-loader {
@@ -43,7 +43,7 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .text-bold-heading {
-	font-family: RobotoDraft;
+	font-family: Roboto Light;
 	text-transform: uppercase;
 	line-height: 50px;
 	color: #ffffff;
@@ -51,7 +51,7 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .text-bold-heading-main {
-	font-family: RobotoDraft;
+	font-family: Roboto Light;
 	text-transform: uppercase;
 	margin: 0;
 	padding: 0;
@@ -68,7 +68,7 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .small-text-bold {
-	font-family: RobotoDraft;
+	font-family: Roboto Light;
 }
 
 .text-margin {
@@ -83,7 +83,7 @@ h1, h2, h3, h4, h5, h6, p {
 .text-bold {
 	color: #fff;
 	font-weight: 700;
-	font-family: RobotoDraft;
+	font-family: Roboto Light;
 }
 
 .header-logo-small {
@@ -723,6 +723,7 @@ select {
 	font-size: 18px;
 	background: #ed7833;
 	border: 0px;
+	
 }
 
 .navbar .navbar-nav>li>a {
@@ -730,6 +731,7 @@ select {
 	padding-top: 20px;
 	padding-bottom: 20px;
 	height: 60px;
+	font-family: Roboto Light;
 }
 
 .host-link {
@@ -915,7 +917,7 @@ select {
 }
 
 .pic-text {
-	font-family: RobotoDraft;
+	font-family: Roboto Light;
 }
 
 .form-row {
@@ -1393,7 +1395,7 @@ The div that holds all the lines
 }
 
 p {
-	font-family: " RobotoDraft;
+	font-family: Roboto Light;
 }
 
 p {
