@@ -214,14 +214,7 @@ function config ( $stateProvider, $urlRouterProvider, USER_ROLES ) {
 				data: {
 					authorizedRoles: [ USER_ROLES.admin, USER_ROLES.host ],
 					secure: true
-				},
-
-				onEnter: [ '$state', 'AuthenticationService', function ( $state, AuthenticationService ) {
-					if ( ! AuthenticationService.isLoggedIn () ) {
-						$state.go ( 'home' );
-					}
-					;
-				} ]
+				}
 			} )
 		.state (
 			"hostregister.registertabs.menu",
