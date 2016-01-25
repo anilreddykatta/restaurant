@@ -17,8 +17,8 @@
 				<h4 class="panel-title">
 
 					<a class="accordion-toggle" data-toggle="collapse"
-						data-parent="#accordion" href="#collapseOne"> <i
-						class="indicator glyphicon glyphicon-minus"></i> Menu item One #1
+					   data-parent="#accordion" href="#collapseOne"> <i
+							class="indicator glyphicon glyphicon-minus"></i> Menu item One #1
 					</a>
 
 
@@ -30,7 +30,8 @@
 					options that can accommodate your group. Choose from private rooms
 					in restaurants, banquet halls, restaurant buyouts and more. We also
 					streamline payment so you don't have to worry about splitting the
-					check. We look forward to helping you find a great venue.</div>
+					check. We look forward to helping you find a great venue.
+				</div>
 			</div>
 		</div>
 
@@ -38,8 +39,8 @@
 			<div class="panel-heading">
 				<h4 class="panel-title">
 					<a class="accordion-toggle" data-toggle="collapse"
-						data-parent="#accordion" href="#collapseTwo"> <i
-						class="indicator glyphicon glyphicon-plus"></i> Menu item One #2
+					   data-parent="#accordion" href="#collapseTwo"> <i
+							class="indicator glyphicon glyphicon-plus"></i> Menu item One #2
 					</a>
 				</h4>
 			</div>
@@ -49,15 +50,16 @@
 					options that can accommodate your group. Choose from private rooms
 					in restaurants, banquet halls, restaurant buyouts and more. We also
 					streamline payment so you don't have to worry about splitting the
-					check. We look forward to helping you find a great venue.</div>
+					check. We look forward to helping you find a great venue.
+				</div>
 			</div>
 		</div>
 		<div class="panel panel-primary">
 			<div class="panel-heading">
 				<h4 class="panel-title">
 					<a class="accordion-toggle" data-toggle="collapse"
-						data-parent="#accordion" href="#collapseThree"> <i
-						class="indicator glyphicon glyphicon-plus"></i> Menu item One #3
+					   data-parent="#accordion" href="#collapseThree"> <i
+							class="indicator glyphicon glyphicon-plus"></i> Menu item One #3
 					</a>
 				</h4>
 			</div>
@@ -67,15 +69,16 @@
 					options that can accommodate your group. Choose from private rooms
 					in restaurants, banquet halls, restaurant buyouts and more. We also
 					streamline payment so you don't have to worry about splitting the
-					check. We look forward to helping you find a great venue.</div>
+					check. We look forward to helping you find a great venue.
+				</div>
 			</div>
 		</div>
 		<div class="panel panel-primary">
 			<div class="panel-heading">
 				<h4 class="panel-title">
 					<a class="accordion-toggle" data-toggle="collapse"
-						data-parent="#accordion" href="#collapse4"> <i
-						class="indicator glyphicon glyphicon-plus"></i> Menu item One #4
+					   data-parent="#accordion" href="#collapse4"> <i
+							class="indicator glyphicon glyphicon-plus"></i> Menu item One #4
 					</a>
 				</h4>
 			</div>
@@ -85,15 +88,16 @@
 					options that can accommodate your group. Choose from private rooms
 					in restaurants, banquet halls, restaurant buyouts and more. We also
 					streamline payment so you don't have to worry about splitting the
-					check. We look forward to helping you find a great venue.</div>
+					check. We look forward to helping you find a great venue.
+				</div>
 			</div>
 		</div>
 		<div class="panel panel-primary">
 			<div class="panel-heading">
 				<h4 class="panel-title">
 					<a class="accordion-toggle" data-toggle="collapse"
-						data-parent="#accordion" href="#collapse5"> <i
-						class="indicator glyphicon glyphicon-plus"></i> Menu item One #5
+					   data-parent="#accordion" href="#collapse5"> <i
+							class="indicator glyphicon glyphicon-plus"></i> Menu item One #5
 					</a>
 				</h4>
 			</div>
@@ -103,35 +107,26 @@
 					options that can accommodate your group. Choose from private rooms
 					in restaurants, banquet halls, restaurant buyouts and more. We also
 					streamline payment so you don't have to worry about splitting the
-					check. We look forward to helping you find a great venue.</div>
+					check. We look forward to helping you find a great venue.
+				</div>
 			</div>
 		</div>
 	</div>
 
 
-
-
-
 </div>
-
-
-
-
-
-
-
 
 
 <script>
 
-function toggleChevron(e) {
-      $(e.target)
-        .prev('.panel-heading')
-        .find('i.indicator')
-        .toggleClass('glyphicon-minus glyphicon-plus');
-        $('#accordion','.panel-heading').css('background-color', 'green');
-}
-$('#accordion').on('hidden.bs.collapse', toggleChevron);
-$('#accordion').on('shown.bs.collapse', toggleChevron);
+	function toggleChevron ( e ) {
+		$ ( e.target )
+				.prev ( '.panel-heading' )
+				.find ( 'i.indicator' )
+				.toggleClass ( 'glyphicon-minus glyphicon-plus' );
+		$ ( '#accordion', '.panel-heading' ).css ( 'background-color', 'green' );
+	}
+	$ ( '#accordion' ).on ( 'hidden.bs.collapse', toggleChevron );
+	$ ( '#accordion' ).on ( 'shown.bs.collapse', toggleChevron );
 
 </script>

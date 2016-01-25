@@ -1,10 +1,12 @@
 /**
  * Created by anilkatta on 1/5/16.
  */
-var Mongoose = requires("mongoose");
+var Mongoose = require("mongoose");
+var extend = require('mongoose-schema-extend');
 var Schema = Mongoose.Schema;
-var Model = Mongoose.model;
-var UserSchema = requires("user" ).UserSchema;
+var UserSchema = require("./user" ).UserSchema;
+var Photo = require('./photo');
+
 
 var HostingStyleSchema = new Schema({
 	host_style : {type: String, required: false},
@@ -46,7 +48,7 @@ var DishDetailsSchema = new Schema({
 	dish_name: {type: String, required: false},
 	dish_description: {type: String, required: false},
 	dish_price: {type: Number, required: false},
-	dish_photo_links: {type: [String], required: false},
+	dish_photos: {type: [Photo.PhotoSchema], required: false},
 	dish_advance_booking_time: {type: Number, required: false},
 	dish_allergens: {type: [String], required: false },
 	is_show_or_cooking_recipe_shared: {type: Boolean, required: false}
@@ -62,13 +64,14 @@ var EventSchema = new Schema({
 	event_price: {type: Number, required: false},
 	event_date: {type: Date, required: false},
 	event_dish_details: {type: [DishDetailsSchema], required: false},
-	event_photo_links: {type: [String], required: false}
+	event_photos: {type: [Photo.PhotoSchema], required: false}
 });
 
 
 var HostSchema = UserSchema.extend({
 	message: {type: [String], required: false},
 	bank_details: {type: [BankDetailsSchema], required: false},
+	host_address: {type: Schema.ObjectId, ref: AddressSchema, required: false},
 	paypal_details: {type: [PaypalDetailsSchema], required: false},
 	max_number_of_guests: {type: Number, required: false},
 	are_bio_products: {type: String, required: false},
@@ -76,8 +79,9 @@ var HostSchema = UserSchema.extend({
 	hosting_tags: {type: [HostingTagSchema], required: false},
 	hosting_dish_details: {type: [DishDetailsSchema], required: false},
 	hosting_accessibilities: {type: [HostingStyleSchema], required: false},
-	hosting_food_preferences: {type: [HostingFoodPreferencesSchema], required: false},
-	events: {type: [EventSchema], required: false}
+	hosting_food_preferences: {type: [HostingFoodPreferencesSchema], required: false}
 }, {discriminatorKey: '_type'});
 
-module.exports = Model('Host', HostSchema);
+
+module.exports = Mongoose.model('Host', HostSchema);
+module.exports.HostSchema = HostSchema;

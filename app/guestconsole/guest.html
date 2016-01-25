@@ -3,8 +3,8 @@
 	<div class=" map-container" ng-controller="guestConsoleController">
 		<div class="col-md-12">
 			<div
-				class="col-md-7 col-sm-12 col-lg-7 override-col-margin col-xs-12 slidebar"
-				style="padding-bottom: 100.5px;">
+					class="col-md-7 col-sm-12 col-lg-7 override-col-margin col-xs-12 slidebar"
+					style="padding-bottom: 100.5px;">
 				<form class="form-horizontal form-container">
 
 					<fieldset>
@@ -17,15 +17,15 @@
 
 
 									<input type="text" class="form-control" maxlength="28"
-										data-toggle="tooltip" data-placement="top"
-										title="Enter Date of Birth"
-										datepicker-options="calendar.dateOptions" name="PP44"
-										id="PP44" datepicker-popup="{{calendar.dateFormat}}"
-										is-open="openDatePickers[1]" ng-maxlength="10" ng-model="dob"
-										datepicker-options="calendar.dateOptions" close-text="Close"
-										placeholder="mm/dd/yyyy" /> <span class="input-group-btn">
+										   data-toggle="tooltip" data-placement="top"
+										   title="Enter Date of Birth"
+										   datepicker-options="calendar.dateOptions" name="PP44"
+										   id="PP44" datepicker-popup="{{calendar.dateFormat}}"
+										   is-open="openDatePickers[1]" ng-maxlength="10" ng-model="dob"
+										   datepicker-options="calendar.dateOptions" close-text="Close"
+										   placeholder="mm/dd/yyyy"/> <span class="input-group-btn">
 										<button type="button" class="btn btn-default"
-											ng-click="open($event, 1)" id="calResizing">
+												ng-click="open($event, 1)" id="calResizing">
 											<i class="fa fa-calendar"></i>
 										</button>
 									</span>
@@ -33,7 +33,6 @@
 								</div>
 
 							</div>
-
 
 
 							<div class="col-lg-6 col-margin-top col-md-6 col-sm-6 col-xs-12">
@@ -52,11 +51,11 @@
 
 							<div class="col-lg-10 col-xs-12 col-md-10 col-sm-12">
 								<div
-									class="col-lg-2 col-md-2 override-col-margin col-sm-2 col-xs-2">
+										class="col-lg-2 col-md-2 override-col-margin col-sm-2 col-xs-2">
 
 									<div class="checkbox">
 										<label class="checkbox-label"> <input type="checkbox"><span
-											class="checkbox-material"><span class="check"></span></span>
+												class="checkbox-material"><span class="check"></span></span>
 											Lunch
 										</label>
 									</div>
@@ -64,42 +63,42 @@
 								</div>
 
 								<div
-									class="col-lg-2 col-md-2 override-col-margin col-sm-2 col-xs-2">
+										class="col-lg-2 col-md-2 override-col-margin col-sm-2 col-xs-2">
 
 									<div class="checkbox">
 										<label class="checkbox-label"> <input type="checkbox"><span
-											class="checkbox-material"><span class="check"></span></span>
+												class="checkbox-material"><span class="check"></span></span>
 											Drinks
 										</label>
 									</div>
 								</div>
 								<div
-									class="col-lg-2 col-md-2 override-col-margin col-sm-2 col-xs-2">
+										class="col-lg-2 col-md-2 override-col-margin col-sm-2 col-xs-2">
 
 									<div class="checkbox">
 										<label class="checkbox-label"> <input type="checkbox"><span
-											class="checkbox-material"><span class="check"></span></span>
+												class="checkbox-material"><span class="check"></span></span>
 											Dinner
 										</label>
 									</div>
 								</div>
 								<div
-									class="col-lg-2 col-md-2 override-col-margin col-sm-2 col-xs-2">
+										class="col-lg-2 col-md-2 override-col-margin col-sm-2 col-xs-2">
 
 									<div class="checkbox">
 										<label class="checkbox-label"> <input type="checkbox"><span
-											class="checkbox-material"><span class="check"></span></span>
+												class="checkbox-material"><span class="check"></span></span>
 											Brunch
 										</label>
 									</div>
 								</div>
 								<div
-									class="col-lg-3 col-md-3 override-col-margin col-sm-3 col-xs-3">
+										class="col-lg-3 col-md-3 override-col-margin col-sm-3 col-xs-3">
 
 
 									<div class="checkbox">
 										<label class="checkbox-label"> <input type="checkbox"><span
-											class="checkbox-material"><span class="check"></span></span>
+												class="checkbox-material"><span class="check"></span></span>
 											Breakfast
 										</label>
 									</div>
@@ -108,18 +107,17 @@
 							</div>
 
 
-
 						</div>
 						<div class="form-group">
 
 							<div class="col-lg-10">
 
 								<rzslider rz-slider-floor="priceSlider.floor"
-									rz-slider-ceil="priceSlider.ceil"
-									rz-slider-model="priceSlider.min"
-									rz-slider-high="priceSlider.max"></rzslider>
-								<br /> <label class="col-margin-top">minimum price :-
-									{{priceSlider.min}} , maximul price:- {{priceSlider.max}}</label>
+										  rz-slider-ceil="priceSlider.ceil"
+										  rz-slider-model="priceSlider.min"
+										  rz-slider-high="priceSlider.max"></rzslider>
+								<br/> <label class="col-margin-top">minimum price :-
+								{{priceSlider.min}} , maximul price:- {{priceSlider.max}}</label>
 							</div>
 						</div>
 
@@ -149,40 +147,40 @@
 						<div>
 							<div class="col-md-6  col-sm-6  col-xs-6 ">
 								<div class="container angular-guest-slider"
-									ng-controller="sliderController">
+									 ng-controller="sliderController">
 									<img ng-repeat="slide in slides"
-										class="angular-slide slide-animation nonDraggableImage"
-										ng-swipe-right="nextSlide()" ng-swipe-left="prevSlide()"
-										ng-hide="!isCurrentSlideIndex($index)"
-										ng-src="{{slide.image}}"> <i
+										 class="angular-slide slide-animation nonDraggableImage"
+										 ng-swipe-right="nextSlide()" ng-swipe-left="prevSlide()"
+										 ng-hide="!isCurrentSlideIndex($index)"
+										 ng-src="{{slide.image}}"> <i
 										class="icon icon-heart-alt icon-white icon-size-2"
 										id="wishlist-widget-icon-4696450"></i> <a class="arrow prev"
-										href="#" ng-click="nextSlide()"><i
+																				  href="#" ng-click="nextSlide()"><i
 										class="fa fa-chevron-left arrow-signals"></i></a> <a
 										class="arrow next " href="#" ng-click="prevSlide()"><i
 										class="fa fa-chevron-right arrow-signals"></i></a> <a
 										href="/rooms/4774115?checkin=08-12-2015&amp;checkout=10-12-2015&amp;s=15_aUHWw"
 										target="listing_4774115"
 										class="link-reset panel-overlay-bottom-left panel-overlay-label panel-overlay-listing-label">
-										<div>
-											<sup class="h6 text-contrast"><i class="fa fa-usd"></i></sup>
-											<span class="h3 text-contrast price-amount">734</span> <sup
-												class="h6 text-contrast"></sup> <span class="h3 icon-beach">
+									<div>
+										<sup class="h6 text-contrast"><i class="fa fa-usd"></i></sup>
+										<span class="h3 text-contrast price-amount">734</span> <sup
+											class="h6 text-contrast"></sup> <span class="h3 icon-beach">
 												<i class="icon icon-instant-book icon-flush-sides"></i>
 											</span>
-										</div>
+									</div>
 
-									</a>
+								</a>
 								</div>
 
 								<div class="panel-body panel-card-section">
 									<div class="media">
 										<a href="#/guest/hostitems"
-											class="media-photo-badge pull-right card-profile-picture card-profile-picture-offset">
+										   class="media-photo-badge pull-right card-profile-picture card-profile-picture-offset">
 											<div class="media-photo media-round">
 												<img
-													src="https://a1.muscache.com/ac/users/8096327/profile_pic/1376288532/original.jpg"
-													alt="I am an avid traveller who loves exploring destina">
+														src="https://a1.muscache.com/ac/users/8096327/profile_pic/1376288532/original.jpg"
+														alt="I am an avid traveller who loves exploring destina">
 											</div>
 										</a>
 										<h3 class="h5 listing-name text-truncate row-space-top-1">
@@ -190,11 +188,11 @@
 												CrashPad - 6 Bunker Room &amp; B'fast </a>
 										</h3>
 										<div itemprop="description"
-											class="text-muted listing-location text-truncate">
+											 class="text-muted listing-location text-truncate">
 											<span> <a
-												href="/rooms/4696450?checkin=08-12-2015&amp;checkout=10-12-2015&amp;s=15_aUHWw"
-												target="listing_4696450" class="text-normal link-reset">
-													Shared room <i class="fa fa-star-o icon-light-gray"></i> <i
+													href="/rooms/4696450?checkin=08-12-2015&amp;checkout=10-12-2015&amp;s=15_aUHWw"
+													target="listing_4696450" class="text-normal link-reset">
+												Shared room <i class="fa fa-star-o icon-light-gray"></i> <i
 													class="fa fa-star-o icon-light-gray"></i> <i
 													class="fa fa-star-o icon-light-gray"></i> <i
 													class="fa fa-star icon-light-gray"></i> <i
@@ -209,40 +207,40 @@
 							</div>
 							<div class="col-md-6  col-sm-6  col-xs-6 ">
 								<div class="container angular-guest-slider"
-									ng-controller="sliderController">
+									 ng-controller="sliderController">
 									<img ng-repeat="slide in slides"
-										class="angular-slide slide-animation nonDraggableImage"
-										ng-swipe-right="nextSlide()" ng-swipe-left="prevSlide()"
-										ng-hide="!isCurrentSlideIndex($index)"
-										ng-src="{{slide.image}}"> <i
+										 class="angular-slide slide-animation nonDraggableImage"
+										 ng-swipe-right="nextSlide()" ng-swipe-left="prevSlide()"
+										 ng-hide="!isCurrentSlideIndex($index)"
+										 ng-src="{{slide.image}}"> <i
 										class="icon icon-heart-alt icon-white icon-size-2"
 										id="wishlist-widget-icon-4696450"></i> <a class="arrow prev"
-										href="#" ng-click="nextSlide()"><i
+																				  href="#" ng-click="nextSlide()"><i
 										class="fa fa-chevron-left arrow-signals"></i></a> <a
 										class="arrow next " href="#" ng-click="prevSlide()"><i
 										class="fa fa-chevron-right arrow-signals"></i></a> <a
 										href="/rooms/4774115?checkin=08-12-2015&amp;checkout=10-12-2015&amp;s=15_aUHWw"
 										target="listing_4774115"
 										class="link-reset panel-overlay-bottom-left panel-overlay-label panel-overlay-listing-label">
-										<div>
-											<sup class="h6 text-contrast"><i class="fa fa-usd"></i></sup>
-											<span class="h3 text-contrast price-amount">734</span> <sup
-												class="h6 text-contrast"></sup> <span class="h3 icon-beach">
+									<div>
+										<sup class="h6 text-contrast"><i class="fa fa-usd"></i></sup>
+										<span class="h3 text-contrast price-amount">734</span> <sup
+											class="h6 text-contrast"></sup> <span class="h3 icon-beach">
 												<i class="icon icon-instant-book icon-flush-sides"></i>
 											</span>
-										</div>
+									</div>
 
-									</a>
+								</a>
 								</div>
 
 								<div class="panel-body panel-card-section">
 									<div class="media">
 										<a href="#/guest/hostitems"
-											class="media-photo-badge pull-right card-profile-picture card-profile-picture-offset">
+										   class="media-photo-badge pull-right card-profile-picture card-profile-picture-offset">
 											<div class="media-photo media-round">
 												<img
-													src="https://a1.muscache.com/ac/users/8096327/profile_pic/1376288532/original.jpg"
-													alt="I am an avid traveller who loves exploring destina">
+														src="https://a1.muscache.com/ac/users/8096327/profile_pic/1376288532/original.jpg"
+														alt="I am an avid traveller who loves exploring destina">
 											</div>
 										</a>
 										<h3 class="h5 listing-name text-truncate row-space-top-1">
@@ -250,11 +248,11 @@
 												CrashPad - 6 Bunker Room &amp; B'fast </a>
 										</h3>
 										<div itemprop="description"
-											class="text-muted listing-location text-truncate">
+											 class="text-muted listing-location text-truncate">
 											<span> <a
-												href="/rooms/4696450?checkin=08-12-2015&amp;checkout=10-12-2015&amp;s=15_aUHWw"
-												target="listing_4696450" class="text-normal link-reset">
-													Shared room <i class="fa fa-star-o icon-light-gray"></i> <i
+													href="/rooms/4696450?checkin=08-12-2015&amp;checkout=10-12-2015&amp;s=15_aUHWw"
+													target="listing_4696450" class="text-normal link-reset">
+												Shared room <i class="fa fa-star-o icon-light-gray"></i> <i
 													class="fa fa-star-o icon-light-gray"></i> <i
 													class="fa fa-star-o icon-light-gray"></i> <i
 													class="fa fa-star icon-light-gray"></i> <i
@@ -269,40 +267,40 @@
 							</div>
 							<div class="col-md-6  col-sm-6  col-xs-6 ">
 								<div class="container angular-guest-slider"
-									ng-controller="sliderController">
+									 ng-controller="sliderController">
 									<img ng-repeat="slide in slides"
-										class="angular-slide slide-animation nonDraggableImage"
-										ng-swipe-right="nextSlide()" ng-swipe-left="prevSlide()"
-										ng-hide="!isCurrentSlideIndex($index)"
-										ng-src="{{slide.image}}"> <i
+										 class="angular-slide slide-animation nonDraggableImage"
+										 ng-swipe-right="nextSlide()" ng-swipe-left="prevSlide()"
+										 ng-hide="!isCurrentSlideIndex($index)"
+										 ng-src="{{slide.image}}"> <i
 										class="icon icon-heart-alt icon-white icon-size-2"
 										id="wishlist-widget-icon-4696450"></i> <a class="arrow prev"
-										href="#" ng-click="nextSlide()"><i
+																				  href="#" ng-click="nextSlide()"><i
 										class="fa fa-chevron-left arrow-signals"></i></a> <a
 										class="arrow next " href="#" ng-click="prevSlide()"><i
 										class="fa fa-chevron-right arrow-signals"></i></a> <a
 										href="/rooms/4774115?checkin=08-12-2015&amp;checkout=10-12-2015&amp;s=15_aUHWw"
 										target="listing_4774115"
 										class="link-reset panel-overlay-bottom-left panel-overlay-label panel-overlay-listing-label">
-										<div>
-											<sup class="h6 text-contrast"><i class="fa fa-usd"></i></sup>
-											<span class="h3 text-contrast price-amount">734</span> <sup
-												class="h6 text-contrast"></sup> <span class="h3 icon-beach">
+									<div>
+										<sup class="h6 text-contrast"><i class="fa fa-usd"></i></sup>
+										<span class="h3 text-contrast price-amount">734</span> <sup
+											class="h6 text-contrast"></sup> <span class="h3 icon-beach">
 												<i class="icon icon-instant-book icon-flush-sides"></i>
 											</span>
-										</div>
+									</div>
 
-									</a>
+								</a>
 								</div>
 
 								<div class="panel-body panel-card-section">
 									<div class="media">
 										<a href="#/guest/hostitems"
-											class="media-photo-badge pull-right card-profile-picture card-profile-picture-offset">
+										   class="media-photo-badge pull-right card-profile-picture card-profile-picture-offset">
 											<div class="media-photo media-round">
 												<img
-													src="https://a1.muscache.com/ac/users/8096327/profile_pic/1376288532/original.jpg"
-													alt="I am an avid traveller who loves exploring destina">
+														src="https://a1.muscache.com/ac/users/8096327/profile_pic/1376288532/original.jpg"
+														alt="I am an avid traveller who loves exploring destina">
 											</div>
 										</a>
 										<h3 class="h5 listing-name text-truncate row-space-top-1">
@@ -310,11 +308,11 @@
 												CrashPad - 6 Bunker Room &amp; B'fast </a>
 										</h3>
 										<div itemprop="description"
-											class="text-muted listing-location text-truncate">
+											 class="text-muted listing-location text-truncate">
 											<span> <a
-												href="/rooms/4696450?checkin=08-12-2015&amp;checkout=10-12-2015&amp;s=15_aUHWw"
-												target="listing_4696450" class="text-normal link-reset">
-													Shared room <i class="fa fa-star-o icon-light-gray"></i> <i
+													href="/rooms/4696450?checkin=08-12-2015&amp;checkout=10-12-2015&amp;s=15_aUHWw"
+													target="listing_4696450" class="text-normal link-reset">
+												Shared room <i class="fa fa-star-o icon-light-gray"></i> <i
 													class="fa fa-star-o icon-light-gray"></i> <i
 													class="fa fa-star-o icon-light-gray"></i> <i
 													class="fa fa-star icon-light-gray"></i> <i
@@ -329,40 +327,40 @@
 							</div>
 							<div class="col-md-6  col-sm-6  col-xs-6 ">
 								<div class="container angular-guest-slider"
-									ng-controller="sliderController">
+									 ng-controller="sliderController">
 									<img ng-repeat="slide in slides"
-										class="angular-slide slide-animation nonDraggableImage"
-										ng-swipe-right="nextSlide()" ng-swipe-left="prevSlide()"
-										ng-hide="!isCurrentSlideIndex($index)"
-										ng-src="{{slide.image}}"> <i
+										 class="angular-slide slide-animation nonDraggableImage"
+										 ng-swipe-right="nextSlide()" ng-swipe-left="prevSlide()"
+										 ng-hide="!isCurrentSlideIndex($index)"
+										 ng-src="{{slide.image}}"> <i
 										class="icon icon-heart-alt icon-white icon-size-2"
 										id="wishlist-widget-icon-4696450"></i> <a class="arrow prev"
-										href="#" ng-click="nextSlide()"><i
+																				  href="#" ng-click="nextSlide()"><i
 										class="fa fa-chevron-left arrow-signals"></i></a> <a
 										class="arrow next " href="#" ng-click="prevSlide()"><i
 										class="fa fa-chevron-right arrow-signals"></i></a> <a
 										href="/rooms/4774115?checkin=08-12-2015&amp;checkout=10-12-2015&amp;s=15_aUHWw"
 										target="listing_4774115"
 										class="link-reset panel-overlay-bottom-left panel-overlay-label panel-overlay-listing-label">
-										<div>
-											<sup class="h6 text-contrast"><i class="fa fa-usd"></i></sup>
-											<span class="h3 text-contrast price-amount">734</span> <sup
-												class="h6 text-contrast"></sup> <span class="h3 icon-beach">
+									<div>
+										<sup class="h6 text-contrast"><i class="fa fa-usd"></i></sup>
+										<span class="h3 text-contrast price-amount">734</span> <sup
+											class="h6 text-contrast"></sup> <span class="h3 icon-beach">
 												<i class="icon icon-instant-book icon-flush-sides"></i>
 											</span>
-										</div>
+									</div>
 
-									</a>
+								</a>
 								</div>
 
 								<div class="panel-body panel-card-section">
 									<div class="media">
 										<a href="#/guest/hostitems"
-											class="media-photo-badge pull-right card-profile-picture card-profile-picture-offset">
+										   class="media-photo-badge pull-right card-profile-picture card-profile-picture-offset">
 											<div class="media-photo media-round">
 												<img
-													src="https://a1.muscache.com/ac/users/8096327/profile_pic/1376288532/original.jpg"
-													alt="I am an avid traveller who loves exploring destina">
+														src="https://a1.muscache.com/ac/users/8096327/profile_pic/1376288532/original.jpg"
+														alt="I am an avid traveller who loves exploring destina">
 											</div>
 										</a>
 										<h3 class="h5 listing-name text-truncate row-space-top-1">
@@ -370,11 +368,11 @@
 												CrashPad - 6 Bunker Room &amp; B'fast </a>
 										</h3>
 										<div itemprop="description"
-											class="text-muted listing-location text-truncate">
+											 class="text-muted listing-location text-truncate">
 											<span> <a
-												href="/rooms/4696450?checkin=08-12-2015&amp;checkout=10-12-2015&amp;s=15_aUHWw"
-												target="listing_4696450" class="text-normal link-reset">
-													Shared room <i class="fa fa-star-o icon-light-gray"></i> <i
+													href="/rooms/4696450?checkin=08-12-2015&amp;checkout=10-12-2015&amp;s=15_aUHWw"
+													target="listing_4696450" class="text-normal link-reset">
+												Shared room <i class="fa fa-star-o icon-light-gray"></i> <i
 													class="fa fa-star-o icon-light-gray"></i> <i
 													class="fa fa-star-o icon-light-gray"></i> <i
 													class="fa fa-star icon-light-gray"></i> <i
@@ -391,15 +389,15 @@
 						<div>
 							<div class="col-md-6  col-sm-6  col-xs-6 ">
 								<div class="container angular-guest-slider"
-									ng-controller="sliderController">
+									 ng-controller="sliderController">
 									<img ng-repeat="slide in slides"
-										class="angular-slide slide-animation nonDraggableImage"
-										ng-swipe-right="nextSlide()" ng-swipe-left="prevSlide()"
-										ng-hide="!isCurrentSlideIndex($index)"
-										ng-src="{{slide.image}}"> <i
+										 class="angular-slide slide-animation nonDraggableImage"
+										 ng-swipe-right="nextSlide()" ng-swipe-left="prevSlide()"
+										 ng-hide="!isCurrentSlideIndex($index)"
+										 ng-src="{{slide.image}}"> <i
 										class="icon icon-heart-alt icon-white icon-size-2"
 										id="wishlist-widget-icon-4696450"></i> <a class="arrow prev"
-										href="#" ng-click="nextSlide()"><i
+																				  href="#" ng-click="nextSlide()"><i
 										class="fa fa-chevron-left arrow-signals"></i></a> <a
 										class="arrow next " href="#" ng-click="prevSlide()"><i
 										class="fa fa-chevron-right arrow-signals"></i></a>
@@ -408,11 +406,11 @@
 								<div class="panel-body panel-card-section">
 									<div class="media">
 										<a href="#/guest/hostitems"
-											class="media-photo-badge pull-right card-profile-picture card-profile-picture-offset">
+										   class="media-photo-badge pull-right card-profile-picture card-profile-picture-offset">
 											<div class="media-photo media-round">
 												<img
-													src="https://a1.muscache.com/ac/users/8096327/profile_pic/1376288532/original.jpg"
-													alt="I am an avid traveller who loves exploring destina">
+														src="https://a1.muscache.com/ac/users/8096327/profile_pic/1376288532/original.jpg"
+														alt="I am an avid traveller who loves exploring destina">
 											</div>
 										</a>
 										<h3 class="h5 listing-name text-truncate row-space-top-1">
@@ -420,11 +418,11 @@
 												CrashPad - 6 Bunker Room &amp; B'fast </a>
 										</h3>
 										<div itemprop="description"
-											class="text-muted listing-location text-truncate">
+											 class="text-muted listing-location text-truncate">
 											<span> <a
-												href="/rooms/4696450?checkin=08-12-2015&amp;checkout=10-12-2015&amp;s=15_aUHWw"
-												target="listing_4696450" class="text-normal link-reset">
-													Shared room <i class="fa fa-star-o icon-light-gray"></i> <i
+													href="/rooms/4696450?checkin=08-12-2015&amp;checkout=10-12-2015&amp;s=15_aUHWw"
+													target="listing_4696450" class="text-normal link-reset">
+												Shared room <i class="fa fa-star-o icon-light-gray"></i> <i
 													class="fa fa-star-o icon-light-gray"></i> <i
 													class="fa fa-star-o icon-light-gray"></i> <i
 													class="fa fa-star icon-light-gray"></i> <i
@@ -439,15 +437,15 @@
 							</div>
 							<div class="col-md-6  col-sm-6  col-xs-6 ">
 								<div class="container angular-guest-slider"
-									ng-controller="sliderController">
+									 ng-controller="sliderController">
 									<img ng-repeat="slide in slides"
-										class="angular-slide slide-animation nonDraggableImage"
-										ng-swipe-right="nextSlide()" ng-swipe-left="prevSlide()"
-										ng-hide="!isCurrentSlideIndex($index)"
-										ng-src="{{slide.image}}"> <i
+										 class="angular-slide slide-animation nonDraggableImage"
+										 ng-swipe-right="nextSlide()" ng-swipe-left="prevSlide()"
+										 ng-hide="!isCurrentSlideIndex($index)"
+										 ng-src="{{slide.image}}"> <i
 										class="icon icon-heart-alt icon-white icon-size-2"
 										id="wishlist-widget-icon-4696450"></i> <a class="arrow prev"
-										href="#" ng-click="nextSlide()"><i
+																				  href="#" ng-click="nextSlide()"><i
 										class="fa fa-chevron-left arrow-signals"></i></a> <a
 										class="arrow next " href="#" ng-click="prevSlide()"><i
 										class="fa fa-chevron-right arrow-signals"></i></a>
@@ -456,11 +454,11 @@
 								<div class="panel-body panel-card-section">
 									<div class="media">
 										<a href=""
-											class="media-photo-badge pull-right card-profile-picture card-profile-picture-offset">
+										   class="media-photo-badge pull-right card-profile-picture card-profile-picture-offset">
 											<div class="media-photo media-round">
 												<img
-													src="https://a1.muscache.com/ac/users/8096327/profile_pic/1376288532/original.jpg"
-													alt="I am an avid traveller who loves exploring destina">
+														src="https://a1.muscache.com/ac/users/8096327/profile_pic/1376288532/original.jpg"
+														alt="I am an avid traveller who loves exploring destina">
 											</div>
 										</a>
 										<h3 class="h5 listing-name text-truncate row-space-top-1">
@@ -468,11 +466,11 @@
 												CrashPad - 6 Bunker Room &amp; B'fast </a>
 										</h3>
 										<div itemprop="description"
-											class="text-muted listing-location text-truncate">
+											 class="text-muted listing-location text-truncate">
 											<span> <a
-												href="/rooms/4696450?checkin=08-12-2015&amp;checkout=10-12-2015&amp;s=15_aUHWw"
-												target="listing_4696450" class="text-normal link-reset">
-													Shared room <i class="fa fa-star-o icon-light-gray"></i> <i
+													href="/rooms/4696450?checkin=08-12-2015&amp;checkout=10-12-2015&amp;s=15_aUHWw"
+													target="listing_4696450" class="text-normal link-reset">
+												Shared room <i class="fa fa-star-o icon-light-gray"></i> <i
 													class="fa fa-star-o icon-light-gray"></i> <i
 													class="fa fa-star-o icon-light-gray"></i> <i
 													class="fa fa-star icon-light-gray"></i> <i
@@ -487,15 +485,15 @@
 							</div>
 							<div class="col-md-6  col-sm-6  col-xs-6 ">
 								<div class="container angular-guest-slider"
-									ng-controller="sliderController">
+									 ng-controller="sliderController">
 									<img ng-repeat="slide in slides"
-										class="angular-slide slide-animation nonDraggableImage"
-										ng-swipe-right="nextSlide()" ng-swipe-left="prevSlide()"
-										ng-hide="!isCurrentSlideIndex($index)"
-										ng-src="{{slide.image}}"> <i
+										 class="angular-slide slide-animation nonDraggableImage"
+										 ng-swipe-right="nextSlide()" ng-swipe-left="prevSlide()"
+										 ng-hide="!isCurrentSlideIndex($index)"
+										 ng-src="{{slide.image}}"> <i
 										class="icon icon-heart-alt icon-white icon-size-2"
 										id="wishlist-widget-icon-4696450"></i> <a class="arrow prev"
-										href="#" ng-click="nextSlide()"><i
+																				  href="#" ng-click="nextSlide()"><i
 										class="fa fa-chevron-left arrow-signals"></i></a> <a
 										class="arrow next " href="#" ng-click="prevSlide()"><i
 										class="fa fa-chevron-right arrow-signals"></i></a>
@@ -504,11 +502,11 @@
 								<div class="panel-body panel-card-section">
 									<div class="media">
 										<a href="#/guest/hostitems"
-											class="media-photo-badge pull-right card-profile-picture card-profile-picture-offset">
+										   class="media-photo-badge pull-right card-profile-picture card-profile-picture-offset">
 											<div class="media-photo media-round">
 												<img
-													src="https://a1.muscache.com/ac/users/8096327/profile_pic/1376288532/original.jpg"
-													alt="I am an avid traveller who loves exploring destina">
+														src="https://a1.muscache.com/ac/users/8096327/profile_pic/1376288532/original.jpg"
+														alt="I am an avid traveller who loves exploring destina">
 											</div>
 										</a>
 										<h3 class="h5 listing-name text-truncate row-space-top-1">
@@ -516,11 +514,11 @@
 												CrashPad - 6 Bunker Room &amp; B'fast </a>
 										</h3>
 										<div itemprop="description"
-											class="text-muted listing-location text-truncate">
+											 class="text-muted listing-location text-truncate">
 											<span> <a
-												href="/rooms/4696450?checkin=08-12-2015&amp;checkout=10-12-2015&amp;s=15_aUHWw"
-												target="listing_4696450" class="text-normal link-reset">
-													Shared room <i class="fa fa-star-o icon-light-gray"></i> <i
+													href="/rooms/4696450?checkin=08-12-2015&amp;checkout=10-12-2015&amp;s=15_aUHWw"
+													target="listing_4696450" class="text-normal link-reset">
+												Shared room <i class="fa fa-star-o icon-light-gray"></i> <i
 													class="fa fa-star-o icon-light-gray"></i> <i
 													class="fa fa-star-o icon-light-gray"></i> <i
 													class="fa fa-star icon-light-gray"></i> <i
@@ -535,15 +533,15 @@
 							</div>
 							<div class="col-md-6  col-sm-6  col-xs-6 ">
 								<div class="container angular-guest-slider"
-									ng-controller="sliderController">
+									 ng-controller="sliderController">
 									<img ng-repeat="slide in slides"
-										class="angular-slide slide-animation nonDraggableImage"
-										ng-swipe-right="nextSlide()" ng-swipe-left="prevSlide()"
-										ng-hide="!isCurrentSlideIndex($index)"
-										ng-src="{{slide.image}}"> <i
+										 class="angular-slide slide-animation nonDraggableImage"
+										 ng-swipe-right="nextSlide()" ng-swipe-left="prevSlide()"
+										 ng-hide="!isCurrentSlideIndex($index)"
+										 ng-src="{{slide.image}}"> <i
 										class="icon icon-heart-alt icon-white icon-size-2"
 										id="wishlist-widget-icon-4696450"></i> <a class="arrow prev"
-										href="#" ng-click="nextSlide()"><i
+																				  href="#" ng-click="nextSlide()"><i
 										class="fa fa-chevron-left arrow-signals"></i></a> <a
 										class="arrow next " href="#" ng-click="prevSlide()"><i
 										class="fa fa-chevron-right arrow-signals"></i></a>
@@ -552,11 +550,11 @@
 								<div class="panel-body panel-card-section">
 									<div class="media">
 										<a href=""
-											class="media-photo-badge pull-right card-profile-picture card-profile-picture-offset">
+										   class="media-photo-badge pull-right card-profile-picture card-profile-picture-offset">
 											<div class="media-photo media-round">
 												<img
-													src="https://a1.muscache.com/ac/users/8096327/profile_pic/1376288532/original.jpg"
-													alt="I am an avid traveller who loves exploring destina">
+														src="https://a1.muscache.com/ac/users/8096327/profile_pic/1376288532/original.jpg"
+														alt="I am an avid traveller who loves exploring destina">
 											</div>
 										</a>
 										<h3 class="h5 listing-name text-truncate row-space-top-1">
@@ -564,11 +562,11 @@
 												CrashPad - 6 Bunker Room &amp; B'fast </a>
 										</h3>
 										<div itemprop="description"
-											class="text-muted listing-location text-truncate">
+											 class="text-muted listing-location text-truncate">
 											<span> <a
-												href="/rooms/4696450?checkin=08-12-2015&amp;checkout=10-12-2015&amp;s=15_aUHWw"
-												target="listing_4696450" class="text-normal link-reset">
-													Shared room <i class="fa fa-star-o icon-light-gray"></i> <i
+													href="/rooms/4696450?checkin=08-12-2015&amp;checkout=10-12-2015&amp;s=15_aUHWw"
+													target="listing_4696450" class="text-normal link-reset">
+												Shared room <i class="fa fa-star-o icon-light-gray"></i> <i
 													class="fa fa-star-o icon-light-gray"></i> <i
 													class="fa fa-star-o icon-light-gray"></i> <i
 													class="fa fa-star icon-light-gray"></i> <i
@@ -585,15 +583,15 @@
 						<div>
 							<div class="col-md-6  col-sm-6  col-xs-6 ">
 								<div class="container angular-guest-slider"
-									ng-controller="sliderController">
+									 ng-controller="sliderController">
 									<img ng-repeat="slide in slides"
-										class="angular-slide slide-animation nonDraggableImage"
-										ng-swipe-right="nextSlide()" ng-swipe-left="prevSlide()"
-										ng-hide="!isCurrentSlideIndex($index)"
-										ng-src="{{slide.image}}"> <i
+										 class="angular-slide slide-animation nonDraggableImage"
+										 ng-swipe-right="nextSlide()" ng-swipe-left="prevSlide()"
+										 ng-hide="!isCurrentSlideIndex($index)"
+										 ng-src="{{slide.image}}"> <i
 										class="icon icon-heart-alt icon-white icon-size-2"
 										id="wishlist-widget-icon-4696450"></i> <a class="arrow prev"
-										href="#" ng-click="nextSlide()"><i
+																				  href="#" ng-click="nextSlide()"><i
 										class="fa fa-chevron-left arrow-signals"></i></a> <a
 										class="arrow next " href="#" ng-click="prevSlide()"><i
 										class="fa fa-chevron-right arrow-signals"></i></a>
@@ -602,11 +600,11 @@
 								<div class="panel-body panel-card-section">
 									<div class="media">
 										<a href="#/guest/hostitems"
-											class="media-photo-badge pull-right card-profile-picture card-profile-picture-offset">
+										   class="media-photo-badge pull-right card-profile-picture card-profile-picture-offset">
 											<div class="media-photo media-round">
 												<img
-													src="https://a1.muscache.com/ac/users/8096327/profile_pic/1376288532/original.jpg"
-													alt="I am an avid traveller who loves exploring destina">
+														src="https://a1.muscache.com/ac/users/8096327/profile_pic/1376288532/original.jpg"
+														alt="I am an avid traveller who loves exploring destina">
 											</div>
 										</a>
 										<h3 class="h5 listing-name text-truncate row-space-top-1">
@@ -614,11 +612,11 @@
 												CrashPad - 6 Bunker Room &amp; B'fast </a>
 										</h3>
 										<div itemprop="description"
-											class="text-muted listing-location text-truncate">
+											 class="text-muted listing-location text-truncate">
 											<span> <a
-												href="/rooms/4696450?checkin=08-12-2015&amp;checkout=10-12-2015&amp;s=15_aUHWw"
-												target="listing_4696450" class="text-normal link-reset">
-													Shared room <i class="fa fa-star-o icon-light-gray"></i> <i
+													href="/rooms/4696450?checkin=08-12-2015&amp;checkout=10-12-2015&amp;s=15_aUHWw"
+													target="listing_4696450" class="text-normal link-reset">
+												Shared room <i class="fa fa-star-o icon-light-gray"></i> <i
 													class="fa fa-star-o icon-light-gray"></i> <i
 													class="fa fa-star-o icon-light-gray"></i> <i
 													class="fa fa-star icon-light-gray"></i> <i
@@ -633,15 +631,15 @@
 							</div>
 							<div class="col-md-6  col-sm-6  col-xs-6 ">
 								<div class="container angular-guest-slider"
-									ng-controller="sliderController">
+									 ng-controller="sliderController">
 									<img ng-repeat="slide in slides"
-										class="angular-slide slide-animation nonDraggableImage"
-										ng-swipe-right="nextSlide()" ng-swipe-left="prevSlide()"
-										ng-hide="!isCurrentSlideIndex($index)"
-										ng-src="{{slide.image}}"> <i
+										 class="angular-slide slide-animation nonDraggableImage"
+										 ng-swipe-right="nextSlide()" ng-swipe-left="prevSlide()"
+										 ng-hide="!isCurrentSlideIndex($index)"
+										 ng-src="{{slide.image}}"> <i
 										class="icon icon-heart-alt icon-white icon-size-2"
 										id="wishlist-widget-icon-4696450"></i> <a class="arrow prev"
-										href="#" ng-click="nextSlide()"><i
+																				  href="#" ng-click="nextSlide()"><i
 										class="fa fa-chevron-left arrow-signals"></i></a> <a
 										class="arrow next " href="#" ng-click="prevSlide()"><i
 										class="fa fa-chevron-right arrow-signals"></i></a>
@@ -650,11 +648,11 @@
 								<div class="panel-body panel-card-section">
 									<div class="media">
 										<a href=""
-											class="media-photo-badge pull-right card-profile-picture card-profile-picture-offset">
+										   class="media-photo-badge pull-right card-profile-picture card-profile-picture-offset">
 											<div class="media-photo media-round">
 												<img
-													src="https://a1.muscache.com/ac/users/8096327/profile_pic/1376288532/original.jpg"
-													alt="I am an avid traveller who loves exploring destina">
+														src="https://a1.muscache.com/ac/users/8096327/profile_pic/1376288532/original.jpg"
+														alt="I am an avid traveller who loves exploring destina">
 											</div>
 										</a>
 										<h3 class="h5 listing-name text-truncate row-space-top-1">
@@ -662,11 +660,11 @@
 												CrashPad - 6 Bunker Room &amp; B'fast </a>
 										</h3>
 										<div itemprop="description"
-											class="text-muted listing-location text-truncate">
+											 class="text-muted listing-location text-truncate">
 											<span> <a
-												href="/rooms/4696450?checkin=08-12-2015&amp;checkout=10-12-2015&amp;s=15_aUHWw"
-												target="listing_4696450" class="text-normal link-reset">
-													Shared room <i class="fa fa-star-o icon-light-gray"></i> <i
+													href="/rooms/4696450?checkin=08-12-2015&amp;checkout=10-12-2015&amp;s=15_aUHWw"
+													target="listing_4696450" class="text-normal link-reset">
+												Shared room <i class="fa fa-star-o icon-light-gray"></i> <i
 													class="fa fa-star-o icon-light-gray"></i> <i
 													class="fa fa-star-o icon-light-gray"></i> <i
 													class="fa fa-star icon-light-gray"></i> <i
@@ -681,15 +679,15 @@
 							</div>
 							<div class="col-md-6  col-sm-6  col-xs-6 ">
 								<div class="container angular-guest-slider"
-									ng-controller="sliderController">
+									 ng-controller="sliderController">
 									<img ng-repeat="slide in slides"
-										class="angular-slide slide-animation nonDraggableImage"
-										ng-swipe-right="nextSlide()" ng-swipe-left="prevSlide()"
-										ng-hide="!isCurrentSlideIndex($index)"
-										ng-src="{{slide.image}}"> <i
+										 class="angular-slide slide-animation nonDraggableImage"
+										 ng-swipe-right="nextSlide()" ng-swipe-left="prevSlide()"
+										 ng-hide="!isCurrentSlideIndex($index)"
+										 ng-src="{{slide.image}}"> <i
 										class="icon icon-heart-alt icon-white icon-size-2"
 										id="wishlist-widget-icon-4696450"></i> <a class="arrow prev"
-										href="#" ng-click="nextSlide()"><i
+																				  href="#" ng-click="nextSlide()"><i
 										class="fa fa-chevron-left arrow-signals"></i></a> <a
 										class="arrow next " href="#" ng-click="prevSlide()"><i
 										class="fa fa-chevron-right arrow-signals"></i></a>
@@ -698,11 +696,11 @@
 								<div class="panel-body panel-card-section">
 									<div class="media">
 										<a href="#/guest/hostitems"
-											class="media-photo-badge pull-right card-profile-picture card-profile-picture-offset">
+										   class="media-photo-badge pull-right card-profile-picture card-profile-picture-offset">
 											<div class="media-photo media-round">
 												<img
-													src="https://a1.muscache.com/ac/users/8096327/profile_pic/1376288532/original.jpg"
-													alt="I am an avid traveller who loves exploring destina">
+														src="https://a1.muscache.com/ac/users/8096327/profile_pic/1376288532/original.jpg"
+														alt="I am an avid traveller who loves exploring destina">
 											</div>
 										</a>
 										<h3 class="h5 listing-name text-truncate row-space-top-1">
@@ -710,11 +708,11 @@
 												CrashPad - 6 Bunker Room &amp; B'fast </a>
 										</h3>
 										<div itemprop="description"
-											class="text-muted listing-location text-truncate">
+											 class="text-muted listing-location text-truncate">
 											<span> <a
-												href="/rooms/4696450?checkin=08-12-2015&amp;checkout=10-12-2015&amp;s=15_aUHWw"
-												target="listing_4696450" class="text-normal link-reset">
-													Shared room <i class="fa fa-star-o icon-light-gray"></i> <i
+													href="/rooms/4696450?checkin=08-12-2015&amp;checkout=10-12-2015&amp;s=15_aUHWw"
+													target="listing_4696450" class="text-normal link-reset">
+												Shared room <i class="fa fa-star-o icon-light-gray"></i> <i
 													class="fa fa-star-o icon-light-gray"></i> <i
 													class="fa fa-star-o icon-light-gray"></i> <i
 													class="fa fa-star icon-light-gray"></i> <i
@@ -734,57 +732,61 @@
 				<div class="results-footer">
 					<div class="nearby-links">
 						More places to stay in Jaipur: <a class="text-muted"
-							href="/s/Jaipur--India?type=apartment"> Apartments </a> .<a
+														  href="/s/Jaipur--India?type=apartment"> Apartments </a> .<a
 							class="text-muted" href="/s/Jaipur--India?type=house"> Houses
-						</a> . <a class="text-muted" href="/s/Jaipur--India?type=bnb"> Bed
-							&amp; Breakfasts </a>.<a class="text-muted"
-							href="/s/Jaipur--India?type=loft"> Lofts </a>.<a
+					</a> . <a class="text-muted" href="/s/Jaipur--India?type=bnb"> Bed
+						&amp; Breakfasts </a>.<a class="text-muted"
+												 href="/s/Jaipur--India?type=loft"> Lofts </a>.<a
 							class="text-muted" href="/s/Jaipur--India?type=villa"> Villas
-						</a>
+					</a>
 
 						<div class="space-top-1">
 							People also stay in <a class="text-muted"
-								href="/s/New-Delhi--India"> {{query.components.city}} </a>.<a
+												   href="/s/New-Delhi--India"> {{query.components.city}} </a>.<a
 								class="text-muted" href="/s/Mumbai--India">
-								{{query.components.state}} </a>.<a class="text-muted"
-								href="/s/Kathmandu--Nepal"> {{query.components.country}} </a>.<a
+							{{query.components.state}} </a>.<a class="text-muted"
+															   href="/s/Kathmandu--Nepal">
+							{{query.components.country}} </a>.<a
 								class="text-muted" href="/s/Bangalore--India"> Bangalore </a>.<a
 								class="text-muted" href="/s/Kandy--Sri-Lanka">
-								{{query.components.postCode}} </a>
+							{{query.components.postCode}} </a>
 
 						</div>
 						<div class="breadcrumbs row-space-top-1" itemprop="breadcrumb">
 							<span itemscope=""
-								itemtype="http://data-vocabulary.org/Breadcrumb"> <a
-								href="/s/India" itemprop="url"> <span itemprop="title">India</span>
+								  itemtype="http://data-vocabulary.org/Breadcrumb"> <a
+									href="/s/India" itemprop="url"> <span itemprop="title">India</span>
 							</a> <i class="icon icon-chevron-right breadcrumb-spacer"></i>
 							</span> <span itemscope=""
-								itemtype="http://data-vocabulary.org/Breadcrumb"> <a
+										  itemtype="http://data-vocabulary.org/Breadcrumb"> <a
 								href="/s/Rajasthan--India" itemprop="url"> <span
-									itemprop="title">Rajasthan</span>
-							</a> <i class="icon icon-chevron-right breadcrumb-spacer"></i>
+								itemprop="title">Rajasthan</span>
+						</a> <i class="icon icon-chevron-right breadcrumb-spacer"></i>
 							</span> <a href="/s/Jaipur--India?sublets=monthly"> <span>Jaipur</span>
-							</a>
+						</a>
 						</div>
 					</div>
 				</div>
 
 			</div>
 			<div
-				class="col-md-5 col-lg-5 hidden-sm hidden-xs override-col-margin ">
+					class="col-md-5 col-lg-5 hidden-sm hidden-xs override-col-margin ">
 
 				<div class="angular-google-map-container map-canvas"
-					ng-controller="guestConsoleController">
+					 ng-controller="guestConsoleController">
 					<ui-gmap-google-map center="map.center" zoom="map.zoom"
-						draggable="true" options="map.options" events="map.events"
-						control="googlemap"> <ui-gmap-window
-						coords="markers.coords" show="windowOptions.show"
-						options="windowOptions" closeClick="closeClick()">
+										draggable="true" options="map.options" events="map.events"
+										control="googlemap">
+						<ui-gmap-window
+								coords="markers.coords" show="windowOptions.show"
+								options="windowOptions" closeClick="closeClick()">
 
 
-					</ui-gmap-window> <ui-gmap-markers models="markers" idkey="markers.id"
-						coords="'coords'" click="'onClick'" events="markers.events">
-					</ui-gmap-markers> </ui-gmap-google-map>
+						</ui-gmap-window>
+						<ui-gmap-markers models="markers" idkey="markers.id"
+										 coords="'coords'" click="'onClick'" events="markers.events">
+						</ui-gmap-markers>
+					</ui-gmap-google-map>
 				</div>
 
 			</div>

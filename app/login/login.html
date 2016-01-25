@@ -1,11 +1,11 @@
 <style>
-.js-hero {
-	display: none;
-}
+	.js-hero {
+		display: none;
+	}
 </style>
 <link href="css/header.css" rel="stylesheet">
 <div class="row-fluid login-bg landing-hero"
-	ng-controller="loginController">
+	 ng-controller="loginController">
 
 	<div class="relative">
 		<div id="searchbox" class="search-field-area  ng-scope">
@@ -16,51 +16,52 @@
 							Login via
 							<div class="social-buttons">
 								<a href="/api/users/facebook"
-									class="btn btn-primary facebook btn-fb"><i
-									class="fa fa-facebook "></i> Facebook</a> <a
+								   class="btn btn-primary facebook btn-fb"><i
+										class="fa fa-facebook "></i> Facebook</a> <a
 									href="/api/users/google" class="btn btn-primary google btn-tw"><i
 									class="fa fa-google-plus "></i> Google</a>
 							</div>
 							or
 
-							<h6  class="bg-danger" 
+							<h6 class="bg-danger"
 								role="alert">{{loginerrormessage}}</h6>
 							<form class="form" role="form" novalidate name="loginform"
-								ng-class="{ 'submitted' : loginsubmitted === true}"
-								ng-submit="login(loginform)" accept-charset="UTF-8" id="login-nav">
+								  ng-class="{ 'submitted' : loginsubmitted === true}"
+								  ng-submit="login(loginform)" accept-charset="UTF-8" id="login-nav">
 								<div class="form-group">
 									<label class="sr-only" for="exampleInputEmail2">Email
 										address</label> <input type="email" required ng-model="user.email"
-										class="form-control" name="email" id="email"
-										placeholder="Email address"> <span
+															   class="form-control" name="email" id="email"
+															   placeholder="Email address"> <span
 										class=" label label-danger"
 										data-ng-show="loginsubmitted  && loginform.email.$error.required">Please enter Email !</span>
 										<span
-										class=" label label-danger"
-										data-ng-show="loginsubmitted  && loginform.email.$error.email">Please
+												class=" label label-danger"
+												data-ng-show="loginsubmitted  && loginform.email.$error.email">Please
 										enter valid Email !</span>
 								</div>
 								<div class="form-group">
 									<label class="sr-only" for="exampleInputPassword2">Password</label>
 									<input type="password" required ng-model="user.password"
-										class="form-control" name="password" id="password"
-										placeholder="Password"> <span
+										   class="form-control" name="password" id="password"
+										   placeholder="Password"> <span
 										class=" label label-danger"
 										data-ng-show="loginsubmitted  && loginform.password.$error.required">Please enter password!!</span>
-										
+
 									<h6 class="help-block text-right">
 										<a href="#/password"><b>Forget password ?</b></a>
 									</h6>
 								</div>
 								<div class="form-group">
 									<button type="submit" class="btn btn-primary btn-block">Sign
-										in</button>
+										in
+									</button>
 								</div>
 								<div>
 
 									<div class="checkbox">
 										<label> <input type="checkbox"><span
-											class="checkbox-material"><span class="check"></span></span>
+												class="checkbox-material"><span class="check"></span></span>
 											keep me logged-in
 										</label>
 									</div>

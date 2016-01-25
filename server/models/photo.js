@@ -13,5 +13,5 @@ var PhotoSchema = new Schema({
 	description : {type: String, required: false}
 });
 
-
+module.exports.PhotoSchema = PhotoSchema;
 module.exports = mongoose.model("Photo", PhotoSchema);

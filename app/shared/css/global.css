@@ -5,34 +5,22 @@
 /*Global declare that page has  100% height Now split it in different parts  */
 /*it covers most of part of header navbar and footer css and globally defined css*/
 html {
-	
+
 }
 
 /* ----------------Define global fonts and font family-------------------*/
 /*Roboto Light font will  be used in all the pages its global declaration */
 h1, h2, h3, h4, h5, h6, h7, h8 {
-	font-family: 'Roboto Light', sans-serif !important;
+	font-family: 'Roboto Light', sans-serif;
 	font-weight: 200;
 }
 
-.h1, h1 {
-	font-family: "Roboto Light" !important;
-}
-
-.h1, .h2, .h3, h1, h2, h3 {
-	font-family: "Roboto Light" !important;
-}
-
-.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
-	font-family: "Roboto Light" !important;
-}
-
 p {
-	font-family: 'Roboto Light', sans-serif !important;;
+	font-family: 'Roboto Light', sans-serif;
 }
 
 body {
-	font-family: 'Roboto Light', sans-serif !important;;
+	font-family: 'Roboto Light', sans-serif;
 	font-size: 16px;
 }
 
@@ -102,20 +90,10 @@ btn-sm {
 }
 
 .btn-primary
-
-
-
-
-
-
-
-
 :not
 
 
 
-
- 
 
 
 
@@ -126,8 +104,6 @@ btn-sm {
 
 
 
- 
-
 
 
 
@@ -136,8 +112,6 @@ btn-sm {
 
 
 
-
- 
 
 
 
@@ -148,75 +122,16 @@ btn-sm {
 
 
 
- 
 
 
 
-
-)
-{
-background-color
-
-
-
-
-
-
-
-
-:
-
-
-
-
- 
-
-
-
-
-#009688
-
-
-
-
-
-
-
-
-;
-color
-
-
-
-
-
-
-
-
-:
-
-
-
-
- 
-
-
-
-
-rgb
-
-
-
-
-
-
-
-
-(255
-,
-255,
-255);
+) {
+	background-color: #009688;
+	color: rgb(255,
+	255,
+	255);
 }
+
 .btn-styles {
 	font-size: 18px;
 	color: #ffffff !important;
@@ -240,8 +155,7 @@ rgb
 	margin: 3px;
 }
 
-.video-container iframe, .video-container object, .video-container embed
-	{
+.video-container iframe, .video-container object, .video-container embed {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -255,8 +169,11 @@ rgb
 }
 
 @
-keyframes spin {from { transform:scale(1)rotate(0deg);
-	
+keyframes spin {
+
+from {
+	transform: scale(1) rotate(0deg);
+
 }
 
 to {
@@ -265,8 +182,11 @@ to {
 
 }
 @
--webkit-keyframes spin2 {from { -webkit-transform:rotate(0deg);
-	
+-webkit-keyframes spin2 {
+
+from {
+	-webkit-transform: rotate(0deg);
+
 }
 
 to {
@@ -299,11 +219,11 @@ ul.inline, ol.inline {
 	margin: 0;
 }
 
-.popular-container ul>li {
+.popular-container ul > li {
 	margin-right: 30px;
 }
 
-ul.inline>li, ol.inline>li {
+ul.inline > li, ol.inline > li {
 	display: inline-block;
 	padding-right: 5px;
 	padding-left: 5px;
@@ -343,8 +263,8 @@ small {
 
 .search-banner {
 	background-image: linear-gradient(rgba(0, 0, 0, 0.25),
-		rgba(0, 0, 0, 0.25)),
-		url('//s3.amazonaws.com/bookalokal-assets/landing/landing-table.jpg');
+	rgba(0, 0, 0, 0.25)),
+	url('//s3.amazonaws.com/bookalokal-assets/landing/landing-table.jpg');
 }
 
 #list-main-container {
@@ -445,7 +365,7 @@ small {
 	border-bottom: 0;
 }
 
-.viewModeSearch .nav>li>a:hover, .viewMode .nav>li>a:focus {
+.viewModeSearch .nav > li > a:hover, .viewMode .nav > li > a:focus {
 	color: #d5712d;
 	font-size: 16px;
 	font-weight: normal;
@@ -453,12 +373,12 @@ small {
 	border: 0;
 }
 
-.viewModeSearch .nav-tabs>li>a, .viewMode .nav-pills>li>a {
+.viewModeSearch .nav-tabs > li > a, .viewMode .nav-pills > li > a {
 	margin-right: 0;
 	padding: 7px;
 }
 
-.viewModeSearch .nav>li>a:hover, .viewMode .nav>li>a:focus {
+.viewModeSearch .nav > li > a:hover, .viewMode .nav > li > a:focus {
 	color: #d5712d;
 	font-size: 16px;
 	font-weight: normal;

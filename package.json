@@ -7,12 +7,21 @@
     "start": "node app.js"
   },
   "dependencies": {
+    "angular-bootstrap-datetimepicker": "^0.4.0",
+    "body-parser": "~1.0.0",
+    "cookie-parser": "~1.4.0",
     "crypto": "~0.0.3",
+    "errorhandler": "~1.4.2",
     "express": "~4.13.3",
+    "express-logger": "~0.0.3",
     "express-session": "~1.12.1",
-	"express-logger": "~0.0.3",
     "jwt-simple": "~0.3.1",
+    "method-override": "~2.3.5",
     "mongoose": "~4.1.9",
+    "mongoose-schema-extend": "*",
+    "morgan": "~1.6.1",
+    "node-uuid": "~1.4.7",
+    "nodemailer": "~1.10.0",
     "passport": "~0.1.17",
     "passport-facebook": ">= 0.0.0",
     "passport-google-oauth": "~0.1.5",
@@ -20,15 +29,9 @@
     "passport-local": "~0.1.6",
     "passport-local-mongoose": "~0.2.5",
     "path": "~0.12.7",
-    "nodemailer": "~1.10.0",
-	"mongoose-schema-extend": "~0.2.0",
-	"body-parser":"~1.0.0",
-	"urlencode": "~1.1.0",
-	"method-override" : "~2.3.5",
-	"cookie-parser": "~1.4.0",
-	"errorhandler": "~1.4.2",
-	"node-uuid": "~1.4.7",
-	"morgan": "~1.6.1"
+    "urlencode": "~1.1.0",
+	"angular-bootstrap-datetimepicker" : "*",
+	"moment" : "*"
   },
   "engines": {
     "node": "4.1.1"

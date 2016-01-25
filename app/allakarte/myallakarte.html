@@ -41,40 +41,51 @@
 				<div class="container-fluid">
 					<form class="form-horizontal">
 						<div class="form-group label-floating">
-							<label for="dish_item_name"  class="col-sm-4 control-label modal-label">Name</label>
+							<label for="dish_item_name" class="col-sm-4 control-label modal-label">Name</label>
 							<div class="col-sm-8">
-								<input type="text" class="form-control" ng-model="dish_item.name" id="dish_item_name" placeholder="Name"/>
+								<input type="text" class="form-control" ng-model="dish_item.name" id="dish_item_name"
+									   placeholder="Name"/>
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="dish_item_description"  class="col-sm-4 control-label modal-label">Description</label>
+							<label for="dish_item_description"
+								   class="col-sm-4 control-label modal-label">Description</label>
 							<div class="col-sm-8">
-								<textarea rows="5" class="form-control" ng-model="dish_item.description" id="dish_item_description" placeholder="Description"/>
+								<textarea rows="5" class="form-control" ng-model="dish_item.description"
+										  id="dish_item_description" placeholder="Description"/>
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="col-sm-4 control-label modal-label" for="dish_item_price">Price</label>
 							<div class="col-sm-8 input-group price-class">
 								<div class="input-group-addon">$</div>
-								<input type="text" class="form-control" ng-model="dish_item.price" id="dish_item_price" placeholder="Price">
+								<input type="text" class="form-control" ng-model="dish_item.price" id="dish_item_price"
+									   placeholder="Price">
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="dish_item_allergens"  class="col-sm-4 control-label modal-label">Allergens</label>
+							<label for="dish_item_allergens"
+								   class="col-sm-4 control-label modal-label">Allergens</label>
 							<div class="col-sm-8">
-								<input type="text" class="form-control" ng-model="dish_item.allergens" id="dish_item_allergens" placeholder="Allergens"/>
+								<input type="text" class="form-control" ng-model="dish_item.allergens"
+									   id="dish_item_allergens" placeholder="Allergens"/>
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="dish_item_advance_booking_time"  class="col-sm-4 control-label modal-label">Advance Booking Time</label>
+							<label for="dish_item_advance_booking_time" class="col-sm-4 control-label modal-label">Advance
+								Booking Time</label>
 							<div class="col-sm-8">
-								<input type="text" class="form-control" ng-model="dish_item.advance_booking_time" id="dish_item_advance_booking_time" placeholder="Advance Booking Time"/>
+								<input type="text" class="form-control" ng-model="dish_item.advance_booking_time"
+									   id="dish_item_advance_booking_time" placeholder="Advance Booking Time"/>
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="dish_item_is_show_or_cooking_recipe_shared"  class="col-sm-4 control-label modal-label">Recipe Shared</label>
+							<label for="dish_item_is_show_or_cooking_recipe_shared"
+								   class="col-sm-4 control-label modal-label">Recipe Shared</label>
 							<div class="col-sm-8">
-								<input type="checkbox" class="form-control" ng-model="dish_item.is_show_or_cooking_recipe_shared" id="dish_item_is_show_or_cooking_recipe_shared"/>
+								<input type="checkbox" class="form-control"
+									   ng-model="dish_item.is_show_or_cooking_recipe_shared"
+									   id="dish_item_is_show_or_cooking_recipe_shared"/>
 							</div>
 						</div>
 					</form>
@@ -100,79 +111,91 @@
 		<div class="col-md-4 pull-right margin-bottom-0-5-percent">
 			<div class="input-group">
 				<span class="input-group-addon" id="basic-addon1"><i class="fa fa-search"></i></span>
-				<input type="text" class="form-control search-in-table" ng-model="searchText" placeholder="Search by name" aria-describedby="basic-addon1">
+				<input type="text" class="form-control search-in-table" ng-model="searchText"
+					   placeholder="Search by name" aria-describedby="basic-addon1">
 			</div>
 		</div>
 		<div class="col-md-12 table-responsive" style="margin-bottom: 20px;">
 			<table class="col-md-12 table text-center table-bordered centered-table table-mc-light-blue wrap-word-class">
 				<thead>
-					<th class="width-5-percent"><i class="fa fa-hashtag"></i></th>
-					<th>Name</th>
-					<th>Price</th>
-					<th>Advance Booking Time</th>
-					<th>Recipe Shared</th>
-					<th class="width-10-percent">Actions</th>
+				<th class="width-5-percent"><i class="fa fa-hashtag"></i></th>
+				<th>Name</th>
+				<th>Price</th>
+				<th>Advance Booking Time</th>
+				<th>Recipe Shared</th>
+				<th class="width-10-percent">Actions</th>
 				</thead>
 				<tbody>
-					<tr ng-repeat-start="dish_item in allakarte.dish_items" data-toggle="collapse" data-target="#demo{{$index}}" class="accordion-toggle">
-						<td class="col-md-1">
-							<span>{{$index + 1}}</span>
-							<button class="btn btn-default btn-xs" ng-show="dish_item.expanded" ng-click="dish_item.expanded = false"><i class="material-icons">expand_less</i></button>
-							<button class="btn btn-default btn-xs" ng-show="!dish_item.expanded" ng-click="dish_item.expanded = true"><i class="material-icons">expand_more</i></button>
-						</td>
-						<td class="col-md-4">{{dish_item.name}}</td>
-						<td class="col-md-2"><i class="fa fa-usd"></i> {{dish_item.price | number:2}}</td>
-						<td class="col-md-2">{{dish_item.advance_booking_time}}</td>
-						<td class="col-md-1">
-							<span ng-show="dish_item.is_show_or_cooking_recipe_shared"><i class="fa fa-check-square-o"></i></span>
-							<span ng-hide="dish_item.is_show_or_cooking_recipe_shared"><i class="fa fa-square-o"></i></span>
-						</td>
-						<td class="col-md-2">
-							<button class="btn btn-sm" ng-click="EditItem(dish_item, allakarte)"><i class="fa fa-edit"></i></button>
-							<button class="btn btn-sm" ng-click="RemoveItem(dish_item, allakarte)"><i class="fa fa-trash"></i></button>
-						</td>
-					</tr>
-					<tr ng-if="dish_item.expanded && allakarte.expanded"  ng-repeat-end="">
-						<td class="col-md-1"></td>
-						<td colspan="5" class="col-md-11">
-							<div class="col-sm-12">
+				<tr ng-repeat-start="dish_item in allakarte.dish_items" data-toggle="collapse"
+					data-target="#demo{{$index}}" class="accordion-toggle">
+					<td class="col-md-1">
+						<span>{{$index + 1}}</span>
+						<button class="btn btn-default btn-xs" ng-show="dish_item.expanded"
+								ng-click="dish_item.expanded = false"><i class="material-icons">expand_less</i></button>
+						<button class="btn btn-default btn-xs" ng-show="!dish_item.expanded"
+								ng-click="dish_item.expanded = true"><i class="material-icons">expand_more</i></button>
+					</td>
+					<td class="col-md-4">{{dish_item.name}}</td>
+					<td class="col-md-2"><i class="fa fa-usd"></i> {{dish_item.price | number:2}}</td>
+					<td class="col-md-2">{{dish_item.advance_booking_time}}</td>
+					<td class="col-md-1">
+						<span ng-show="dish_item.is_show_or_cooking_recipe_shared"><i class="fa fa-check-square-o"></i></span>
+						<span ng-hide="dish_item.is_show_or_cooking_recipe_shared"><i class="fa fa-square-o"></i></span>
+					</td>
+					<td class="col-md-2">
+						<button class="btn btn-sm" ng-click="EditItem(dish_item, allakarte)"><i class="fa fa-edit"></i>
+						</button>
+						<button class="btn btn-sm" ng-click="RemoveItem(dish_item, allakarte)"><i
+								class="fa fa-trash"></i></button>
+					</td>
+				</tr>
+				<tr ng-if="dish_item.expanded && allakarte.expanded" ng-repeat-end="">
+					<td class="col-md-1"></td>
+					<td colspan="5" class="col-md-11">
+						<div class="col-sm-12">
+							<div class="col-sm-10">
 								<div class="col-sm-10">
-									<div class="col-sm-10">
-										<div class="col-sm-5 text-left"><b>Name</b></div>
-										<div class="col-sm-7 text-left">{{dish_item.name}}</div>
-									</div>
-									<div class="col-sm-10">
-										<div class="col-sm-5 text-left"><b>Description</b></div>
-										<div class="col-sm-7 text-left">{{dish_item.description}}</div>
-									</div>
-									<div class="col-sm-10">
-										<div class="col-sm-5 text-left"><b>Price</b></div>
-										<div class="col-sm-7 text-left"><i class="fa fa-usd"></i>{{dish_item.price | number:2}}</div>
-									</div>
-									<div class="col-sm-10">
-										<div class="col-sm-5 text-left"><b>Advance Booking Time</b></div>
-										<div class="col-sm-7 text-left">{{dish_item.advance_booking_time}}</div>
-									</div>
-									<div class="col-sm-10">
-										<div class="col-sm-5 text-left"><b>Allergens</b></div>
-										<div class="col-sm-7 text-left">{{dish_item.allergens}}</div>
-									</div>
-									<div class="col-sm-10">
-										<div class="col-sm-5 text-left"><b>Recipe Shared</b></div>
-										<div class="col-sm-7 text-left">
-											<span ng-show="dish_item.is_show_or_cooking_recipe_shared"><i class="fa fa-check-square-o"></i></span>
-											<span ng-hide="dish_item.is_show_or_cooking_recipe_shared"><i class="fa fa-square-o"></i></span>
-										</div>
+									<div class="col-sm-5 text-left"><b>Name</b></div>
+									<div class="col-sm-7 text-left">{{dish_item.name}}</div>
+								</div>
+								<div class="col-sm-10">
+									<div class="col-sm-5 text-left"><b>Description</b></div>
+									<div class="col-sm-7 text-left">{{dish_item.description}}</div>
+								</div>
+								<div class="col-sm-10">
+									<div class="col-sm-5 text-left"><b>Price</b></div>
+									<div class="col-sm-7 text-left"><i class="fa fa-usd"></i>{{dish_item.price |
+										number:2}}
 									</div>
 								</div>
-								<div class="col-sm-4"></div>
+								<div class="col-sm-10">
+									<div class="col-sm-5 text-left"><b>Advance Booking Time</b></div>
+									<div class="col-sm-7 text-left">{{dish_item.advance_booking_time}}</div>
+								</div>
+								<div class="col-sm-10">
+									<div class="col-sm-5 text-left"><b>Allergens</b></div>
+									<div class="col-sm-7 text-left">{{dish_item.allergens}}</div>
+								</div>
+								<div class="col-sm-10">
+									<div class="col-sm-5 text-left"><b>Recipe Shared</b></div>
+									<div class="col-sm-7 text-left">
+										<span ng-show="dish_item.is_show_or_cooking_recipe_shared"><i
+												class="fa fa-check-square-o"></i></span>
+										<span ng-hide="dish_item.is_show_or_cooking_recipe_shared"><i
+												class="fa fa-square-o"></i></span>
+									</div>
+								</div>
 							</div>
-						</td>
-					</tr>
+							<div class="col-sm-4"></div>
+						</div>
+					</td>
+				</tr>
 				</tbody>
 			</table>
 			<div class="pull-left">
-				<button class="btn-default btn btn-primary" ng-click="AddItem(allakarte)"><i class="fa fa-plus"></i>&nbsp;&nbsp;Create Dish Item</button>
+				<button class="btn-default btn btn-primary" ng-click="AddItem(allakarte)"><i class="fa fa-plus"></i>&nbsp;&nbsp;Create
+					Dish Item
+				</button>
 			</div>
 			<ul class="pagination pull-right" ng-show="showPagination">
 				<li><a ng-click="goToPage($index)">{{$index + 1}}</a></li>
