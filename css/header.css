@@ -9,12 +9,12 @@
 }
 
 .header-bg {
-	background-color: rgb(54, 163, 153);
+	    background-color: #273b47;
 }
 
 .my-profile {
-	background-color: rgb(54, 163, 153) !important;
-	color: white !important;
+    background-color: rgb(39, 59, 71) !important;
+    color: white !important;
 }
 
 .search-btn input[name="location"] {
@@ -146,15 +146,15 @@
 }
 
 .navbar.navbar, .navbar-default.navbar {
-	background-color: rgba(0, 150, 136, 0.71);
-	color: #ffffff;
+    background-color: #273b47;
+    color: #ffffff;
+    border-radius: 0px !important;
 }
 
-.navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus
-	{
-	background-color: rgb(13, 121, 112);
-	text-decoration: none;
-	color: #ffffff;
+.navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus {
+    background-color: rgb(26, 47, 60);
+    text-decoration: none;
+    color: #ffffff;
 }
 
 .nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus
