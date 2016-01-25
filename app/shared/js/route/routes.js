@@ -63,9 +63,9 @@ function config ( $stateProvider, $urlRouterProvider, USER_ROLES ) {
 			"allakarte",
 			{
 				url: "/allakarte",
-				templateUrl : "app/allakarte/myallakarte.html",
+				templateUrl: "app/allakarte/myallakarte.html",
 				data: {
-					authorizedRoles: [USER_ROLES.admin, USER_ROLES.host, USER_ROLES.guest],
+					authorizedRoles: [ USER_ROLES.admin, USER_ROLES.host, USER_ROLES.guest ],
 					secure: false
 				}
 			}
@@ -86,13 +86,12 @@ function config ( $stateProvider, $urlRouterProvider, USER_ROLES ) {
 				url: "/login",
 				templateUrl: "app/login/login.html",
 				data: {
-					authorizedRoles: [ USER_ROLES.admin, USER_ROLES.host, USER_ROLES.guest ],
+					authorizedRoles: [ USER_ROLES.admin, USER_ROLES.host, USER_ROLES.guest ]
 				},
 				onEnter: [ '$state', 'AuthenticationService', function ( $state, AuthenticationService ) {
 					if ( AuthenticationService.isLoggedIn () ) {
 						$state.go ( 'home' );
 					}
-					;
 				} ]
 			} )
 		.state (
@@ -107,7 +106,6 @@ function config ( $stateProvider, $urlRouterProvider, USER_ROLES ) {
 					if ( AuthenticationService.isLoggedIn () ) {
 						$state.go ( 'home' );
 					}
-					;
 				} ]
 			} )
 
@@ -123,7 +121,7 @@ function config ( $stateProvider, $urlRouterProvider, USER_ROLES ) {
 					if ( AuthenticationService.changepassword ( $stateParams.email, $stateParams.token ) ) {
 						//$state.go('home');
 						console.log ( $stateParams.email );
-					};
+					}
 				} ]
 
 			} )
@@ -139,7 +137,6 @@ function config ( $stateProvider, $urlRouterProvider, USER_ROLES ) {
 					if ( AuthenticationService.isLoggedIn () ) {
 						$state.go ( 'home' );
 					}
-					;
 				} ]
 			} )
 		.state (
@@ -220,7 +217,6 @@ function config ( $stateProvider, $urlRouterProvider, USER_ROLES ) {
 					if ( ! AuthenticationService.isLoggedIn () ) {
 						$state.go ( 'home' );
 					}
-					;
 				} ]
 			} )
 		.state (
@@ -364,7 +360,6 @@ function config ( $stateProvider, $urlRouterProvider, USER_ROLES ) {
 					if ( ! AuthenticationService.isLoggedIn () ) {
 						$state.go ( 'home' );
 					}
-					;
 				} ]
 			} )
 		.state (
@@ -487,8 +482,6 @@ angular
 						} );
 
 			} ] );
-
-
 angular
 	.module ( 'Alacarte.food' ).filter ( "trustUrl", [ '$sce', function ( $sce ) {
 	return function ( recordingUrl ) {

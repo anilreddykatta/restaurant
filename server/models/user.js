@@ -21,7 +21,7 @@ var CreditCardSchema = new Schema({
 	card_holders_name : {type: String, required: false}
 });
 
-Token.statics.hasExpired= function(created) {
+Token.statics.hasExpired = function(created) {
 	var now = new Date();
 	var diff = (now.getTime() - created);
 	return diff > config.ttl;
@@ -227,4 +227,3 @@ UserSchema.statics.findUserByResetToken = function(email, resetToken, callback) 
 module.exports = Mongoose.model('User', UserSchema);
 module.exports.Token = TokenModel;
 module.exports.UserSchema = UserSchema;
-

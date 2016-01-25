@@ -1,19 +1,17 @@
-
-
 <div id="videoHeader" class="hero shift-with-hiw js-hero">
 	<div class="hero__background">
 
 		<div class="header-video">
 			<img src="img/masthead.jpg" class="header-video__media "
-				data-video-url="https://www.youtube.com/embed/Scxs7L0vhZ4"
-				data-teaser="video/teaser-video" data-video-width="560"
-				data-video-height="315"> <a
+				 data-video-url="https://www.youtube.com/embed/Scxs7L0vhZ4"
+				 data-teaser="video/teaser-video" data-video-width="560"
+				 data-video-height="315"> <a
 				href="https://www.youtube.com/embed/Scxs7L0vhZ4"
 				class="header-video__play-trigger" id="header-video__play-trigger"></a>
 			<button type="button" class="header-video__close-trigger"
-				id="header-video__close-trigger" style="display: none;"></button>
+					id="header-video__close-trigger" style="display: none;"></button>
 			<video autoplay="true" loop="true" muted=""
-				id="header-video__teaser-video" class="header-video__teaser-video">
+				   id="header-video__teaser-video" class="header-video__teaser-video">
 				<source src="video/teaser-video.webm" type="video/mp4">
 				<source src="video/teaser-video.mp4" type="video/mp4">
 			</video>
@@ -22,19 +20,20 @@
 	</div>
 
 	<div
-		class="hero__content page-container page-container-full text-center">
+			class="hero__content page-container page-container-full text-center">
 		<div class="va-container va-container-v va-container-h">
 			<div class="va-middle">
 				<div class="visible-lg  visible-md" id="logo">
 					<img src="img/logo-main.png" alt=" Alacarte">
 				</div>
 				<h1
-					class="text-bold-heading text-branding text-jumbo text-contrast space-1">
+						class="text-bold-heading text-branding text-jumbo text-contrast space-1">
 					Food & Travel</h1>
 				<div class="h4 text-contrast space-4">Visit the places around
-					the world and find delicious food</div>
+					the world and find delicious food
+				</div>
 				<a href="" data-dismiss="modal" data-toggle="modal"
-					data-target="#infoModal" class="btn btn-primary"> How It Works
+				   data-target="#infoModal" class="btn btn-primary"> How It Works
 				</a>
 
 			</div>
@@ -45,25 +44,25 @@
 				<div id="book">
 
 					<form class="row" name="mainform"
-						ng-class="{ 'submitted' : mainformsubmitted === true}">
+						  ng-class="{ 'submitted' : mainformsubmitted === true}">
 						<div
-							class="col-md-4 col-sm-offset-1 col-margin-top col-md-offset-1  col-sm-4  dates">
+								class="col-md-4 col-sm-offset-1 col-margin-top col-md-offset-1  col-sm-4  dates">
 							<input required type="text"
-								class="form-control header-form-control " id="Autocomplete"
-								name="Autocomplete" class="form-control" vs-google-autocomplete
-								ng-model="query.name" vs-place="query.place"
-								vs-place-id="query.components.placeId"
-								vs-street-number="query.components.streetNumber"
-								vs-street="query.components.street"
-								vs-city="query.components.city"
-								vs-state="query.components.state"
-								vs-country-short="query.components.countryCode"
-								vs-country="query.components.country"
-								vs-post-code="query.components.postCode"
-								vs-latitude="query.components.location.lat"
-								vs-longitude="query.components.location.long" type="text"
-								name="query" id="query" class="form-control"
-								placeholder="Enter location" /></i></span> <span
+								   class="form-control header-form-control " id="Autocomplete"
+								   name="Autocomplete" class="form-control" vs-google-autocomplete
+								   ng-model="query.name" vs-place="query.place"
+								   vs-place-id="query.components.placeId"
+								   vs-street-number="query.components.streetNumber"
+								   vs-street="query.components.street"
+								   vs-city="query.components.city"
+								   vs-state="query.components.state"
+								   vs-country-short="query.components.countryCode"
+								   vs-country="query.components.country"
+								   vs-post-code="query.components.postCode"
+								   vs-latitude="query.components.location.lat"
+								   vs-longitude="query.components.location.long" type="text"
+								   name="query" id="query" class="form-control"
+								   placeholder="Enter location"/></i></span> <span
 								class=" label label-danger"
 								data-ng-show="mainformsubmitted  && mainform.Autocomplete.$error.required">Please
 								enter Location !</span>
@@ -73,26 +72,26 @@
 						<div class="col-md-3 col-sm-3 col-margin-top " id="jrange">
 
 							<input type="text" class="form-control header-form-control"
-								maxlength="28" data-toggle="tooltip" data-placement="top"
-								title="Enter Date of Birth" required ng-model="query.dob"
-								datepicker-options="calendar.dateOptions" name="dob" id="dob"
-								ng-focus="open($event, 1)"
-								datepicker-popup="{{calendar.dateFormat}}"
-								is-open="openDatePickers[1]" ng-maxlength="10"
-								datepicker-options="calendar.dateOptions" close-text="Close"
-								placeholder="mm/dd/yyyy" /> <span class=" label label-danger"
-								data-ng-show="mainformsubmitted  && mainform.dob.$error.required">Please
+								   maxlength="28" data-toggle="tooltip" data-placement="top"
+								   title="Enter Date of Birth" required ng-model="query.dob"
+								   datepicker-options="calendar.dateOptions" name="dob" id="dob"
+								   ng-focus="open($event, 1)"
+								   datepicker-popup="{{calendar.dateFormat}}"
+								   is-open="openDatePickers[1]" ng-maxlength="10"
+								   datepicker-options="calendar.dateOptions" close-text="Close"
+								   placeholder="mm/dd/yyyy"/> <span class=" label label-danger"
+																	data-ng-show="mainformsubmitted  && mainform.dob.$error.required">Please
 								enter Date !</span>
 
 							<div></div>
 							<span class="input-icon"><i ng-click="open($event, 1)"
-								class="fa fa-calendar"></i></span>
+														class="fa fa-calendar"></i></span>
 						</div>
 						<div class="col-md-3 col-sm-3 col-margin-top ">
 							<div class="search-area  input-group-btn">
 								<a class="btn btn-primary" href=""
-									ng-click="mainSearchform(mainform)"> <span
-									ng-show="searchButtonText == 'Searching'"> <i
+								   ng-click="mainSearchform(mainform)"> <span
+										ng-show="searchButtonText == 'Searching'"> <i
 										class="glyphicon glyphicon-refresh spinning"></i></span>
 									{{searchButtonText }}
 									<div class="ripple-wrapper"></div>
@@ -114,7 +113,6 @@
 								<li><a href="#/secure/cities/result">Boston</a></li>
 							</ul>
 						</div>
-
 
 
 					</div>
@@ -140,8 +138,8 @@
 			<div class="col-sm-4">
 				<div class="text-center">
 					<img data-src="img/grid/chefs.svg"
-						class="img-responsive step-image lazy-loaded img-icons"
-						src="img/grid/chefs.svg">
+						 class="img-responsive step-image lazy-loaded img-icons"
+						 src="img/grid/chefs.svg">
 					<h4>1. Explore Unique Home</h4>
 					<p class="text-center">Discover home restaurants with unique
 						dining experiences like a cosy dinner on the rooftop in Rome, or a
@@ -151,8 +149,8 @@
 			<div class="col-sm-4">
 				<div class="text-center">
 					<img data-src="img/grid/venues.svg"
-						class="img-responsive step-image lazy-loaded img-icons"
-						src="img/grid/venues.svg">
+						 class="img-responsive step-image lazy-loaded img-icons"
+						 src="img/grid/venues.svg">
 					<h4>2. Book a Dining & Experience</h4>
 					<p>Connect with hosts, confirm dates, arrange for any dining
 						preferences, and make payment through services.</p>
@@ -161,8 +159,8 @@
 			<div class="col-sm-4">
 				<div class="text-center">
 					<img data-src="img/grid/popups.svg"
-						class="img-responsive step-image lazy-loaded img-icons"
-						src="img/grid/popups.svg">
+						 class="img-responsive step-image lazy-loaded img-icons"
+						 src="img/grid/popups.svg">
 					<h4>3. Enjoy dine Experience</h4>
 					<p>Indulge yourself in in authentic home-cooked food, make
 						friends and have great fun. Bon Appetit!</p>
@@ -174,8 +172,8 @@
 </section>
 
 <div class="home-private-events-bar"
-	style="background-image: url(img/grid/home_forest.jpg);"
-	data-bindattr-793="793">
+	 style="background-image: url(img/grid/home_forest.jpg);"
+	 data-bindattr-793="793">
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-9">
@@ -185,7 +183,7 @@
 			</div>
 			<div class="col-sm-3">
 				<a id="ember796" class="btn btn-primary" href="#/host"
-					data-analytics="home_page_private_events_bar">Become host</a>
+				   data-analytics="home_page_private_events_bar">Become host</a>
 			</div>
 		</div>
 	</div>
@@ -195,11 +193,11 @@
 		<div class="row panel-host">
 			<div class="col-md-8 col-sm-8 col-xs-12 override-padding">
 				<div class="container angular-slider"
-					ng-controller="sliderController">
+					 ng-controller="sliderController">
 					<img ng-repeat="slide in slides"
-						class="angular-slide slide-animation nonDraggableImage"
-						ng-swipe-right="nextSlide()" ng-swipe-left="prevSlide()"
-						ng-hide="!isCurrentSlideIndex($index)" ng-src="{{slide.image}}">
+						 class="angular-slide slide-animation nonDraggableImage"
+						 ng-swipe-right="nextSlide()" ng-swipe-left="prevSlide()"
+						 ng-hide="!isCurrentSlideIndex($index)" ng-src="{{slide.image}}">
 
 					<a class="arrow prev" href="#" ng-click="nextSlide()"></a> <a
 						class="arrow next" href="#" ng-click="prevSlide()"></a>
@@ -207,8 +205,9 @@
 						<div class="wrapper">
 							<ul class="dots">
 								<li class="dot" ng-repeat="slide in slides"><a href="#"
-									ng-class="{'active':isCurrentSlideIndex($index)}"
-									ng-click="setCurrentSlideIndex($index);">{{slide.description}}</a></li>
+																			   ng-class="{'active':isCurrentSlideIndex($index)}"
+																			   ng-click="setCurrentSlideIndex($index);">{{slide.description}}</a>
+								</li>
 							</ul>
 						</div>
 					</nav>
@@ -224,7 +223,7 @@
 					</div>
 					<h4 class="intro text-margin">share your delicious food with
 						travelers.</h4>
-					<br />
+					<br/>
 					<div class="search-area btn-margin input-group-btn">
 						<button class="btn btn-primary" onclick="#/host">Search</button>
 					</div>
@@ -235,15 +234,6 @@
 </section>
 
 
-
-
-
-
-
-
-
-
-
 <section class="small-padding-top top-cities section-light">
 	<div class="container locations">
 		<div class="text-center">
@@ -251,12 +241,12 @@
 		</div>
 		<div class="row">
 			<div
-				class="col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0 col-xs-8 col-xs-offset-2">
+					class="col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0 col-xs-8 col-xs-offset-2">
 				<div class="shadow-layer-container">
 					<div class="shadow-layer-box">
 						<a href="/s/Rome--Italy">Rome</a> <img alt="Where to eat in Rome"
-							data-src="img/grid/rome.jpg" src="img/grid/rome.jpg"
-							class="lazy-loaded">
+															   data-src="img/grid/rome.jpg" src="img/grid/rome.jpg"
+															   class="lazy-loaded">
 					</div>
 					<a href="/s/Rome--Italy">
 						<div class="shadow-layer"></div>
@@ -264,7 +254,7 @@
 				</div>
 			</div>
 			<div
-				class="col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0 col-xs-8 col-xs-offset-2">
+					class="col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0 col-xs-8 col-xs-offset-2">
 				<div class="shadow-layer-container">
 					<div class="shadow-layer-box">
 						<a href="/s/Florence--Italy">Florence</a> <img
@@ -277,7 +267,7 @@
 				</div>
 			</div>
 			<div
-				class="col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0 col-xs-8 col-xs-offset-2">
+					class="col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0 col-xs-8 col-xs-offset-2">
 				<div class="shadow-layer-container">
 					<div class="shadow-layer-box">
 						<a href="/s/Barcelona--Barcelona--Spain">Barcelona</a> <img
@@ -292,7 +282,7 @@
 		</div>
 		<div class="row">
 			<div
-				class="col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0 col-xs-8 col-xs-offset-2">
+					class="col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0 col-xs-8 col-xs-offset-2">
 				<div class="shadow-layer-container">
 					<div class="shadow-layer-box">
 						<a href="/s/Paris--France">Paris</a> <img
@@ -305,7 +295,7 @@
 				</div>
 			</div>
 			<div
-				class="col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0 col-xs-8 col-xs-offset-2">
+					class="col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0 col-xs-8 col-xs-offset-2">
 				<div class="shadow-layer-container">
 					<div class="shadow-layer-box">
 						<a href="/s/Milan--Italy">Milan</a> <img
@@ -318,7 +308,7 @@
 				</div>
 			</div>
 			<div
-				class="col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0 col-xs-8 col-xs-offset-2">
+					class="col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0 col-xs-8 col-xs-offset-2">
 				<div class="shadow-layer-container">
 					<div class="shadow-layer-box">
 						<a href="/s/Stockholm--Sweden">Stockholm</a> <img
@@ -333,7 +323,7 @@
 		</div>
 		<div class="row">
 			<div
-				class="col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0 col-xs-8 col-xs-offset-2">
+					class="col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0 col-xs-8 col-xs-offset-2">
 				<div class="shadow-layer-container">
 					<div class="shadow-layer-box">
 						<a href="/s/Singapore--Singapore">Singapore</a> <img
@@ -346,7 +336,7 @@
 				</div>
 			</div>
 			<div
-				class="col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0 col-xs-8 col-xs-offset-2">
+					class="col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0 col-xs-8 col-xs-offset-2">
 				<div class="shadow-layer-container">
 					<div class="shadow-layer-box">
 						<a href="/s/Prague--Czech-Republic">Prague</a> <img
@@ -359,7 +349,7 @@
 				</div>
 			</div>
 			<div
-				class="col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0 col-xs-8 col-xs-offset-2">
+					class="col-md-4 col-md-offset-0 col-sm-4 col-sm-offset-0 col-xs-8 col-xs-offset-2">
 				<div class="shadow-layer-container">
 					<div class="shadow-layer-box">
 						<a href="/s/Berlin--Germany">Berlin</a> <img
@@ -394,7 +384,5 @@
 		</div>
 	</div>
 </section>
-
-
 </div>
 

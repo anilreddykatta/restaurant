@@ -21,89 +21,106 @@
 
 	<section class="container">
 		<concierge-form>
-		<div class="form-row">
-			<div class="concierge-form">
-				<h4>Get started here</h4>
-				<div class="divider center"></div>
+			<div class="form-row">
+				<div class="concierge-form">
+					<h4>Get started here</h4>
+					<div class="divider center"></div>
 
-				<div>
-					<form name="starthosting" novalidate
-						ng-class="{ 'submitted' : starthostingsubmitted === true}">
-						<div class="form-group  custom-cover">
-							<div class="right-inner-addon ">
-								<i class="fa fa-map-marker"></i> <input type="text"
-									class="form-control header-form-control " id="Autocomplete"
-									class="form-control" ng-autocomplete="result1" ng-model="meal.place"
-									name="Autocomplete" details="details1" options="options1" /> <span
-									class=" label label-danger" required
-									data-ng-show="starthostingsubmitted  && starthosting.Autocomplete.$error.required">Please
+					<div>
+						<form name="starthosting" novalidate
+							  ng-class="{ 'submitted' : starthostingsubmitted === true}">
+							<div class="form-group  custom-cover">
+								<div class="right-inner-addon ">
+									<i class="fa fa-map-marker"></i> <input type="text"
+																			class="form-control header-form-control "
+																			id="Autocomplete"
+																			class="form-control"
+																			ng-autocomplete="result1"
+																			ng-model="meal.place"
+																			name="Autocomplete" details="details1"
+																			options="options1"/> <span
+										class=" label label-danger" required
+										data-ng-show="starthostingsubmitted  && starthosting.Autocomplete.$error.required">Please
 									enter Location data !</span>
-							</div>
+								</div>
 
-						</div>
-						<div class="form-group">
-							<label for="exampleInputEmail2"> <i class="fa fa-home"></i>
-								Type of event
-							</label> <select required ng-model="meal.occassion" class="form-control" name="concierge_type" id="concierge_type" required >
+							</div>
+							<div class="form-group">
+								<label for="exampleInputEmail2"> <i class="fa fa-home"></i>
+									Type of event
+								</label> <select required ng-model="meal.occassion" class="form-control"
+												 name="concierge_type" id="concierge_type" required>
 								<option value="" class="" selected="selected">Type of
-									event</option>
+									event
+								</option>
 								<option value="string:Business/Corporate"
-									label="Business/Corporate">Business/Corporate</option>
+										label="Business/Corporate">Business/Corporate
+								</option>
 								<option value="string:Team Building" label="Team Building">Team
-									Building</option>
+									Building
+								</option>
 								<option value="string:Birthday" label="Birthday">Birthday</option>
 								<option value="string:Shower" label="Shower">Shower</option>
 								<option value="string:Holiday Party" label="Holiday Party">Holiday
-									Party</option>
+									Party
+								</option>
 								<option value="string:Traveler Group" label="Traveler Group">Traveler
-									Group</option>
+									Group
+								</option>
 								<option value="string:Reunion" label="Reunion">Reunion</option>
 								<option value="string:Wedding Rehearsal Dinner"
-									label="Wedding Rehearsal Dinner">Wedding Rehearsal
-									Dinner</option>
+										label="Wedding Rehearsal Dinner">Wedding Rehearsal
+									Dinner
+								</option>
 								<option value="string:Wedding Event" label="Wedding Event">Wedding
-									Event</option>
+									Event
+								</option>
 								<option value="string:Other" label="Other">Other</option>
 							</select>
 							<span
 									class=" label label-danger" required
 									data-ng-show="starthostingsubmitted  && starthosting.concierge_type.$error.required">Please
 									enter occassion !</span>
-						</div>
-						<div class="form-group">
-							<label for="exampleInputEmail2"><i class="fa-cutlery fa"></i>
-								Food Type </label> 
-								<select required id="inputMealType" name="inputMealType" data-placeholder="Select"
-								ng-model="meal.foodtype"
-								class="form-control override-form-control"><option
-									value="0">Breakfast</option>
-								<option value="" class="" selected="selected">Type of
-									Food</option>
-								<option value="1">Brunch</option>
-								<option value="2" selected="selected">Lunch</option>
-								<option value="3">Dinner</option>
-								<option value="4">Snacks &amp; Drinks</option>
-								<option value="5">Wine/Drink Tasting</option>
-								<option value="6">Food Tour</option>
-								<option value="7">Cooking Class</option>
-								<option value="8">Food Experience</option></select>
-								<span
-									class=" label label-danger" required
-									data-ng-show="starthostingsubmitted  && starthosting.inputMealType.$error.required">Please
-									enter MealType !</span>
-						</div>
-						<div class="form-group">
-							<div class=" override-col-margin pull-right">
-
-								<a href="" ng-click="openHostModal(starthosting)" class="btn btn-primary">Continue</a>
 							</div>
-						</div>
-					</form>
+							<div class="form-group">
+								<label for="exampleInputEmail2"><i class="fa-cutlery fa"></i>
+									Food Type </label>
+								<select required id="inputMealType" name="inputMealType" data-placeholder="Select"
+										ng-model="meal.foodtype"
+										class="form-control override-form-control">
+									<option
+											value="0">Breakfast
+									</option>
+									<option value="" class="" selected="selected">Type of
+										Food
+									</option>
+									<option value="1">Brunch</option>
+									<option value="2" selected="selected">Lunch</option>
+									<option value="3">Dinner</option>
+									<option value="4">Snacks &amp; Drinks</option>
+									<option value="5">Wine/Drink Tasting</option>
+									<option value="6">Food Tour</option>
+									<option value="7">Cooking Class</option>
+									<option value="8">Food Experience</option>
+								</select>
+								<span
+										class=" label label-danger" required
+										data-ng-show="starthostingsubmitted  && starthosting.inputMealType.$error.required">Please
+									enter MealType !</span>
+							</div>
+							<div class="form-group">
+								<div class=" override-col-margin pull-right">
+
+									<a href="" ng-click="openHostModal(starthosting)"
+									   class="btn btn-primary">Continue</a>
+								</div>
+							</div>
+						</form>
+					</div>
+					<!-- end ngIf: !success -->
+					<!-- ngIf: success -->
 				</div>
-				<!-- end ngIf: !success -->
-				<!-- ngIf: success -->
 			</div>
-		</div>
 		</concierge-form>
 	</section>
 	<section class="group-pics-container">
@@ -117,7 +134,7 @@
 			<div class="group-pics-content  row ">
 				<div class="col-md-5 col-md-offset-1 col-sm-5 col-sm-offset-1">
 					<img class="img-responsive"
-						src="//s3.amazonaws.com/bookalokal-assets/landing/dinner-party.jpg">
+						 src="//s3.amazonaws.com/bookalokal-assets/landing/dinner-party.jpg">
 					<div class="pic-text">
 						<h3>The Private Dining Solution</h3>
 						<p>we will send you a selection of private dining options to
@@ -127,7 +144,7 @@
 				</div>
 				<div class="customization-blob col-md-5 col-sm-5">
 					<img class="img-responsive"
-						src="//s3.amazonaws.com/bookalokal-assets/landing/cocktail-party.jpg">
+						 src="//s3.amazonaws.com/bookalokal-assets/landing/cocktail-party.jpg">
 					<div class="pic-text">
 						<h3>Customize the Menu</h3>
 						<p>Choose from unique private dining options in DC, New York
@@ -154,7 +171,7 @@
 						<div class="meet-host-description meet-host-vertical">
 							<h2>
 								Meet&nbsp;<a href="/user/527b26a17f8b9aa7048b4c04"
-									class="orange">John</a>
+											 class="orange">John</a>
 							</h2>
 							<p class="host-city">Washington DC, United States</p>
 							<div class="landing-divider push-twenty"></div>
@@ -167,7 +184,7 @@
 						</div>
 						<div class="meet-host-pic visible-md visible-lg">
 							<a href=""><img class="img-responsive img-thumbnail "
-								src="img/meal_1.jpg" class="img-polaroid vertical-pic"></a>
+											src="img/meal_1.jpg" class="img-polaroid vertical-pic"></a>
 						</div>
 					</div>
 				</div>
@@ -176,7 +193,7 @@
 						<div class="meet-host-description meet-host-vertical">
 							<h2>
 								Meet&nbsp;<a href="/user/527b26a17f8b9aa7048b4c04"
-									class="orange">Jessica</a>
+											 class="orange">Jessica</a>
 							</h2>
 							<p class="host-city">WestVerginia WV, United States</p>
 							<div class="landing-divider push-twenty"></div>
@@ -189,7 +206,7 @@
 						</div>
 						<div class="meet-host-pic visible-md visible-lg">
 							<a href=""><img class="img-responsive img-thumbnail "
-								src="img/meal_3.jpg" class="img-polaroid vertical-pic"></a>
+											src="img/meal_3.jpg" class="img-polaroid vertical-pic"></a>
 						</div>
 					</div>
 				</div>
@@ -198,7 +215,7 @@
 						<div class="meet-host-description meet-host-vertical">
 							<h2>
 								Meet&nbsp;<a href="/user/527b26a17f8b9aa7048b4c04"
-									class="orange">Anny</a>
+											 class="orange">Anny</a>
 							</h2>
 							<p class="host-city">Newyork NY, United States</p>
 							<div class="landing-divider push-twenty"></div>
@@ -211,7 +228,7 @@
 						</div>
 						<div class="meet-host-pic visible-md visible-lg">
 							<a href=""><img class="img-responsive img-thumbnail "
-								src="img/meal_1.jpg" class="img-polaroid vertical-pic"></a>
+											src="img/meal_1.jpg" class="img-polaroid vertical-pic"></a>
 						</div>
 					</div>
 				</div>
@@ -221,22 +238,20 @@
 			<a class="left carousel-control" href="#Carousel" data-slide="prev">
 				<span class="glyphicon glyphicon-chevron-left"></span>
 			</a> <a class="right carousel-control" href="#Carousel" data-slide="next">
-				<span class="glyphicon glyphicon-chevron-right"></span>
-			</a>
+			<span class="glyphicon glyphicon-chevron-right"></span>
+		</a>
 		</div>
 
 	</div>
 
 
-
-
 	<div class="modal fade" modal="showModal" tabindex="-1" role="dialog"
-		aria-labelledby="loginModalLabel" aria-hidden="true">
+		 aria-labelledby="loginModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header login-modal-header">
 					<button type="button" ng-click="cancel()" class="close"
-						data-dismiss="modal" aria-label="Close">
+							data-dismiss="modal" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
 					<h6 class="modal-title text-center" id="loginModalLabel">Application
@@ -249,25 +264,25 @@
 
 								<h6 class="bg-danger" style="color: red;" role="alert">{{hostloginerrormessage}}</h6>
 								<form novalidate class="form" role="form" name="hostloginform"
-									ng-class="{ 'submitted' : hostloginsubmitted === true}"
-									ng-submit="hostlogin(hostloginform)">
+									  ng-class="{ 'submitted' : hostloginsubmitted === true}"
+									  ng-submit="hostlogin(hostloginform)">
 
 									<div class="form-group">
 										<input type="email" ng-model="user.email"
-											placeholder="Enter your email" id="email" name="email"
-											required class="form-control login-field"> <i
+											   placeholder="Enter your email" id="email" name="email"
+											   required class="form-control login-field"> <i
 											class="fa fa-user login-field-icon"></i> <span
 											class=" label label-danger"
 											data-ng-show="hostloginsubmitted  && hostloginform.email.$error.required">Please
 											enter Email !</span> <span class=" label label-danger"
-											data-ng-show="hostloginsubmitted  && hostloginform.email.$error.email">Please
+																	   data-ng-show="hostloginsubmitted  && hostloginform.email.$error.email">Please
 											enter valid Email !</span>
 									</div>
 
 									<div class="form-group">
 										<input type="password" ng-model="user.password" required
-											id="password" name="password" placeholder="Password"
-											class="form-control login-field"> <i
+											   id="password" name="password" placeholder="Password"
+											   class="form-control login-field"> <i
 											class="fa fa-lock login-field-icon"></i> <span
 											class=" label label-danger"
 											data-ng-show="hostloginsubmitted  && hostloginform.password.$error.required">Please
@@ -283,10 +298,10 @@
 							<div class='modal-body-right'>
 								<div class="modal-social-icons">
 									<a href='#' class="btn btn-default facebook"> <i
-										class="fa fa-facebook modal-icons"></i> Sign In Facebook
+											class="fa fa-facebook modal-icons"></i> Sign In Facebook
 									</a><a href='#' class="btn btn-default google"> <i
 										class="fa fa-google-plus modal-icons"></i> Sign In Google
-									</a>
+								</a>
 								</div>
 							</div>
 							<div id='center-line'>OR</div>
@@ -299,15 +314,15 @@
 					<div class="row">
 						<div class="col-xs-6 col-sm-6 col-md-6 center">
 							<i class="fa fa-lock"></i> <a type="button"
-								class="btn btn-default" ng-click="passwordModal()"
-								class="forgetpass-tab"> Forgot password? </a>
+														  class="btn btn-default" ng-click="passwordModal()"
+														  class="forgetpass-tab"> Forgot password? </a>
 
 						</div>
 
 						<div class="col-xs-6 col-sm-6 col-md-6 center">
 							<i class="fa fa-check"></i> <a type="button"
-								class="btn btn-default" ng-click="registerModal()"
-								class="signin-tab"> Sign Up </a>
+														   class="btn btn-default" ng-click="registerModal()"
+														   class="signin-tab"> Sign Up </a>
 						</div>
 					</div>
 				</div>
@@ -317,12 +332,12 @@
 	</div>
 
 	<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
-		aria-labelledby="myModalLabel">
+		 aria-labelledby="myModalLabel">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal"
-						aria-label="Close">
+							aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
 					<h4 class="modal-title" id="myModalLabel">Modal title</h4>

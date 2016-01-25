@@ -1,7 +1,7 @@
 <style>
-.js-hero {
-	display: none;
-}
+	.js-hero {
+		display: none;
+	}
 
 	.margin-botton-3-0-percent {
 		margin-bottom: 3.0% !important;
@@ -9,7 +9,7 @@
 </style>
 <link href="css/header.css" rel="stylesheet">
 <div class="row-fluid login-bg landing-hero"
-	ng-controller="registerController">
+	 ng-controller="registerController">
 
 	<div class="relative">
 		<div id="searchbox" class="search-field-area  ng-scope">
@@ -20,16 +20,16 @@
 							Login via
 							<div class="social-buttons">
 								<a href="#" class="btn btn-primary facebook btn-fb"><i
-									class="fa fa-facebook "></i> Facebook</a> <a href="#"
-									class="btn btn-primary google btn-tw"><i
+										class="fa fa-facebook "></i> Facebook</a> <a href="#"
+																					 class="btn btn-primary google btn-tw"><i
 									class="fa fa-google-plus "></i> Google</a>
 							</div>
 							or
 							<div class="bg-danger margin-botton-3-0-percent">{{registererrormessage}}</div>
 							<form class="form" novalidate role="form" name="registerform"
-								ng-submit="register(registerform)"
-								ng-class="{ 'submitted' : registersubmitted === true}"
-								accept-charset="UTF-8" id="login-nav">
+								  ng-submit="register(registerform)"
+								  ng-class="{ 'submitted' : registersubmitted === true}"
+								  accept-charset="UTF-8" id="login-nav">
 								<div class="form-group">
 									<label class="sr-only" for="nameInput">Name</label> <input
 										type="text" ng-model="user.firstname" class="form-control"
@@ -49,12 +49,12 @@
 								<div class="form-group">
 									<label class="sr-only" for="emailAddressInput">Email
 										address</label> <input type="email" ng-model="user.email"
-										class="form-control" id="email" name="email"
-										placeholder="Email address" required> <span
+															   class="form-control" id="email" name="email"
+															   placeholder="Email address" required> <span
 										class=" label label-danger"
 										data-ng-show="registersubmitted  && registerform.email.$error.required">Please
 										enter Email !</span> <span class=" label label-danger"
-										data-ng-show="registersubmitted  && registerform.email.$error.email">Please
+																   data-ng-show="registersubmitted  && registerform.email.$error.email">Please
 										enter valid Email !</span>
 								</div>
 								<div class="form-group">
@@ -62,20 +62,21 @@
 										type="password" ng-model="user.password" class="form-control"
 										id="password" name="password" placeholder="Password" required>
 									<span class=" label label-danger"
-										data-ng-show="registersubmitted  && registerform.password.$error.required">Please
+										  data-ng-show="registersubmitted  && registerform.password.$error.required">Please
 										enter password !</span>
 								</div>
 								<div class="form-group">
 									<label class="sr-only" for="cityInput">City</label> <input
 										type="text" ng-model="user.city" class="form-control"
 										placeholder="city/country" id="Autocomplete"
-							           class="form-control" vs-google-autocomplete name="Autocomplete" placeholder="city" required>
+										class="form-control" vs-google-autocomplete name="Autocomplete"
+										placeholder="city" required>
 								</div>
 
 								<div class="row-space-2 row-space-top-2">
 									<div class="checkbox">
 										<label> <input type="checkbox"><span
-											class="checkbox-material"><span class="check"></span></span>
+												class="checkbox-material"><span class="check"></span></span>
 											I agree to the terms of service
 										</label>
 									</div>

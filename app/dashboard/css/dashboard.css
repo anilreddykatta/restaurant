@@ -59,13 +59,14 @@
 	padding-bottom: 5px;
 	background-color: #fff;
 }
+
 #info i {
-    margin-left: 3px;
-    margin-right: 3px;
+	margin-left: 3px;
+	margin-right: 3px;
 }
 
 .input-prepend .add-on:first-child, .input-prepend .btn:first-child {
-    -webkit-border-radius: 4px 0 0 4px;
-    -moz-border-radius: 4px 0 0 4px;
-    border-radius: 4px 0 0 4px;
+	-webkit-border-radius: 4px 0 0 4px;
+	-moz-border-radius: 4px 0 0 4px;
+	border-radius: 4px 0 0 4px;
 }
